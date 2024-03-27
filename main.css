@@ -8,9 +8,7 @@
     user-select: none;
 }
 
-.scroll {
-    overflow-y: auto;
-}
+.scroll {overflow-y: auto;}
 .scroll::-webkit-scrollbar {
     width: 12px;
 }
@@ -20,10 +18,10 @@
     border: solid 5px transparent;
 }
 .scroll::-webkit-scrollbar-thumb {
-    background-color: rgb(from var(--text) r g b / 50%);
+    background-color: rgb(from var(--text-200) r g b / 50%);
     border-radius: 50px;
     background-clip: content-box;
-    border: solid 2px transparent;
+    border: solid 1pt transparent;
 }
 
 input[type="checkbox"].toggle+label {
@@ -84,10 +82,52 @@ nav {
     top: 0px;
     height: 5rem;
 
-    background-color: var(--background);
+    background-color: var(--background-50);
     border-bottom: 1pt solid var(--border-highlight);
 }
 
 main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     height: calc(100dvh - 5rem - 1pt);
+
+    background-color: var(--background-50);
 }
+
+#text_box {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    
+    width: 85%;
+    border-radius: 1.7rem;
+    background-color: var(--primary-400);
+    box-shadow: var(--shadow-elevation-medium);
+}
+#text_box>div {padding: 1rem;}
+
+#text1 {position: relative;}
+#text1::after {
+    content: '';
+    position: absolute;
+    height: 90%;
+    width: 3pt;
+    top: 5%;
+    right: 0%;
+    background-color: var(--border-highlight);
+}
+#text1 h3 {
+    color: var(--text-200);
+    text-decoration: underline;
+    text-decoration-color: var(--secondary-400);
+}
+#text1 h4 {
+    color: var(--text-200);
+    margin-left: 1.5rem;
+}
+#text1 h6 {
+    color: var(--texta-200);
+    margin-left: 3rem;
+}
+#text1 span {color: var(--accent-400)}
