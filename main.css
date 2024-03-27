@@ -283,3 +283,30 @@ main>div {margin: 2rem;}
     padding: 0.5rem 1rem;
     background-color: var(--accent);
 }
+
+#table {
+    width: 80%;
+    background-color: var(--text-alt);
+    color: var(--text);
+    border-radius: 1.7rem;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table, th, td {border: 3pt solid var(--border-highlight);}
+table td {
+    height: 30px;
+    text-align: center;
+}
+table th {
+    background-color: var(--secondary);
+}
+table tbody tr:nth-child(odd) td:nth-child(odd) {
+    background-color: var(--text);
+    color: var(--text-alt);
+}
+table tbody tr:nth-child(even) td:nth-child(even) {
+    background-color: var(--text);
+    color: var(--text-alt);
+}
