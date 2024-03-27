@@ -26,6 +26,24 @@ body * {transition: all ease-in-out 0.2s;}
     border: solid 1pt transparent;
 }
 
+.link {
+    position: relative;
+    text-decoration: none;
+    color: var(--text);
+}
+.link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3pt;
+    width: 100%;
+    opacity: 0.5;
+    background-color: var(--accent);
+    transition: all ease-in-out 0.2s;
+}
+.link:hover::after {height: 90%;}
+
 input[type="checkbox"].toggle+label {
     /*visible label*/
     font-size: 12px;
@@ -86,7 +104,7 @@ nav {
     padding: 0rem 1rem;
 
     background-color: var(--background);
-    border-bottom: 1pt solid var(--border-highlight);
+    border-bottom: 2pt solid var(--border-highlight);
 }
 
 main {
@@ -95,7 +113,7 @@ main {
     align-items: center;
     justify-content: space-around;
 
-    height: calc(100dvh - 5rem - 1pt);
+    height: calc(100dvh - 5rem - 2pt);
 
     background-color: var(--background);
 }
@@ -126,6 +144,7 @@ main>div {margin: 2rem;}
     color: var(--text);
     text-decoration: underline;
     text-decoration-color: var(--secondary);
+    text-decoration-thickness: 3pt;
 }
 #text1 h4 {
     color: var(--text);
@@ -192,6 +211,7 @@ main>div {margin: 2rem;}
     align-items: center;
     justify-content: space-evenly;
 
+    margin: auto;
     height: 80%;
     width: 80%;
 
@@ -254,21 +274,34 @@ main>div {margin: 2rem;}
 }
 #container2>div:hover h5::after {width: 100%;}
 
+#container3 {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    align-items: center;
+    width: 85%;
+}
+
 #dropdown {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    position: relative;
+    margin: auto;
+    width: 85%;
+    height: 20rem;
+
     padding: 1rem;
-    width: 55%;
     border-radius: 1.7rem;
     background-color: var(--primary);
+
 }
 #dropdown details {
     font-size: 15pt;
     font-family: var(--font);
     font-weight: 700;
     color: var(--text-alt);
-    width: 100%;
+    width: 90%;
     padding: 0.4rem;
     margin: 0.25rem;
     border-radius: 0.7rem;
@@ -284,8 +317,37 @@ main>div {margin: 2rem;}
     background-color: var(--accent);
 }
 
+#bento {
+    display: grid;
+    grid-template-areas:
+    'a a a e d'
+    'a a a f d'
+    'b b c c c';
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 0.5rem;
+    height: 100%;
+}
+#bento div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.7rem;
+    background-color: #FF0066;
+    padding: auto;
+    text-align: center;
+}
+#bento div:nth-child(1) {grid-area: a;}
+#bento div:nth-child(2) {grid-area: b;}
+#bento div:nth-child(3) {grid-area: c;}
+#bento div:nth-child(4) {grid-area: d;}
+#bento div:nth-child(5) {grid-area: e;}
+#bento div:nth-child(6) {grid-area: f;}
+
 #table {
-    width: 80%;
+    width: 60%;
     background-color: var(--text-alt);
     color: var(--text);
     border-radius: 1.7rem;
@@ -296,7 +358,7 @@ table {
 }
 table, th, td {border: 3pt solid var(--border-highlight);}
 table td {
-    height: 30px;
+    height: 50px;
     text-align: center;
 }
 table th {
