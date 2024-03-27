@@ -155,14 +155,35 @@ main>div {margin: 2rem;}
 #blobs {
     position: relative;
     height: 30rem;
+    overflow: hidden;
 }
 #blobs svg {
+    color: #FF0066;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     opacity: 0.5;
+    transition: all ease-in-out 1s;
+}
+#blobs:hover #blob1 {
+    scale: 1.1;
+    rotate: 50deg;
+}
+#blobs:hover #blob2 {
+    scale: 1.09;
+    rotate: -7deg;
+}
+#blobs:hover #blob3 {
+    scale: 1.05;
+    rotate: 30deg;
+    transform: translate(-5px, 5px);
+}
+#blobs:hover #blob4 {
+    scale: 1.3;
+    rotate: -20deg;
+    transform: translate(10px, -5px);
 }
 
 #btns {
