@@ -145,7 +145,7 @@ main>div {margin: 2rem;}
     height: 90%;
     width: 3pt;
     top: 5%;
-    right: 0%;
+    right: 0;
     background-color: var(--border-highlight);
 }
 #text1 h3 {
@@ -360,7 +360,6 @@ main>div {margin: 2rem;}
     width: 100%;
     height: 100%;
     border-radius: 0.7rem;
-    background-color: #FF0066;
     padding: auto;
     text-align: center;
     box-shadow: var(--shadow-elevation-medium);
@@ -433,4 +432,120 @@ nav h4 {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+@media screen and (max-width: 890px) {
+    #text_box {
+        grid-template-columns: 1fr;
+        grid-template-rows: fit-content 1.5fr;
+        text-align: center;
+    }
+    #text1 {order: 2;}
+    #text1::after {
+        width: 90%;
+        height: 3pt;
+        top: 0;
+        right: 5%;
+    }
+    #text1 h4 {margin-left: 0rem;}
+    #text1 h6 {margin-left: 0rem;}
+
+    #parablob1 {top: 100dvh;}
+    #parablob2 {top: 110dvh;}
+    #parablob3 {top: 120dvh;}
+
+    #container1 {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 7rem 0rem;
+    }
+    #blobs {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        scale: 2;
+    }
+    #container1:hover #blob1 {
+        scale: 1.1;
+        rotate: 50deg;
+    }
+    #container1:hover #blob2 {
+        scale: 1.09;
+        rotate: -7deg;
+    }
+    #container1:hover #blob3 {
+        scale: 1.05;
+        rotate: 30deg;
+        transform: translate(-5px, 5px);
+    }
+    #container1:hover #blob4 {
+        scale: 1.3;
+        rotate: -20deg;
+        transform: translate(10px, -5px);
+    }
+    #btns {
+        height: 15rem;
+        width: clamp(30%,15rem,90%);
+        z-index: 5;
+    }
+    main {overflow-x: hidden;}
+
+    #container2>div {margin: 0rem 0.35rem;}
+
+    #container3 {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1.3fr;
+        gap: 1rem;
+    }
+
+    #dropdown {
+        width: 95%;
+        height: 20rem;
+    }
+
+    #table {width: 85%;}
+}
+
+@media screen and (max-width: 490px) {
+    nav>h4 {font-size: 15pt;}
+
+    #blobs {scale: 2.2;}
+    #btns {
+        height: 11rem;
+        width: clamp(30%,11rem,90%);
+    }
+
+    #container2>div {
+        padding: 2rem;
+        margin: 0rem 0.3rem;
+        width: 10%;
+        height: 5rem;
+    }
+    #container2>div h5 {font-size: 11pt;}
+
+    #dropdown {padding: 1rem 0.2rem;}
+    #dropdown details {
+        font-size: 12pt;
+        width: 80%;
+    }
+    #bento {
+        grid-template-areas:
+        'a a b'
+        'a a b'
+        'a a c'
+        'e f c'
+        'd d c';
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    #bento div h5 {font-size: 10.5pt;}
+
+    table td, table th {
+        height: 35px;
+        font-size: 10pt;
+    }
 }
