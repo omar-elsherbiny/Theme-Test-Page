@@ -160,7 +160,7 @@
     --accent1: var(--acnt-500);
     --primary1: var(--prim-600);
     --secondary1: var(--scnd-300);
-    --text2: var(--txt-800);
+    --text2: var(--txt-900);
     --text3: var(--txt-950);
     --text4: var(--txt-50);
     --secondary2: var(--scnd-500);
@@ -171,6 +171,10 @@
     --secondary3: var(--scnd-400);
     --accent3: var(--acnt-200);
     --text5: var(--txt-200);
+    --background0: var(--bgr-600);
+    --background1: var(--bgr-400);
+    --background2: var(--bgr-200);
+    --primary4: hsl(from var(--prim-200) h 50% l);
 }
 
 :root[data-theme="dark"] {
@@ -181,7 +185,7 @@
     --background1: var(--bgrd-900);
     --primary1: var(--primd-600);
     --secondary1: var(--scndd-400);
-    --text2: var(--txtd-300);
+    --text2: var(--txtd-200);
     --text3: var(--txtd-900);
     --text4: var(--txtd-900);
     --secondary2: var(--scndd-500);
@@ -192,6 +196,10 @@
     --secondary3: var(--scndd-600);
     --accent3: var(--acntd-600);
     --text5: var(--txtd-800);
+    --background0: var(--bgrd-400);
+    --background1: var(--bgrd-600);
+    --background2: var(--bgrd-800);
+    --primary4: hsl(from var(--primd-600) h 35% l);
 }
 
 body {

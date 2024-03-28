@@ -107,7 +107,7 @@ nav {
     position: sticky;
 
     top: 0px;
-    height: 5rem;
+    height: 3rem;
     padding: 0rem 1rem;
 
     background-color: var(--background);
@@ -120,9 +120,9 @@ main {
     align-items: center;
     justify-content: space-around;
 
-    height: calc(100dvh - 5rem - 2pt);
+    height: calc(100dvh - 3rem - 2pt);
 
-    background-color: var(--background);
+    perspective: 10px;
 }
 main>div {margin: 2rem;}
 
@@ -132,7 +132,7 @@ main>div {margin: 2rem;}
     
     width: 85%;
     border-radius: 1.7rem;
-    background-color: var(--primary1);
+    background-color: var(--primary4);
     box-shadow: var(--shadow-elevation-medium);
 }
 #text_box>div {padding: 1rem;}
@@ -148,7 +148,7 @@ main>div {margin: 2rem;}
     background-color: var(--border-highlight);
 }
 #text1 h3 {
-    color: var(--text2);
+    color: var(--text1);
     text-decoration: underline;
     text-decoration-color: var(--secondary1);
     text-decoration-thickness: 3pt;
@@ -190,7 +190,7 @@ main>div {margin: 2rem;}
     width: 100%;
     height: 100%;
     opacity: 0.5;
-    transition: all ease-in-out 1s;
+    transition: all ease-in-out 0.7s;
 }
 #blob1 {color: var(--primary2);}
 #blob2 {color: var(--primary3);}
@@ -241,6 +241,7 @@ main>div {margin: 2rem;}
     background-color: var(--secondary2);
     box-shadow: var(--shadow-elevation-medium);
     transition: all ease-in-out 0.2s;
+    cursor: pointer;
 }
 #btns button:hover {
     box-shadow: var(--shadow-elevation-high);
@@ -264,6 +265,11 @@ main>div {margin: 2rem;}
     border-radius: 1.7rem;
     width: 10%;
     height: 10rem;
+    cursor: pointer;
+}
+#container2>div:hover {
+    box-shadow: var(--shadow-elevation-high);
+    scale: 1.01;
 }
 #container2>div h5 {position: relative;}
 #container2>div h5::after {
@@ -318,6 +324,7 @@ main>div {margin: 2rem;}
     border-radius: 0.7rem;
     background-color: var(--secondary1);
     box-shadow: var(--shadow-elevation-medium);
+    cursor: pointer;
 }
 #dropdown details:hover {
     box-shadow: var(--shadow-elevation-high);
@@ -390,3 +397,23 @@ table>tbody tr:hover:nth-child(even) {background-color: var(--accent3);}
 table>tbody tr:hover:nth-child(odd) {background-color: var(--text5);}
 table>thead tr:hover {background-color: var(--secondary3);}
 #table:has(>table>thead tr:hover) {border: solid 3pt var(--secondary3);}
+
+main {background-color: var(--background0);}
+.cls-1 {fill: var(--background1);}
+.cls-2 {fill: var(--background2);}
+.cls-3 {fill: var(--background);}
+
+header {
+    position: relative;
+    width: 100%;
+    z-index: -1;
+    transform-style: preserve-3d;
+}
+#parablob1,#parablob2,#parablob3 {
+    position: absolute;
+    left: 0;
+    top: 50dvh;
+}
+#parablob1 {transform: translateZ(2px) scale(0.8);}
+#parablob2 {transform: translateZ(4px) scale(0.6);}
+#parablob3 {top: 60dvh; transform: translateZ(6px) scale(0.6) scaleY(1.5);}
