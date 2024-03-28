@@ -2,11 +2,12 @@
 
 body * {transition: all ease-in-out 0.2s;}
 body *::selection {
-    background-color: var(--accent);
+    background-color: var(--border-highlight);
     text-decoration: underline;
     text-decoration-color: rgba(0,0,0,0.5);
     text-decoration-thickness: 3pt;
 }
+body {color: var(--text1);}
 
 .hide {display: none !important;}
 
@@ -26,7 +27,7 @@ body *::selection {
     border: solid 5px transparent;
 }
 .scroll::-webkit-scrollbar-thumb {
-    background-color: rgb(from var(--text) r g b / 50%);
+    background-color: rgb(from var(--text1) r g b / 50%);
     border-radius: 50px;
     background-clip: content-box;
     border: solid 1pt transparent;
@@ -35,7 +36,7 @@ body *::selection {
 .link {
     position: relative;
     text-decoration: none;
-    color: var(--text);
+    color: var(--text1);
 }
 .link::after {
     content: '';
@@ -45,7 +46,7 @@ body *::selection {
     height: 3pt;
     width: 100%;
     opacity: 0.5;
-    background-color: var(--accent);
+    background-color: var(--accent1);
     transition: all ease-in-out 0.2s;
 }
 .link:hover::after {height: 90%;}
@@ -131,7 +132,7 @@ main>div {margin: 2rem;}
     
     width: 85%;
     border-radius: 1.7rem;
-    background-color: var(--primary);
+    background-color: var(--primary1);
     box-shadow: var(--shadow-elevation-medium);
 }
 #text_box>div {padding: 1rem;}
@@ -147,20 +148,20 @@ main>div {margin: 2rem;}
     background-color: var(--border-highlight);
 }
 #text1 h3 {
-    color: var(--text);
+    color: var(--text2);
     text-decoration: underline;
-    text-decoration-color: var(--secondary);
+    text-decoration-color: var(--secondary1);
     text-decoration-thickness: 3pt;
 }
 #text1 h4 {
-    color: var(--text);
+    color: var(--text3);
     margin-left: 1.5rem;
 }
 #text1 h6 {
-    color: var(--text-alt);
+    color: var(--text1);
     margin-left: 3rem;
 }
-#text1 span {color: var(--accent)}
+#text1 span {color: var(--accent1)}
 
 #text2 {
     display: flex;
@@ -183,7 +184,6 @@ main>div {margin: 2rem;}
     overflow: hidden;
 }
 #blobs svg {
-    color: #FF0066;
     position: absolute;
     top: 0;
     left: 0;
@@ -192,6 +192,10 @@ main>div {margin: 2rem;}
     opacity: 0.5;
     transition: all ease-in-out 1s;
 }
+#blob1 {color: var(--primary2);}
+#blob2 {color: var(--primary3);}
+#blob3 {color: var(--primary1);}
+#blob4 {color: var(--primary0);}
 #blobs:hover #blob1 {
     scale: 1.1;
     rotate: 50deg;
@@ -222,7 +226,7 @@ main>div {margin: 2rem;}
     width: 80%;
 
     border-radius: 1.7rem;
-    background-color: var(--primary);
+    background-color: var(--primary1);
     box-shadow: var(--shadow-elevation-medium);
 }
 #btns button {
@@ -231,10 +235,10 @@ main>div {margin: 2rem;}
     font-size: 20pt;
     font-family: var(--font);
     font-weight: 700;
-    color: var(--text-alt);
+    color: var(--text4);
     border-radius: 1rem;
     border: none;
-    background-color: var(--secondary);
+    background-color: var(--secondary2);
     box-shadow: var(--shadow-elevation-medium);
     transition: all ease-in-out 0.2s;
 }
@@ -254,7 +258,7 @@ main>div {margin: 2rem;}
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    background-color: var(--border-highlight);
+    background-color: rgb(from var(--primary3) r g b / 0.2);
     padding: 3rem;
     margin: 0rem 1rem;
     border-radius: 1.7rem;
@@ -265,7 +269,7 @@ main>div {margin: 2rem;}
 #container2>div h5::after {
     content: '';
     position: absolute;
-    background-color: var(--secondary);
+    background-color: var(--secondary1);
     bottom: 0;
     left: 0;
     height: 2.2pt;
@@ -275,7 +279,7 @@ main>div {margin: 2rem;}
 }
 #container2>div svg {transition: all ease-in-out 0.2s;}
 #container2>div:hover svg {
-    color: var(--accent);
+    color: var(--accent1);
     scale: 1.3;
 }
 #container2>div:hover h5::after {width: 100%;}
@@ -298,8 +302,8 @@ main>div {margin: 2rem;}
     height: 20rem;
 
     padding: 1rem;
-    border-radius: 1.7rem;
-    background-color: var(--primary);
+    border-radius: 1.7rem 0.5rem 0.5rem 1.7rem;
+    background-color: var(--primary1);
     box-shadow: var(--shadow-elevation-medium);
 
 }
@@ -307,12 +311,12 @@ main>div {margin: 2rem;}
     font-size: 15pt;
     font-family: var(--font);
     font-weight: 700;
-    color: var(--text-alt);
+    color: var(--text3);
     width: 90%;
     padding: 0.4rem;
     margin: 0.25rem;
     border-radius: 0.7rem;
-    background-color: var(--secondary);
+    background-color: var(--secondary1);
     box-shadow: var(--shadow-elevation-medium);
 }
 #dropdown details:hover {
@@ -325,7 +329,8 @@ main>div {margin: 2rem;}
     font-weight: 500;
     border-radius: 0.7rem;
     padding: 0.5rem 1rem;
-    background-color: var(--accent);
+    background-color: rgb(from var(--accent1) r g b / 0.3);
+    color: var(--text1);
 }
 
 #bento {
@@ -353,20 +358,24 @@ main>div {margin: 2rem;}
 }
 #bento div:hover {
     box-shadow: var(--shadow-elevation-high);
-    scale: 1.005;
+    scale: 1.01;
 }
-#bento div:nth-child(1) {grid-area: a;}
-#bento div:nth-child(2) {grid-area: b;}
-#bento div:nth-child(3) {grid-area: c;}
-#bento div:nth-child(4) {grid-area: d;}
-#bento div:nth-child(5) {grid-area: e;}
-#bento div:nth-child(6) {grid-area: f;}
+#bento div:nth-child(1) {grid-area: a; background-color: var(--primary1);}
+#bento div:nth-child(2) {grid-area: b; background-color: var(--border-highlight);}
+#bento div:nth-child(3) {grid-area: c; background-color: var(--primary0);}
+#bento div:nth-child(4) {grid-area: d; background-color: var(--primary2);}
+#bento div:nth-child(5) {grid-area: e; background-color: var(--primary3);}
+#bento div:nth-child(6) {grid-area: f; background-color: var(--border-highlight);}
 
-#table {width: 60%;}
+#table {
+    width: 60%;
+    border-radius: 1.6rem;
+    border: solid 3pt var(--secondary1);
+    box-shadow: var(--shadow-elevation-medium);
+}
 table {
     border-collapse: collapse;
     width: 100%;
-    box-shadow: var(--shadow-elevation-medium);
     border-radius: 1.3rem;
     overflow: hidden;
 }
@@ -374,11 +383,10 @@ table td, table th {
     height: 50px;
     text-align: center;
 }
-table>thead>tr {background-color: var(--secondary);}
-table>tbody tr:nth-child(even) {
-    background-color: var(--text);
-    color: var(--text-alt);
-}
-table>tbody tr:nth-child(odd) {background-color: var(--text-alt);}
-table>tbody tr:hover:nth-child(even) {background-color: #FF0066;}
-table>tbody tr:hover:nth-child(odd) {background-color: #22FF66;}
+table>thead>tr {background-color: var(--secondary1);}
+table>tbody tr:nth-child(even) {background-color: var(--accent2);}
+table>tbody tr:nth-child(odd) {background-color: var(--text4);}
+table>tbody tr:hover:nth-child(even) {background-color: var(--accent3);}
+table>tbody tr:hover:nth-child(odd) {background-color: var(--text5);}
+table>thead tr:hover {background-color: var(--secondary3);}
+#table:has(>table>thead tr:hover) {border: solid 3pt var(--secondary3);}
