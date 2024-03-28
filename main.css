@@ -154,7 +154,7 @@ main>div {margin: 2rem;}
     text-decoration-thickness: 3pt;
 }
 #text1 h4 {
-    color: var(--text3);
+    color: var(--text2);
     margin-left: 1.5rem;
 }
 #text1 h6 {
@@ -235,7 +235,7 @@ main>div {margin: 2rem;}
     font-size: 20pt;
     font-family: var(--font);
     font-weight: 700;
-    color: var(--text4);
+    color: var(--text3);
     border-radius: 1rem;
     border: none;
     background-color: var(--secondary2);
@@ -317,7 +317,7 @@ main>div {margin: 2rem;}
     font-size: 15pt;
     font-family: var(--font);
     font-weight: 700;
-    color: var(--text3);
+    color: var(--text2);
     width: 90%;
     padding: 0.4rem;
     margin: 0.25rem;
@@ -392,9 +392,9 @@ table td, table th {
 }
 table>thead>tr {background-color: var(--secondary1);}
 table>tbody tr:nth-child(even) {background-color: var(--accent2);}
-table>tbody tr:nth-child(odd) {background-color: var(--text4);}
+table>tbody tr:nth-child(odd) {background-color: var(--text3);}
 table>tbody tr:hover:nth-child(even) {background-color: var(--accent3);}
-table>tbody tr:hover:nth-child(odd) {background-color: var(--text5);}
+table>tbody tr:hover:nth-child(odd) {background-color: var(--text4);}
 table>thead tr:hover {background-color: var(--secondary3);}
 #table:has(>table>thead tr:hover) {border: solid 3pt var(--secondary3);}
 
@@ -417,3 +417,10 @@ header {
 #parablob1 {transform: translateZ(2px) scale(0.8);}
 #parablob2 {transform: translateZ(4px) scale(0.6);}
 #parablob3 {top: 60dvh; transform: translateZ(6px) scale(0.6) scaleY(1.5);}
+
+nav h4 {
+    background: linear-gradient(120deg, var(--primary1), var(--accent1));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
