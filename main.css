@@ -645,6 +645,61 @@ nav h4 {
     -webkit-text-fill-color: transparent;
 }
 
+#glass {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 1rem;
+    padding: 1rem;
+    width: 60%;
+    border-radius: 16px;
+
+    background: rgb(from var(--primary0) r g b / 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgb(from var(--primary0) r g b / 0.3);
+}
+#glass>div {
+    padding: 1rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+#glass:has(>div:hover) {
+    box-shadow: var(--shadow-elevation-high);
+    scale: 1.02;
+}
+#glass>div:hover {
+    box-shadow: var(--shadow-elevation-high);
+    scale: 1.1;
+}
+#glass>div:nth-child(1) {
+    background: rgb(from var(--primary1) r g b / 0.2);
+    border: 1px solid rgb(from var(--primary1) r g b / 0.3);
+}
+#glass>div:nth-child(2) {
+    background: rgb(from var(--primary2) r g b / 0.2);
+    border: 1px solid rgb(from var(--primary2) r g b / 0.3);
+}
+#glass>div:nth-child(3) {
+    background: rgb(from var(--secondary1) r g b / 0.2);
+    border: 1px solid rgb(from var(--secondary1) r g b / 0.3);
+}
+#glass>div:nth-child(4) {
+    background: rgb(from var(--secondary2) r g b / 0.2);
+    border: 1px solid rgb(from var(--secondary2) r g b / 0.3);
+}
+#glass>div:nth-child(5) {
+    background: rgb(from var(--accent1) r g b / 0.2);
+    border: 1px solid rgb(from var(--accent1) r g b / 0.3);
+}
+
 @media screen and (max-width: 890px) {
     #text_box {
         grid-template-columns: 1fr;
@@ -758,5 +813,10 @@ nav h4 {
     table td, table th {
         height: 35px;
         font-size: 10pt;
+    }
+
+    #glass>div {
+        width: 3rem;
+        height: 3rem;
     }
 }
