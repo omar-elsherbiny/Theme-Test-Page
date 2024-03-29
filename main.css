@@ -291,6 +291,7 @@ input[type="checkbox"].toggle+label::before {
     border-radius: 1em;
     background-color: rgb(117, 117, 117);
     margin-right: 0.25em;
+    box-shadow: var(--shadow-elevation-low);
 }
 input[type="checkbox"].toggle+label::after {
     position: absolute;
@@ -304,6 +305,7 @@ input[type="checkbox"].toggle+label::after {
     background-size: 1.2rem;
     background-image: url('https://api.iconify.design/iconamoon:mode-light-fill.svg?color=%2308081a');
     transition: all 200ms ease-in-out;
+    box-shadow: var(--shadow-elevation-medium);
 }
 input[type="checkbox"].toggle:checked+label::after {
     transform: translateX(1.5rem);
@@ -323,6 +325,12 @@ nav {
 
     background-color: var(--background);
     border-bottom: 2pt solid var(--border-highlight);
+}
+nav h4 {
+    background: linear-gradient(120deg, var(--primary1), var(--accent1));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 main {
@@ -637,13 +645,6 @@ header {
 #parablob1 {transform: translateZ(2px) scale(0.8);}
 #parablob2 {transform: translateZ(4px) scale(0.6);}
 #parablob3 {top: 60dvh; transform: translateZ(6px) scale(0.6) scaleY(1.5);}
-
-nav h4 {
-    background: linear-gradient(120deg, var(--primary1), var(--accent1));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
 
 #glass {
     display: flex;

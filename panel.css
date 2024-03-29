@@ -1,8 +1,12 @@
+/*:root {
+    
+}*/
+
 #wrapper {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: calc(100% - 12px);
     height: 100%;
     margin: 0;
     z-index: 50;
@@ -12,8 +16,8 @@
 #panel {
     position: sticky;
     top: 15%;
-    left: calc(90% - 12px);
-    width: 10%;
+    left: 100%;
+    width: fit-content;
     height: 70%;
 
     display: flex;
@@ -21,6 +25,7 @@
     align-items: center;
     justify-content: space-around;
 
+    padding: 0.2rem;
     border-radius: 0.7rem 0 0 0.7rem;
     background-color: aliceblue;
     pointer-events: auto;
@@ -31,6 +36,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    scroll-snap-type: y mandatory;
 }
 #controls>div, #switches {
     display: flex;
@@ -42,7 +48,10 @@
     border-radius: 0.7rem;
     box-shadow: var(--shadow-elevation-medium);
 }
-#controls>div {flex-direction: column;}
+#controls>div {
+    flex-direction: column;
+    scroll-snap-align: end;
+}
 #controls>div>div {
     display: flex;
     align-items: center;
@@ -53,10 +62,11 @@
 
 .color_disp {
     width: 80%;
-    height: 8px;
-    border-radius: 0.7rem;
+    height: 11.5px;
+    border-radius: 0.5rem;
     background-color: #1e1b1b;
     border: solid 2pt aliceblue;
+    font-size: 8pt;
 }
 
 .slider_container {
@@ -168,3 +178,17 @@
 }
 .hue-changer::-moz-range-progress {background-color: transparent;}
 
+#hue_lock+label::after {
+    background-size: 1.55rem;
+    background-image: url('./hue.svg');
+}
+#hue_lock.toggle:checked+label::after {
+    background-size: 1.2rem;
+    background-image: url('https://api.iconify.design/material-symbols:lock-sharp.svg?color=%23fffefa');
+}
+#dark_lock+label::after {
+    background-image: url('https://api.iconify.design/iconamoon:mode-dark-fill.svg?color=%2308081a');
+}
+#dark_lock.toggle:checked+label::after {
+    background-image: url('https://api.iconify.design/material-symbols:lock-sharp.svg?color=%23fffefa');
+}
