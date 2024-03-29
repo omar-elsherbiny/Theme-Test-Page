@@ -1,6 +1,13 @@
-/*:root {
-    
-}*/
+:root[data-theme="light"] {
+    --panel-bgr: aliceblue;
+    --panel-alt: #464650;
+    --panel-alt2: #1e1b1b;
+}
+:root[data-theme="dark"] {
+    --panel-bgr: #464650;
+    --panel-alt: aliceblue;
+    --panel-alt2: aliceblue;
+}
 
 #wrapper {
     position: absolute;
@@ -27,22 +34,24 @@
 
     padding: 0.2rem;
     border-radius: 0.7rem 0 0 0.7rem;
-    background-color: aliceblue;
+    background-color: var(--panel-bgr);
     pointer-events: auto;
 }
-#panel, #panel * {transition: none;}
+#panel, #panel * {transition: color, background-color ease-in-out 0.2s;}
 #controls {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     scroll-snap-type: y mandatory;
+    border-top: solid 2pt var(--border-highlight);
 }
 #controls>div, #switches {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #464650;
+    background-color: var(--panel-alt);
     padding: 4px;
     margin: 4px;
     border-radius: 0.7rem;
@@ -52,6 +61,7 @@
     flex-direction: column;
     scroll-snap-align: end;
 }
+#controls>div:nth-child(1) {margin-top: calc(4px - 2pt);}
 #controls>div>div {
     display: flex;
     align-items: center;
@@ -65,8 +75,9 @@
     height: 11.5px;
     border-radius: 0.5rem;
     background-color: #1e1b1b;
-    border: solid 2pt aliceblue;
+    border: solid 2pt var(--panel-bgr);
     font-size: 8pt;
+    font-weight: 600;
 }
 
 .slider_container {
@@ -74,7 +85,7 @@
     width: 40px;
     height: 40px;
     border-radius: 0.7rem;
-    background-color: aliceblue;
+    background-color: var(--panel-bgr);
     padding: 4px;
     user-select: none;
 }
@@ -86,7 +97,7 @@
     height: 25px;
     border-radius: 50%;
     background-color: hsl(0, 50%, 80%);
-    outline: solid 2.7pt aliceblue;
+    outline: solid 2.7pt var(--panel-bgr);
     pointer-events: none;
     z-index: 3;
 }
@@ -97,7 +108,7 @@
     width: 7px;
     height: 24px;
     border-radius: 4px;
-    background-color: #1e1b1b;
+    background-color: var(--panel-alt2);
     pointer-events: none;
     transform-origin: bottom;
     rotate: 0deg;
@@ -130,7 +141,7 @@
     height: 48px;
     padding: 4px;
     border-radius: 0.7rem;
-    background-color: aliceblue;
+    background-color: var(--panel-bgr);
 }
 .vertical_slider input {
     rotate: -90deg;
@@ -152,7 +163,7 @@
     height: 8px;
     background: linear-gradient(to right,black,white);
     border-radius: 8px;
-    border: 0.125rem solid aliceblue;
+    border: 0.125rem solid var(--panel-bgr);
 }
 .hue-changer::-webkit-slider-thumb {
     box-sizing: border-box;
