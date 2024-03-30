@@ -22,10 +22,10 @@
 
 #panel {
     position: sticky;
-    top: 15%;
+    top: 12.5%;
     left: 100%;
     width: fit-content;
-    height: 70%;
+    height: 75%;
 
     display: flex;
     flex-direction: column;
@@ -37,16 +37,15 @@
     background-color: var(--panel-bgr);
     pointer-events: auto;
 }
-#panel, #panel * {transition: color, background-color ease-in-out 0.2s;}
+#panel, #panel * {transition: background-color ease-in-out 0.2s,color ease-in-out 0.1s;}
 #controls {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     scroll-snap-type: y mandatory;
-    border-top: solid 2pt var(--border-highlight);
 }
-#controls>div, #switches {
+#controls>div, #switches, #min_btn {
     position: relative;
     display: flex;
     align-items: center;
@@ -61,7 +60,6 @@
     flex-direction: column;
     scroll-snap-align: end;
 }
-#controls>div:nth-child(1) {margin-top: calc(4px - 2pt);}
 #controls>div>div {
     display: flex;
     align-items: center;
@@ -69,6 +67,14 @@
     margin: 2px;
     gap: 4px;
 }
+#min_btn {
+    background-color: hsl(0, 5%, 9%);
+    width: 85%;
+    max-height: 28px;
+    padding: 0;
+}
+#min_btn svg {rotate: 180deg; color: rgba(255,255,255,0.5);}
+#min_btn svg:hover {rotate: 180deg; color: aliceblue;}
 
 .color_disp {
     width: 80%;
@@ -78,6 +84,7 @@
     border: solid 2pt var(--panel-bgr);
     font-size: 8pt;
     font-weight: 600;
+    transition: none !important;
 }
 
 .slider_container {
@@ -100,6 +107,7 @@
     outline: solid 2.7pt var(--panel-bgr);
     pointer-events: none;
     z-index: 3;
+    transition: none !important;
 }
 .slider_pointer {
     position: absolute;

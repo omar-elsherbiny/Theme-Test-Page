@@ -26,6 +26,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const pointers = document.querySelectorAll('.slider_pointer');
     const centers = document.querySelectorAll('.slider_center');
 
+    const vert_sliders = document.querySelectorAll('.vertical_slider input');
+
+    const color_disps = document.querySelectorAll('.color_disp');
+
     let dragging = false;
     let startX, startY;
     let ind;
@@ -52,35 +56,41 @@ document.addEventListener('DOMContentLoaded', function () {
         knob.style.top = `${y}px`;
     }
 
-    knobs.forEach(key => key.addEventListener('mousedown', (event) => {
+    knobs.forEach(key => key.addEventListener('pointerdown', (event) => {
         dragging = true;
         startX = event.clientX;
         startY = event.clientY;
         ind = Array.from(knobs).indexOf(key);
     }));
 
-    document.addEventListener('mouseup', () => {
+    document.addEventListener('pointerup', () => {
         dragging = false;
     });
 
-    document.addEventListener('mousemove', (event) => {
+    function updatePreviewColors(ind) {
+        const color = `hsl(${angles[ind]}, ${vert_sliders[ind].value}%, 50%)`
+        centers[ind].style.backgroundColor = color;
+        color_disps[ind].style.backgroundColor = color;
+        color_disps[ind].style.color = `hsl(${angles[ind]}, ${vert_sliders[ind].value}%, 10%)`;
+    }
+
+    document.addEventListener('pointermove', (event) => {
         if (dragging) {
             const newAngle = getAngleFromEvent(event, sliders[ind]);
             updateKnobPosition(newAngle, knobs[ind], sliders[ind]);
             angles[ind] = Math.round(Number(newAngle) + 90) % 360;
             pointers[ind].style.rotate = angles[ind] + 'deg';
-            centers[ind].style.filter = `hue-rotate(${angles[ind]}deg)`;
+            updatePreviewColors(ind);
 
             startX = event.clientX;
             startY = event.clientY;
-            console.log(angles)
         }
     });
     // circular sliders
 
-    const vert_sliders = document.querySelectorAll('.vertical_slider input');
     vert_sliders.forEach(key => key.addEventListener('input', (event) => {
         key.style = `--lightness: ${key.value}%`;
+        updatePreviewColors(Array.from(vert_sliders).indexOf(key));
     }))
     // vertical sliders
 })
