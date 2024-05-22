@@ -153,56 +153,53 @@
 :root[data-theme="light"] {
     --border-highlight: rgba(0, 0, 0, 0.2);
     --background: #fbfbfe;
-    --text1: var(--txt-900);
-    --accent1: var(--acnt-500);
-    --primary1: var(--prim-600);
-    --secondary1: var(--scnd-300);
-    --text2: var(--txt-900);
-    --text3: var(--txt-950);
-    --text4: var(--txt-50);
-    --secondary2: var(--scnd-500);
-    --primary0: var(--prim-700);
-    --primary2: var(--prim-500);
-    --primary3: var(--prim-300);
-    --accent2: var(--background);
-    --secondary3: var(--scnd-400);
-    --accent3: var(--acnt-200);
-    --text5: var(--txt-200);
     --background0: var(--bgr-600);
     --background1: var(--bgr-400);
     --background2: var(--bgr-200);
-    --primary4: hsl(from var(--prim-200) h 50% l);
+    --text1: var(--txt-900);
     --tr-text1: rgb(from var(--txt-900) r g b / 50%);
+    --text2: var(--txt-900);
+    --text3: var(--txt-950);
+    --primary0: var(--prim-700);
+    --primary1: var(--prim-600);
+    --primary2: var(--prim-500);
+    --primary3: var(--prim-300);
     --tr-primary3: rgb(from var(--prim-300) r g b / 0.2);
+    --primary4: hsl(from var(--prim-200) h 50% l);
+    --secondary1: var(--scnd-300);
+    --secondary2: var(--scnd-500);
+    --secondary3: var(--scnd-400);
+    --accent1: var(--acnt-500);
     --tr-accent1: rgb(from var(--acnt-500) r g b / 0.3);
+    --accent2: var(--acnt-100);
+    --accent3: var(--acnt-500);
+    --accent4: var(--acnt-200);
 }
 
 :root[data-theme="dark"] {
     --border-highlight: rgba(255, 255, 255, 0.2);
     --background: #0E1116;
-    --text1: var(--txtd-50);
-    --accent1: var(--acntd-400);
-    --background1: var(--bgrd-900);
-    --primary1: var(--primd-600);
-    --secondary1: var(--scndd-400);
-    --text2: var(--txtd-200);
-    --text3: var(--txtd-900);
-    --text4: var(--txtd-900);
-    --secondary2: var(--scndd-500);
-    --primary0: var(--primd-700);
-    --primary2: var(--primd-500);
-    --primary3: var(--primd-300);
-    --accent2: var(--acntd-700);
-    --secondary3: var(--scndd-600);
-    --accent3: var(--acntd-600);
-    --text5: var(--txtd-800);
     --background0: var(--bgrd-400);
     --background1: var(--bgrd-600);
     --background2: var(--bgrd-800);
-    --primary4: hsl(from var(--primd-600) h 35% l);
+    --text1: var(--txtd-50);
     --tr-text1: rgb(from var(--txtd-50) r g b / 50%);
+    --text2: var(--txtd-200);
+    --text3: var(--txtd-900);
+    --primary0: var(--primd-700);
+    --primary1: var(--primd-600);
+    --primary2: var(--primd-500);
+    --primary3: var(--primd-300);
     --tr-primary3: rgb(from var(--primd-300) r g b / 0.2);
+    --primary4: hsl(from var(--primd-600) h 35% l);
+    --secondary1: var(--scndd-400);
+    --secondary2: var(--scndd-500);
+    --secondary3: var(--scndd-600);
+    --accent1: var(--acntd-400);
     --tr-accent1: rgb(from var(--acntd-400) r g b / 0.3);
+    --accent2: var(--acntd-900);
+    --accent3: var(--acntd-500);
+    --accent4: var(--acntd-800);
 }
 /*root/*/
 
@@ -617,7 +614,7 @@ table td, table th {
 }
 table>thead>tr {background-color: var(--secondary1);}
 table>tbody tr:nth-child(even) {background-color: var(--accent2);}
-table>tbody tr:nth-child(odd) {background-color: var(--text4);}
+table>tbody tr:nth-child(odd) {background-color: var(--accent4);}
 table>tbody tr:hover {background-color: var(--accent3);}
 table>thead tr:hover {background-color: var(--secondary3);}
 #table:has(>table>thead tr:hover) {border: solid 3pt var(--secondary3);}
