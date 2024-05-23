@@ -21,185 +21,209 @@
 
     /*///////////////////*/
 
-    --txt-50:  hsl(var(--text-light), 95%);
-    --txt-100: hsl(var(--text-light), 90%);
-    --txt-200: hsl(var(--text-light), 80%);
-    --txt-300: hsl(var(--text-light), 70%);
-    --txt-400: hsl(var(--text-light), 60%);
-    --txt-500: hsl(var(--text-light), 50%);
-    --txt-600: hsl(var(--text-light), 40%);
-    --txt-700: hsl(var(--text-light), 30%);
-    --txt-800: hsl(var(--text-light), 20%);
-    --txt-900: hsl(var(--text-light), 10%);
-    --txt-950: hsl(var(--text-light), 5%);
+    --txt-50:  var(--text-light) 95%;
+    --txt-100: var(--text-light) 90%;
+    --txt-200: var(--text-light) 80%;
+    --txt-300: var(--text-light) 70%;
+    --txt-400: var(--text-light) 60%;
+    --txt-500: var(--text-light) 50%;
+    --txt-600: var(--text-light) 40%;
+    --txt-700: var(--text-light) 30%;
+    --txt-800: var(--text-light) 20%;
+    --txt-900: var(--text-light) 10%;
+    --txt-950: var(--text-light) 5%;
 
-    --txtd-50:  hsl(var(--text-dark), 95%);
-    --txtd-100: hsl(var(--text-dark), 90%);
-    --txtd-200: hsl(var(--text-dark), 80%);
-    --txtd-300: hsl(var(--text-dark), 70%);
-    --txtd-400: hsl(var(--text-dark), 60%);
-    --txtd-500: hsl(var(--text-dark), 50%);
-    --txtd-600: hsl(var(--text-dark), 40%);
-    --txtd-700: hsl(var(--text-dark), 30%);
-    --txtd-800: hsl(var(--text-dark), 20%);
-    --txtd-900: hsl(var(--text-dark), 10%);
-    --txtd-950: hsl(var(--text-dark), 5%);
+    --txtd-50:  var(--text-dark) 95%;
+    --txtd-100: var(--text-dark) 90%;
+    --txtd-200: var(--text-dark) 80%;
+    --txtd-300: var(--text-dark) 70%;
+    --txtd-400: var(--text-dark) 60%;
+    --txtd-500: var(--text-dark) 50%;
+    --txtd-600: var(--text-dark) 40%;
+    --txtd-700: var(--text-dark) 30%;
+    --txtd-800: var(--text-dark) 20%;
+    --txtd-900: var(--text-dark) 10%;
+    --txtd-950: var(--text-dark) 5%;
 
     /*///////////////////*/
 
-    --bgr-50:  hsl(var(--background-light), 95%);
-    --bgr-100: hsl(var(--background-light), 90%);
-    --bgr-200: hsl(var(--background-light), 80%);
-    --bgr-300: hsl(var(--background-light), 70%);
-    --bgr-400: hsl(var(--background-light), 60%);
-    --bgr-500: hsl(var(--background-light), 50%);
-    --bgr-600: hsl(var(--background-light), 40%);
-    --bgr-700: hsl(var(--background-light), 30%);
-    --bgr-800: hsl(var(--background-light), 20%);
-    --bgr-900: hsl(var(--background-light), 10%);
-    --bgr-950: hsl(var(--background-light), 5%);
+    --bgr-50:  var(--background-light) 95%;
+    --bgr-100: var(--background-light) 90%;
+    --bgr-200: var(--background-light) 80%;
+    --bgr-300: var(--background-light) 70%;
+    --bgr-400: var(--background-light) 60%;
+    --bgr-500: var(--background-light) 50%;
+    --bgr-600: var(--background-light) 40%;
+    --bgr-700: var(--background-light) 30%;
+    --bgr-800: var(--background-light) 20%;
+    --bgr-900: var(--background-light) 10%;
+    --bgr-950: var(--background-light) 5%;
 
-    --bgrd-50:  hsl(var(--background-dark), 95%);
-    --bgrd-100: hsl(var(--background-dark), 90%);
-    --bgrd-200: hsl(var(--background-dark), 80%);
-    --bgrd-300: hsl(var(--background-dark), 70%);
-    --bgrd-400: hsl(var(--background-dark), 60%);
-    --bgrd-500: hsl(var(--background-dark), 50%);
-    --bgrd-600: hsl(var(--background-dark), 40%);
-    --bgrd-700: hsl(var(--background-dark), 30%);
-    --bgrd-800: hsl(var(--background-dark), 20%);
-    --bgrd-900: hsl(var(--background-dark), 10%);
-    --bgrd-950: hsl(var(--background-dark), 5%);
+    --bgrd-50:  var(--background-dark) 95%;
+    --bgrd-100: var(--background-dark) 90%;
+    --bgrd-200: var(--background-dark) 80%;
+    --bgrd-300: var(--background-dark) 70%;
+    --bgrd-400: var(--background-dark) 60%;
+    --bgrd-500: var(--background-dark) 50%;
+    --bgrd-600: var(--background-dark) 40%;
+    --bgrd-700: var(--background-dark) 30%;
+    --bgrd-800: var(--background-dark) 20%;
+    --bgrd-900: var(--background-dark) 10%;
+    --bgrd-950: var(--background-dark) 5%;
 
     /*///////////////////*/  
 
-    --prim-50:  hsl(var(--primary-light), 95%);
-    --prim-100: hsl(var(--primary-light), 90%);
-    --prim-200: hsl(var(--primary-light), 80%);
-    --prim-300: hsl(var(--primary-light), 70%);
-    --prim-400: hsl(var(--primary-light), 60%);
-    --prim-500: hsl(var(--primary-light), 50%);
-    --prim-600: hsl(var(--primary-light), 40%);
-    --prim-700: hsl(var(--primary-light), 30%);
-    --prim-800: hsl(var(--primary-light), 20%);
-    --prim-900: hsl(var(--primary-light), 10%);
-    --prim-950: hsl(var(--primary-light), 5%);
+    --prim-50:  var(--primary-light) 95%;
+    --prim-100: var(--primary-light) 90%;
+    --prim-200: var(--primary-light) 80%;
+    --prim-300: var(--primary-light) 70%;
+    --prim-400: var(--primary-light) 60%;
+    --prim-500: var(--primary-light) 50%;
+    --prim-600: var(--primary-light) 40%;
+    --prim-700: var(--primary-light) 30%;
+    --prim-800: var(--primary-light) 20%;
+    --prim-900: var(--primary-light) 10%;
+    --prim-950: var(--primary-light) 5%;
 
-    --primd-50:  hsl(var(--primary-dark), 95%);
-    --primd-100: hsl(var(--primary-dark), 90%);
-    --primd-200: hsl(var(--primary-dark), 80%);
-    --primd-300: hsl(var(--primary-dark), 70%);
-    --primd-400: hsl(var(--primary-dark), 60%);
-    --primd-500: hsl(var(--primary-dark), 50%);
-    --primd-600: hsl(var(--primary-dark), 40%);
-    --primd-700: hsl(var(--primary-dark), 30%);
-    --primd-800: hsl(var(--primary-dark), 20%);
-    --primd-900: hsl(var(--primary-dark), 10%);
-    --primd-950: hsl(var(--primary-dark), 5%);
+    --primd-50:  var(--primary-dark) 95%;
+    --primd-100: var(--primary-dark) 90%;
+    --primd-200: var(--primary-dark) 80%;
+    --primd-300: var(--primary-dark) 70%;
+    --primd-400: var(--primary-dark) 60%;
+    --primd-500: var(--primary-dark) 50%;
+    --primd-600: var(--primary-dark) 40%;
+    --primd-700: var(--primary-dark) 30%;
+    --primd-800: var(--primary-dark) 20%;
+    --primd-900: var(--primary-dark) 10%;
+    --primd-950: var(--primary-dark) 5%;
 
     /*///////////////////*/ 
     
-    --scnd-50:  hsl(var(--secondary-light), 95%);
-    --scnd-100: hsl(var(--secondary-light), 90%);
-    --scnd-200: hsl(var(--secondary-light), 80%);
-    --scnd-300: hsl(var(--secondary-light), 70%);
-    --scnd-400: hsl(var(--secondary-light), 60%);
-    --scnd-500: hsl(var(--secondary-light), 50%);
-    --scnd-600: hsl(var(--secondary-light), 40%);
-    --scnd-700: hsl(var(--secondary-light), 30%);
-    --scnd-800: hsl(var(--secondary-light), 20%);
-    --scnd-900: hsl(var(--secondary-light), 10%);
-    --scnd-950: hsl(var(--secondary-light), 5%);
+    --scnd-50:  var(--secondary-light) 95%;
+    --scnd-100: var(--secondary-light) 90%;
+    --scnd-200: var(--secondary-light) 80%;
+    --scnd-300: var(--secondary-light) 70%;
+    --scnd-400: var(--secondary-light) 60%;
+    --scnd-500: var(--secondary-light) 50%;
+    --scnd-600: var(--secondary-light) 40%;
+    --scnd-700: var(--secondary-light) 30%;
+    --scnd-800: var(--secondary-light) 20%;
+    --scnd-900: var(--secondary-light) 10%;
+    --scnd-950: var(--secondary-light) 5%;
 
-    --scndd-50:  hsl(var(--secondary-dark), 95%);
-    --scndd-100: hsl(var(--secondary-dark), 90%);
-    --scndd-200: hsl(var(--secondary-dark), 80%);
-    --scndd-300: hsl(var(--secondary-dark), 70%);
-    --scndd-400: hsl(var(--secondary-dark), 60%);
-    --scndd-500: hsl(var(--secondary-dark), 50%);
-    --scndd-600: hsl(var(--secondary-dark), 40%);
-    --scndd-700: hsl(var(--secondary-dark), 30%);
-    --scndd-800: hsl(var(--secondary-dark), 20%);
-    --scndd-900: hsl(var(--secondary-dark), 10%);
-    --scndd-950: hsl(var(--secondary-dark), 5%);
+    --scndd-50:  var(--secondary-dark) 95%;
+    --scndd-100: var(--secondary-dark) 90%;
+    --scndd-200: var(--secondary-dark) 80%;
+    --scndd-300: var(--secondary-dark) 70%;
+    --scndd-400: var(--secondary-dark) 60%;
+    --scndd-500: var(--secondary-dark) 50%;
+    --scndd-600: var(--secondary-dark) 40%;
+    --scndd-700: var(--secondary-dark) 30%;
+    --scndd-800: var(--secondary-dark) 20%;
+    --scndd-900: var(--secondary-dark) 10%;
+    --scndd-950: var(--secondary-dark) 5%;
     
     /*///////////////////*/
 
-    --acnt-50:  hsl(var(--accent-light), 95%);
-    --acnt-100: hsl(var(--accent-light), 90%);
-    --acnt-200: hsl(var(--accent-light), 80%);
-    --acnt-300: hsl(var(--accent-light), 70%);
-    --acnt-400: hsl(var(--accent-light), 60%);
-    --acnt-500: hsl(var(--accent-light), 50%);
-    --acnt-600: hsl(var(--accent-light), 40%);
-    --acnt-700: hsl(var(--accent-light), 30%);
-    --acnt-800: hsl(var(--accent-light), 20%);
-    --acnt-900: hsl(var(--accent-light), 10%);
-    --acnt-950: hsl(var(--accent-light), 5%);
+    --acnt-50:  var(--accent-light) 95%;
+    --acnt-100: var(--accent-light) 90%;
+    --acnt-200: var(--accent-light) 80%;
+    --acnt-300: var(--accent-light) 70%;
+    --acnt-400: var(--accent-light) 60%;
+    --acnt-500: var(--accent-light) 50%;
+    --acnt-600: var(--accent-light) 40%;
+    --acnt-700: var(--accent-light) 30%;
+    --acnt-800: var(--accent-light) 20%;
+    --acnt-900: var(--accent-light) 10%;
+    --acnt-950: var(--accent-light) 5%;
 
-    --acntd-50:  hsl(var(--accent-dark), 95%);
-    --acntd-100: hsl(var(--accent-dark), 90%);
-    --acntd-200: hsl(var(--accent-dark), 80%);
-    --acntd-300: hsl(var(--accent-dark), 70%);
-    --acntd-400: hsl(var(--accent-dark), 60%);
-    --acntd-500: hsl(var(--accent-dark), 50%);
-    --acntd-600: hsl(var(--accent-dark), 40%);
-    --acntd-700: hsl(var(--accent-dark), 30%);
-    --acntd-800: hsl(var(--accent-dark), 20%);
-    --acntd-900: hsl(var(--accent-dark), 10%);
-    --acntd-950: hsl(var(--accent-dark), 5%);
+    --acntd-50:  var(--accent-dark) 95%;
+    --acntd-100: var(--accent-dark) 90%;
+    --acntd-200: var(--accent-dark) 80%;
+    --acntd-300: var(--accent-dark) 70%;
+    --acntd-400: var(--accent-dark) 60%;
+    --acntd-500: var(--accent-dark) 50%;
+    --acntd-600: var(--accent-dark) 40%;
+    --acntd-700: var(--accent-dark) 30%;
+    --acntd-800: var(--accent-dark) 20%;
+    --acntd-900: var(--accent-dark) 10%;
+    --acntd-950: var(--accent-dark) 5%;
 }
 
 :root[data-theme="light"] {
     --border-highlight: rgba(0, 0, 0, 0.2);
     --background: #fbfbfe;
-    --background0: var(--bgr-600);
-    --background1: var(--bgr-400);
-    --background2: var(--bgr-200);
-    --text1: var(--txt-900);
-    --tr-text1: rgb(from var(--txt-900) r g b / 50%);
-    --text2: var(--txt-900);
-    --text3: var(--txt-950);
-    --primary0: var(--prim-700);
-    --primary1: var(--prim-600);
-    --primary2: var(--prim-500);
-    --primary3: var(--prim-300);
-    --tr-primary3: rgb(from var(--prim-300) r g b / 0.2);
-    --primary4: hsl(from var(--prim-200) h 50% l);
-    --secondary1: var(--scnd-300);
-    --secondary2: var(--scnd-500);
-    --secondary3: var(--scnd-400);
-    --accent1: var(--acnt-500);
-    --tr-accent1: rgb(from var(--acnt-500) r g b / 0.3);
-    --accent2: var(--acnt-100);
-    --accent3: var(--acnt-500);
-    --accent4: var(--acnt-200);
+    --background0: hsl(var(--bgr-600));
+    --background1: hsl(var(--bgr-400));
+    --background2: hsl(var(--bgr-200));
+    --text1: hsl(var(--txt-900));
+    --tr-text1: hsl(var(--txt-900)/ 50%);
+    --text2: hsl(var(--txt-900));
+    --text3: hsl(var(--txt-950));
+    --primary0: hsl(var(--prim-700));
+    --primary1: hsl(var(--prim-600));
+    --primary2: hsl(var(--prim-500));
+    --primary3: hsl(var(--prim-300));
+    --tr-primary3: hsl(var(--prim-300) / 0.2);
+    --primary4: color-mix(in lab, hsl(var(--prim-200)), hsl(1deg 35% 80%));
+    --secondary1: hsl(var(--scnd-300));
+    --secondary2: hsl(var(--scnd-500));
+    --secondary3: hsl(var(--scnd-400));
+    --accent1: hsl(var(--acnt-500));
+    --tr-accent1: hsl(var(--acnt-500)/ 0.3);
+    --accent2: hsl(var(--acnt-100));
+    --accent3: hsl(var(--acnt-500));
+    --accent4: hsl(var(--acnt-200));
+    --gls-primary0: hsl(var(--prim-700)/ 0.2);
+    --gls-primary0-br: hsl(var(--prim-700)/ 0.3);
+    --gls-primary1: hsl(var(--prim-600)/ 0.2);
+    --gls-primary1-br: hsl(var(--prim-600)/ 0.3);
+    --gls-primary2: hsl(var(--prim-500)/ 0.2);
+    --gls-primary2-br: hsl(var(--prim-500)/ 0.3);
+    --gls-secondary1: hsl(var(--scnd-300)/ 0.2);
+    --gls-secondary1-br: hsl(var(--scnd-300)/ 0.3);
+    --gls-secondary2: hsl(var(--scnd-500)/ 0.2);
+    --gls-secondary2-br: hsl(var(--scnd-500)/ 0.3);
+    --gls-accent1: hsl(var(--acnt-500)/ 0.2);
+    --gls-accent1-br: hsl(var(--acnt-500)/ 0.3);
 }
 
 :root[data-theme="dark"] {
     --border-highlight: rgba(255, 255, 255, 0.2);
     --background: #0E1116;
-    --background0: var(--bgrd-400);
-    --background1: var(--bgrd-600);
-    --background2: var(--bgrd-800);
-    --text1: var(--txtd-50);
-    --tr-text1: rgb(from var(--txtd-50) r g b / 50%);
-    --text2: var(--txtd-200);
-    --text3: var(--txtd-900);
-    --primary0: var(--primd-700);
-    --primary1: var(--primd-600);
-    --primary2: var(--primd-500);
-    --primary3: var(--primd-300);
-    --tr-primary3: rgb(from var(--primd-300) r g b / 0.2);
-    --primary4: hsl(from var(--primd-600) h 35% l);
-    --secondary1: var(--scndd-400);
-    --secondary2: var(--scndd-500);
-    --secondary3: var(--scndd-600);
-    --accent1: var(--acntd-400);
-    --tr-accent1: rgb(from var(--acntd-400) r g b / 0.3);
-    --accent2: var(--acntd-900);
-    --accent3: var(--acntd-500);
-    --accent4: var(--acntd-800);
+    --background0: hsl(var(--bgrd-400));
+    --background1: hsl(var(--bgrd-600));
+    --background2: hsl(var(--bgrd-800));
+    --text1: hsl(var(--txtd-50));
+    --tr-text1: hsl(var(--txtd-50)/ 50%);
+    --text2: hsl(var(--txtd-200));
+    --text3: hsl(var(--txtd-900));
+    --primary0: hsl(var(--primd-700));
+    --primary1: hsl(var(--primd-600));
+    --primary2: hsl(var(--primd-500));
+    --primary3: hsl(var(--primd-300));
+    --tr-primary3: hsl(var(--primd-300)/ 0.2);
+    --primary4: color-mix(in lab, hsl(var(--primd-600)), hsl(1deg 35% 40%));
+    --secondary1: hsl(var(--scndd-400));
+    --secondary2: hsl(var(--scndd-500));
+    --secondary3: hsl(var(--scndd-600));
+    --accent1: hsl(var(--acntd-400));
+    --tr-accent1: hsl(var(--acntd-400)/ 0.3);
+    --accent2: hsl(var(--acntd-900));
+    --accent3: hsl(var(--acntd-500));
+    --accent4: hsl(var(--acntd-800));
+    --gls-primary0: hsl(var(--primd-700)/ 0.2);
+    --gls-primary0-br: hsl(var(--primd-700)/ 0.3);
+    --gls-primary1: hsl(var(--primd-600)/ 0.2);
+    --gls-primary1-br: hsl(var(--primd-600)/ 0.3);
+    --gls-primary2: hsl(var(--primd-500)/ 0.2);
+    --gls-primary2-br: hsl(var(--primd-500)/ 0.3);
+    --gls-secondary1: hsl(var(--scndd-400)/ 0.2);
+    --gls-secondary1-br: hsl(var(--scndd-400)/ 0.3);
+    --gls-secondary2: hsl(var(--scndd-500)/ 0.2);
+    --gls-secondary2-br: hsl(var(--scndd-500)/ 0.3);
+    --gls-accent1: hsl(var(--acntd-400)/ 0.2);
+    --gls-accent1-br: hsl(var(--acntd-400)/ 0.3);
 }
 /*root/*/
 
@@ -214,7 +238,9 @@ body {
     width: 100%;
     font-family: var(--font);
     color: var(--text1);
+    overflow-x: hidden;
 }
+
 
 .hide {display: none !important;}
 
@@ -234,7 +260,7 @@ body {
     width: 10px;
 }
 .scroll::-webkit-scrollbar-track {
-    background-color: var(--border-highlight);
+    background-color: color-mix(in lab,var(--background),var(--border-highlight));
     border: solid 5px transparent;
 }
 .scroll::-webkit-scrollbar-thumb {
@@ -630,11 +656,11 @@ table>thead tr:hover {background-color: var(--secondary3);}
     width: 60%;
     border-radius: 16px;
 
-    background: rgb(from var(--primary0) r g b / 0.2);
+    background: var(--gls-primary0);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgb(from var(--primary0) r g b / 0.3);
+    border: 1px solid var(--gls-primary0-br);
 }
 #glass>div {
     padding: 1rem;
@@ -654,24 +680,24 @@ table>thead tr:hover {background-color: var(--secondary3);}
     scale: 1.1;
 }
 #glass>div:nth-child(1) {
-    background: rgb(from var(--primary1) r g b / 0.2);
-    border: 1px solid rgb(from var(--primary1) r g b / 0.3);
+    background: var(--gls-primary1);
+    border: 1px solid var(--gls-primary1-br);
 }
 #glass>div:nth-child(2) {
-    background: rgb(from var(--primary2) r g b / 0.2);
-    border: 1px solid rgb(from var(--primary2) r g b / 0.3);
+    background: var(--gls-primary2);
+    border: 1px solid var(--gls-primary1-br);
 }
 #glass>div:nth-child(3) {
-    background: rgb(from var(--secondary1) r g b / 0.2);
-    border: 1px solid rgb(from var(--secondary1) r g b / 0.3);
+    background: var(--gls-secondary1);
+    border: 1px solid var(--gls-secondary1-br);
 }
 #glass>div:nth-child(4) {
-    background: rgb(from var(--secondary2) r g b / 0.2);
-    border: 1px solid rgb(from var(--secondary2) r g b / 0.3);
+    background: var(--gls-secondary2);
+    border: 1px solid var(--gls-secondary2-br);
 }
 #glass>div:nth-child(5) {
-    background: rgb(from var(--accent1) r g b / 0.2);
-    border: 1px solid rgb(from var(--accent1) r g b / 0.3);
+    background: var(--gls-accent1);
+    border: 1px solid var(--gls-accent1-br);
 }
 /*content/*/
 

@@ -4,20 +4,20 @@
     --font: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     --shadow-color: 0deg 0% 0%;
 
-    --text-light: 207, 70%;
-    --text-dark: 207, 70%;
+    --text-light: 207deg 70%;
+    --text-dark: 207deg 70%;
 
-    --background-light: 240, 60%;
-    --background-dark: 218, 22%;
+    --background-light: 240deg 60%;
+    --background-dark: 218deg 22%;
 
-    --primary-light: 344, 70%;
-    --primary-dark: 344, 75%;
+    --primary-light: 344deg 70%;
+    --primary-dark: 344deg 75%;
 
-    --secondary-light: 263, 60%;
-    --secondary-dark: 246, 56%;
+    --secondary-light: 263deg 60%;
+    --secondary-dark: 246deg 56%;
 
-    --accent-light: 206, 86%;
-    --accent-dark: 190, 65%;
+    --accent-light: 206deg 86%;
+    --accent-dark: 190deg 65%;
     /*
     --degr: 270;
 
