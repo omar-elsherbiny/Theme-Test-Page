@@ -12,7 +12,7 @@
 </head>
 
 <body class="scroll">
-    <div class="parallax-container">
+    <div id="parallax-container">
         <svg class="background-svg" id="parablob1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 3928.37">
             <path
                 d="M1245.53,73.49c-40.48,4.18-81.43,7.52-113.84-7.59-32.4-15.11-56.26-48.66-92.01-31.3-35.76,17.35-83.4,85.62-123.32,85.37s-72.11-69.03-108.14-94.86c-36.04-25.83-75.92-8.72-115.73,2.85-39.82,11.57-79.56,17.6-114.79,21.81-35.22,4.22-65.94,6.62-105.29,13.28-39.36,6.67-87.36,17.62-127.12,10.44-39.75-7.18-71.26-32.47-107.19-50.28C202.18,5.41,161.84-4.91,121.42,2.34,81,9.6,40.5,34.43,0,59.26V3928.37H1366V59.26c-40,5.02-80,10.05-120.47,14.23Z" />
@@ -225,5 +225,34 @@
         <div>3</div>
         <div>4</div>
         <div>5</div>
+    </div>
+    <div id="panel-container">
+        <div id="panel">
+            <div>
+                <input type="checkbox" id="hue_lock" class="toggle">
+                <label for="hue_lock"></label>
+                <input type="checkbox" id="dark_lock" class="toggle">
+                <label for="dark_lock"></label>
+            </div>
+            <div>
+                <div class="color-panel">background</div>
+                <div class="color-panel">text</div>
+                <div class="color-panel">primary</div>
+                <div class="color-panel">secondary</div>
+                <div class="color-panel">accent</div>
+            </div>
+            <div id="hide-panel">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="m7.85 13l2.85 2.85q.3.3.288.7t-.288.7q-.3.3-.712.313t-.713-.288L4.7 12.7q-.3-.3-.3-.7t.3-.7l4.575-4.575q.3-.3.713-.287t.712.312q.275.3.288.7t-.288.7L7.85 11H19q.425 0 .713.288T20 12t-.288.713T19 13z" />
+                </svg>
+            </div>
+        </div>
+        <div id="show-panel">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M16.15 13H5q-.425 0-.712-.288T4 12q0-.425.288-.712T5 11h11.15L13.3 8.15q-.3-.3-.288-.7t.288-.7q.3-.3.713-.312t.712.287L19.3 11.3q.15.15.213.325t.062.375q0 .2-.062.375t-.213.325l-4.575 4.575q-.3.3-.712.288t-.713-.313q-.275-.3-.288-.7t.288-.7z" />
+            </svg>
+        </div>
     </div>
 </body>

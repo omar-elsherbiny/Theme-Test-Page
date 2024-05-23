@@ -21,6 +21,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     // theme switch
 
+    const panel = document.getElementById('panel');
+    const hideButton = document.getElementById('hide-panel');
+    const showButton = document.getElementById('show-panel');
+    let storedPanel = localStorage.getItem('panel');
+    if (storedPanel) {
+        document.documentElement.setAttribute('data-panel', storedPanel)
+        if (storedPanel === 'open') {
+            panel.style.left = "0";
+            showButton.style.left = '-20rem';
+        }
+        else {
+            panel.style.left = "-20rem";
+            showButton.style.left = '0';
+        }
+    }
+    showButton.addEventListener('click', function () {
+        document.documentElement.setAttribute('data-panel', 'open');
+        localStorage.setItem('panel', 'open');
+        panel.style.left = "0";
+        showButton.style.left = '-20rem';
+    });
+    hideButton.addEventListener('click', function () {
+        document.documentElement.setAttribute('data-panel', 'close');
+        localStorage.setItem('panel', 'close');
+        panel.style.left = "-20rem";
+        showButton.style.left = '0';
+    });
+    // panel toggle
+
     const parablob1 = document.getElementById('parablob1');
     const parablob2 = document.getElementById('parablob2');
     const parablob3 = document.getElementById('parablob3');

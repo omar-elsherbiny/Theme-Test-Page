@@ -160,6 +160,7 @@
     --tr-text1: hsl(var(--txt-900)/ 50%);
     --text2: hsl(var(--txt-900));
     --text3: hsl(var(--txt-950));
+    --text4: hsl(var(--txt-50));
     --primary0: hsl(var(--prim-700));
     --primary1: hsl(var(--prim-600));
     --primary2: hsl(var(--prim-500));
@@ -198,6 +199,7 @@
     --tr-text1: hsl(var(--txtd-50)/ 50%);
     --text2: hsl(var(--txtd-200));
     --text3: hsl(var(--txtd-900));
+    --text4: hsl(var(--txtd-900));
     --primary0: hsl(var(--primd-700));
     --primary1: hsl(var(--primd-600));
     --primary2: hsl(var(--primd-500));
@@ -706,7 +708,7 @@ table>thead tr:hover {background-color: var(--secondary3);}
 #parablob2 path {fill: var(--background2);}
 #parablob3 path {fill: var(--background);}
 
-.parallax-container {
+#parallax-container {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -721,6 +723,85 @@ table>thead tr:hover {background-color: var(--secondary3);}
     transition: top ease-in-out 10ms;
 }
 /*parallax/*/
+
+/*panel*/
+#panel-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    margin: 0;
+    pointer-events: none;
+}
+
+#panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 15dvh;
+    left: -20rem;
+    min-width: 7rem;
+    width: 7dvw;
+    height: 60dvh;
+    border-radius: 0 1rem 1rem 0;
+    background-color: var(--background);
+    pointer-events: auto;
+    border: 2pt solid var(--border-highlight);
+}
+#panel>div:nth-child(1) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem;
+}
+#panel>div:nth-child(2) {
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    color: var(--text4);
+    text-align: center;
+}
+#panel>div:nth-child(2)>div {
+    width: 80%;
+    padding: 0.9rem 0.5rem;
+    border-radius: 1rem;
+    background: var(--text1);
+}
+
+#show-panel {
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 50dvh;
+    padding: 0.5rem;
+    border-radius: 0 1rem 1rem 0;
+    background-color: var(--background);
+    pointer-events: auto;
+    border: 2pt solid var(--border-highlight);
+}
+
+#hue_lock+label::after {
+    background-size: 1.55rem;
+    background-image: url(./hue.svg);
+}
+#hue_lock.toggle:checked+label::after {
+    background-size: 1.2rem;
+    background-image: url(https://api.iconify.design/material-symbols:lock-sharp.svg?color=%23fffefa);
+}
+#dark_lock+label::after {
+    background-image: url(https://api.iconify.design/iconamoon:mode-dark-fill.svg?color=%2308081a);
+}
+#dark_lock.toggle:checked+label::after {
+    background-image: url(https://api.iconify.design/material-symbols:lock-sharp.svg?color=%23fffefa);
+}
+/*panel/*/
 
 
 @media screen and (max-width: 890px) {
