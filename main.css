@@ -366,7 +366,7 @@ nav {
 
     top: 0px;
     height: 3rem;
-    padding: 0rem 1.5rem;
+    padding: 0 1.5rem 0 1.5rem;
     width: calc(100% - 3rem);
 
     background-color: var(--background);
@@ -379,6 +379,7 @@ nav h4 {
     color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    padding-left: 83px;
 }
 nav a {
     display: flex;
@@ -388,6 +389,21 @@ nav a {
 nav svg:hover {
     scale: 0.85;
     transition: scale cubic-bezier(.3,-0.93,.7,1.95) 0.2s;
+}
+nav>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#export-btn {
+    padding: 0.2rem 1rem;
+    margin: 0 0.7rem 0 0;
+    border-radius: 1rem;
+    color: var(--text4);
+    background-color: var(--text1);
+    cursor: pointer;
+    box-shadow: var(--shadow-elevation-low);
 }
 
 /* NOTE: callin body instead of main*/
@@ -731,7 +747,7 @@ footer {
     padding: 4rem 2rem 1.5rem 2rem;
     margin-top: 5rem;
     opacity: 0;
-    transition: opacity ease-in-out 2s;
+    transition: opacity ease-in-out 1.5s;
 }
 /*content/*/
 
@@ -785,6 +801,7 @@ footer {
     background-color: var(--background);
     pointer-events: auto;
     border: 2pt solid var(--border-highlight);
+    box-shadow: var(--shadow-elevation-medium);
 }
 #panel>div:nth-child(1) {
     display: flex;
@@ -833,6 +850,7 @@ footer {
     background-color: var(--background);
     pointer-events: auto;
     border: 2pt solid var(--border-highlight);
+    box-shadow: var(--shadow-elevation-medium);
 }
 #show-panel:hover svg {scale: 1.2;}
 
@@ -858,8 +876,49 @@ footer {
 #panel>div:nth-child(2)>div:nth-child(5) {background-color: var(--accent-neut);}
 /*panel/*/
 
+/*modals*/
+#backdrop {
+    position: relative;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    pointer-events: auto;
+}
+
+#input-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: clamp(30dvw,20rem,50dvw);
+    height: clamp(30dvw,20rem,50dvw);
+    transform: translate(-50%, -50%);
+    border-radius: 1rem;
+    background-color: var(--background);
+    box-shadow: var(--shadow-elevation-high);
+    pointer-events: auto;
+    z-index: 1001;
+}
+
+#export-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: clamp(30dvw,20rem,50dvw);
+    height: clamp(30dvw,20rem,50dvw);
+    transform: translate(-50%, -50%);
+    border-radius: 1rem;
+    background-color: var(--background);
+    box-shadow: var(--shadow-elevation-high);
+    pointer-events: auto;
+    z-index: 1001;
+}
+/*modals/*/
+
 
 @media screen and (max-width: 890px) {
+    nav h4 {padding-left: 0;}
+
     #text_box {
         grid-template-columns: 1fr;
         grid-template-rows: fit-content 1.5fr;

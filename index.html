@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./theme.css">
     <link rel="stylesheet" href="./main.css">
     <!-- <link rel="stylesheet" href="./panel.css"> -->
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
 </head>
 
 <body class="scroll">
@@ -35,12 +35,15 @@
         <a target="_blank" href="https://github.com/omar-elsherbiny/Theme-Test-Page">
             <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24">
                 <path fill="currentColor"
-                d="m8.825 12l1.475-1.475q.3-.3.3-.7t-.3-.7q-.3-.3-.712-.3t-.713.3L6.7 11.3q-.15.15-.213.325T6.425 12q0 .2.062.375t.213.325l2.175 2.175q.3.3.713.3t.712-.3q.3-.3.3-.7t-.3-.7zm6.35 0L13.7 13.475q-.3.3-.3.7t.3.7q.3.3.713.3t.712-.3L17.3 12.7q.15-.15.213-.325t.062-.375q0-.2-.062-.375T17.3 11.3l-2.175-2.175q-.15-.15-.337-.225t-.376-.075q-.187 0-.375.075t-.337.225q-.3.3-.3.7t.3.7zM5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h14q.825 0 1.413.588T21 5v14q0 .825-.587 1.413T19 21zm0-2h14V5H5zM5 5v14z" />
+                    d="m8.825 12l1.475-1.475q.3-.3.3-.7t-.3-.7q-.3-.3-.712-.3t-.713.3L6.7 11.3q-.15.15-.213.325T6.425 12q0 .2.062.375t.213.325l2.175 2.175q.3.3.713.3t.712-.3q.3-.3.3-.7t-.3-.7zm6.35 0L13.7 13.475q-.3.3-.3.7t.3.7q.3.3.713.3t.712-.3L17.3 12.7q.15-.15.213-.325t.062-.375q0-.2-.062-.375T17.3 11.3l-2.175-2.175q-.15-.15-.337-.225t-.376-.075q-.187 0-.375.075t-.337.225q-.3.3-.3.7t.3.7zM5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h14q.825 0 1.413.588T21 5v14q0 .825-.587 1.413T19 21zm0-2h14V5H5zM5 5v14z" />
             </svg>
         </a>
         <h4>Theme Test Page</h4>
-        <input type="checkbox" id="theme_toggle" class="toggle">
-        <label for="theme_toggle"></label>
+        <div>
+            <div id="export-btn">Export</div>
+            <input type="checkbox" id="theme_toggle" class="toggle">
+            <label for="theme_toggle"></label>
+        </div>
     </nav>
     <div id="text_box">
         <div id="text1">
@@ -264,11 +267,12 @@
                     d="M16.15 13H5q-.425 0-.712-.288T4 12q0-.425.288-.712T5 11h11.15L13.3 8.15q-.3-.3-.288-.7t.288-.7q.3-.3.713-.312t.712.287L19.3 11.3q.15.15.213.325t.062.375q0 .2-.062.375t-.213.325l-4.575 4.575q-.3.3-.712.288t-.713-.313q-.275-.3-.288-.7t.288-.7z" />
             </svg>
         </div>
+        <div id="backdrop" class="hide"></div>
         <div id="input-modal" class="hide">
-            
+            <input type="color" id="color-input">
         </div>
-        <div id="export-modal"  class="hide">
-            
+        <div id="export-modal" class="hide">
+
         </div>
     </div>
 </body>
