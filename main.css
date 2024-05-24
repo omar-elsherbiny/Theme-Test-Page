@@ -156,25 +156,30 @@
     --background0: hsl(var(--bgr-600));
     --background1: hsl(var(--bgr-400));
     --background2: hsl(var(--bgr-200));
+    --background-neut: hsl(var(--bgr-500));
     --text1: hsl(var(--txt-900));
     --tr-text1: hsl(var(--txt-900)/ 50%);
     --text2: hsl(var(--txt-900));
     --text3: hsl(var(--txt-950));
     --text4: hsl(var(--txt-50));
+    --text-neut: hsl(var(--txt-500));
     --primary0: hsl(var(--prim-700));
     --primary1: hsl(var(--prim-600));
     --primary2: hsl(var(--prim-500));
     --primary3: hsl(var(--prim-300));
     --tr-primary3: hsl(var(--prim-300) / 0.2);
     --primary4: color-mix(in lab, hsl(var(--prim-200)), hsl(1deg 35% 80%));
+    --primary-neut: hsl(var(--prim-500));
     --secondary1: hsl(var(--scnd-300));
     --secondary2: hsl(var(--scnd-500));
     --secondary3: hsl(var(--scnd-400));
+    --secondary-neut: hsl(var(--scnd-500));
     --accent1: hsl(var(--acnt-500));
     --tr-accent1: hsl(var(--acnt-500)/ 0.3);
     --accent2: hsl(var(--acnt-100));
     --accent3: hsl(var(--acnt-500));
     --accent4: hsl(var(--acnt-200));
+    --accent-neut: hsl(var(--acnt-500));
     --gls-primary0: hsl(var(--prim-700)/ 0.2);
     --gls-primary0-br: hsl(var(--prim-700)/ 0.3);
     --gls-primary1: hsl(var(--prim-600)/ 0.2);
@@ -195,25 +200,30 @@
     --background0: hsl(var(--bgrd-400));
     --background1: hsl(var(--bgrd-600));
     --background2: hsl(var(--bgrd-800));
+    --background-neut: hsl(var(--bgrd-500));
     --text1: hsl(var(--txtd-50));
     --tr-text1: hsl(var(--txtd-50)/ 50%);
     --text2: hsl(var(--txtd-200));
     --text3: hsl(var(--txtd-900));
     --text4: hsl(var(--txtd-900));
+    --text-neut: hsl(var(--txtd-500));
     --primary0: hsl(var(--primd-700));
     --primary1: hsl(var(--primd-600));
     --primary2: hsl(var(--primd-500));
     --primary3: hsl(var(--primd-300));
     --tr-primary3: hsl(var(--primd-300)/ 0.2);
     --primary4: color-mix(in lab, hsl(var(--primd-600)), hsl(1deg 35% 40%));
+    --primary-neut: hsl(var(--primd-500));
     --secondary1: hsl(var(--scndd-400));
     --secondary2: hsl(var(--scndd-500));
     --secondary3: hsl(var(--scndd-600));
+    --secondary-neut: hsl(var(--scndd-500));
     --accent1: hsl(var(--acntd-400));
     --tr-accent1: hsl(var(--acntd-400)/ 0.3);
     --accent2: hsl(var(--acntd-900));
     --accent3: hsl(var(--acntd-500));
     --accent4: hsl(var(--acntd-800));
+    --accent-neut: hsl(var(--acntd-500));
     --gls-primary0: hsl(var(--primd-700)/ 0.2);
     --gls-primary0-br: hsl(var(--primd-700)/ 0.3);
     --gls-primary1: hsl(var(--primd-600)/ 0.2);
@@ -711,7 +721,10 @@ table>thead tr:hover {background-color: var(--secondary3);}
     border: 1px solid var(--gls-accent1-br);
 }
 
-footer {padding: 4rem 2rem 1.5rem 2rem;}
+footer {
+    padding: 4rem 2rem 1.5rem 2rem;
+    margin-top: 5rem;
+}
 /*content/*/
 
 /*parallax*/
@@ -778,15 +791,28 @@ footer {padding: 4rem 2rem 1.5rem 2rem;}
     align-items: center;
     flex-direction: column;
     width: 100%;
-    color: var(--text4);
-    text-align: center;
 }
 #panel>div:nth-child(2)>div {
+    font-size: 10pt;
+    font-weight: 800;
+    text-shadow:
+        0.05em 0 var(--text1),
+        0 0.05em var(--text1),
+        -0.05em 0 var(--text1),
+        0 -0.05em var(--text1),
+        -0.05em -0.05em var(--text1),
+        -0.05em 0.05em var(--text1),
+        0.05em -0.05em var(--text1),
+        0.05em 0.05em var(--text1);
+    color: var(--text4);
+    text-align: center;
     width: 80%;
-    padding: 0.9rem 0.5rem;
+    padding: 0.7rem 0.3rem;
     border-radius: 1rem;
-    background: var(--text1);
+    background: #ff0000;
+    border: 1.5pt solid var(--text1);
 }
+#panel>div:nth-child(3):hover svg {scale: 1.2;}
 
 #show-panel {
     display: flex;
@@ -799,6 +825,7 @@ footer {padding: 4rem 2rem 1.5rem 2rem;}
     pointer-events: auto;
     border: 2pt solid var(--border-highlight);
 }
+#show-panel:hover svg {scale: 1.2;}
 
 #hue_lock+label::after {
     background-size: 1.55rem;
@@ -814,6 +841,12 @@ footer {padding: 4rem 2rem 1.5rem 2rem;}
 #dark_lock.toggle:checked+label::after {
     background-image: url(https://api.iconify.design/material-symbols:lock-sharp.svg?color=%23fffefa);
 }
+
+#panel>div:nth-child(2)>div:nth-child(1) {background-color: var(--background-neut);}
+#panel>div:nth-child(2)>div:nth-child(2) {background-color: var(--text-neut);}
+#panel>div:nth-child(2)>div:nth-child(3) {background-color: var(--primary-neut);}
+#panel>div:nth-child(2)>div:nth-child(4) {background-color: var(--secondary-neut);}
+#panel>div:nth-child(2)>div:nth-child(5) {background-color: var(--accent-neut);}
 /*panel/*/
 
 
