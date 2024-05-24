@@ -252,6 +252,12 @@ body {
     color: var(--text1);
     /*overflow-x: hidden;*/
 }
+body *::selection {
+    background-color: var(--border-highlight);
+    text-decoration: underline;
+    text-decoration-color: rgba(0,0,0,0.5);
+    text-decoration-thickness: 3pt;
+}
 
 
 .hide {display: none !important;}
