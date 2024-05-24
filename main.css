@@ -701,12 +701,16 @@ table>thead tr:hover {background-color: var(--secondary3);}
     background: var(--gls-accent1);
     border: 1px solid var(--gls-accent1-br);
 }
+
+footer {padding: 4rem 2rem 1.5rem 2rem;}
 /*content/*/
 
 /*parallax*/
 #parablob1 path {fill: var(--background1);}
 #parablob2 path {fill: var(--background2);}
 #parablob3 path {fill: var(--background);}
+#parablob4 path {fill: var(--background2);}
+#parablob4 {transition: bottom ease-in-out 0.5s;}
 
 #parallax-container {
     position: fixed;

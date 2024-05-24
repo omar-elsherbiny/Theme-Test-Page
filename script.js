@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const panel = document.getElementById('panel');
     const hideButton = document.getElementById('hide-panel');
     const showButton = document.getElementById('show-panel');
-    let storedPanel = localStorage.getItem('panel');
+    let storedPanel = localStorage.getItem('panel') || 'open';
     if (storedPanel) {
         document.documentElement.setAttribute('data-panel', storedPanel)
         if (storedPanel === 'open') {
@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const parablob1 = document.getElementById('parablob1');
     const parablob2 = document.getElementById('parablob2');
     const parablob3 = document.getElementById('parablob3');
+    const parablob4 = document.getElementById('parablob4');
     updateParallax();
 });
 
@@ -61,22 +62,27 @@ function getScrollPercentage() {
     // Alternatively, you can use document.body for the scrollable element
     const scrolledPortion = scrollHeight - clientHeight - scrollTop;
     const scrollPerc = scrolledPortion / (scrollHeight - clientHeight);
-    return 1 - Math.max(Math.min(scrollPerc, 1),0);
+    return 1 - Math.max(Math.min(scrollPerc, 1), 0);
 }
 
-function lerp(a,b,t,capped=true) {
+function lerp(a, b, t, capped = true) {
     if (capped) {
-        t=Math.max(Math.min(t, 1),0);
+        t = Math.max(Math.min(t, 1), 0);
     }
-    return (1-t)*a + t*b;
+    return (1 - t) * a + t * b;
 }
 
 function updateParallax() {
     const scrollValue = getScrollPercentage();
-    parablob1.style.top = lerp(80, -20, 2*scrollValue) + "%";
-    parablob2.style.top = lerp(90, -20, 1.5*scrollValue) + "%";
+    parablob1.style.top = lerp(80, -20, 2 * scrollValue) + "%";
+    parablob2.style.top = lerp(90, -20, 1.5 * scrollValue) + "%";
     parablob3.style.top = lerp(95, -20, scrollValue) + "%";
+    if (scrollValue >= 0.95 && scrollValue <= 1) {
+        parablob4.style.bottom = 0 + "%";
+    } else {
+        parablob4.style.bottom = -60 + "%";
+    }
 }
 
-document.addEventListener("scroll", (e) => {updateParallax();});
+document.addEventListener("scroll", (e) => { updateParallax(); });
 // parallax
