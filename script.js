@@ -77,12 +77,70 @@ function updateParallax() {
     parablob1.style.top = lerp(80, -20, 2 * scrollValue) + "%";
     parablob2.style.top = lerp(90, -20, 1.5 * scrollValue) + "%";
     parablob3.style.top = lerp(95, -20, scrollValue) + "%";
-    if (scrollValue >= 0.97 && scrollValue <= 1) {
+    if (scrollValue >= 0.975 && scrollValue <= 1) {
         parablob4.style.bottom = 0 + "%";
+        document.querySelector('footer').style.opacity = "1";
     } else {
         parablob4.style.bottom = -60 + "%";
+        document.querySelector('footer').style.opacity = "0";
     }
 }
 
 document.addEventListener("scroll", (e) => { updateParallax(); });
 // parallax
+
+const cssVars = [
+    "background",
+    "background0",
+    "background1",
+    "background2",
+    "background-neut",
+    "text1",
+    "tr-text1",
+    "text2",
+    "text3",
+    "text4",
+    "text-neut",
+    "primary0",
+    "primary1",
+    "primary2",
+    "primary3",
+    "tr-primary3",
+    "primary4",
+    "primary-neut",
+    "secondary1",
+    "secondary2",
+    "secondary3",
+    "secondary-neut",
+    "accent1",
+    "tr-accent1",
+    "accent2",
+    "accent3",
+    "accent4",
+    "accent-neut",
+    "gls-primary0",
+    "gls-primary0-br",
+    "gls-primary1",
+    "gls-primary1-br",
+    "gls-primary2",
+    "gls-primary2-br",
+    "gls-secondary1",
+    "gls-secondary1-br",
+    "gls-secondary2",
+    "gls-secondary2-br",
+    "gls-accent1",
+    "gls-accent1-br",
+];
+const root_theme = document.querySelector(':root');
+function desaturate(variable) {
+    resaturate();
+    cssVars.forEach(element => {
+        if (variable != element) {
+            root_theme.style.setProperty("--" + element, "transparent");
+        }
+    })
+}
+function resaturate() {
+    root_theme.style = "";
+}
+// color view

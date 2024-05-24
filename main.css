@@ -730,6 +730,8 @@ table>thead tr:hover {background-color: var(--secondary3);}
 footer {
     padding: 4rem 2rem 1.5rem 2rem;
     margin-top: 5rem;
+    opacity: 0;
+    transition: opacity ease-in-out 2s;
 }
 /*content/*/
 
@@ -817,6 +819,7 @@ footer {
     border-radius: 1rem;
     background: #ff0000;
     border: 1.5pt solid var(--text1);
+    cursor: pointer;
 }
 #panel>div:nth-child(3):hover svg {scale: 1.2;}
 
