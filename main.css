@@ -364,6 +364,15 @@ nav h4 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+nav a {
+    display: flex;
+    text-decoration: none;
+    color: var(--text1);
+}
+nav svg:hover {
+    scale: 0.85;
+    transition: scale cubic-bezier(.3,-0.93,.7,1.95) 0.2s;
+}
 
 /* NOTE: callin body instead of main*/
 body {
