@@ -366,7 +366,7 @@ nav {
 
     top: 0px;
     height: 3rem;
-    padding: 0 1.5rem 0 1.5rem;
+    padding: 0 1.5rem;
     width: calc(100% - 3rem);
 
     background-color: var(--background);
@@ -670,6 +670,7 @@ body>div {margin: 2rem;}
     border-radius: 1.6rem;
     border: solid 3pt var(--secondary1);
     box-shadow: var(--shadow-elevation-medium);
+    cursor: pointer;
 }
 table {
     border-collapse: collapse;
@@ -890,14 +891,20 @@ footer {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: clamp(30dvw,20rem,50dvw);
-    height: clamp(30dvh,20rem,50dvh);
+    width: clamp(40dvw,30rem,60dvw);
+    height: clamp(40dvh,30rem,60dvh);
     transform: translate(-50%, -50%);
     border-radius: 1rem;
+    padding: 0.2rem;
     background-color: var(--background);
     box-shadow: var(--shadow-elevation-high);
     pointer-events: auto;
     z-index: 1001;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 #export-modal {
@@ -946,6 +953,7 @@ footer {
     color: rgb(33, 33, 33);
     text-align: center;
 }
+#css-holder span:hover {font-size: 11.5pt;}
 #export-modal pre {margin: 0;}
 #export-modal pre:hover {background-color: var(--border-highlight);}
 #export-modal>svg {
@@ -959,6 +967,10 @@ footer {
 
 
 @media screen and (max-width: 890px) {
+    nav {
+        padding: 0 0.5rem;
+        width: calc(100% - 1rem);
+    }
     nav h4 {padding-left: 0;}
 
     #text_box {
@@ -1076,4 +1088,6 @@ footer {
         width: 3rem;
         height: 3rem;
     }
+
+    #css-holder span {text-shadow: none;}
 }

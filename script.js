@@ -206,7 +206,7 @@ function updateParallax() {
     parablob1.style.top = lerp(80, -20, 2 * scrollValue) + '%';
     parablob2.style.top = lerp(90, -20, 1.5 * scrollValue) + '%';
     parablob3.style.top = lerp(95, -20, scrollValue) + '%';
-    if (scrollValue >= 0.975 && scrollValue <= 1) {
+    if (scrollValue >= 0.965 && scrollValue <= 1) {
         parablob4.style.bottom = 0 + '%';
         document.querySelector('footer').style.opacity = '1';
     } else {
