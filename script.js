@@ -1,3 +1,80 @@
+const cssVars = [
+    "border-highlight",
+    "background",
+    "background0",
+    "background1",
+    "background2",
+    "background-neut",
+    "text1",
+    "tr-text1",
+    "text2",
+    "text3",
+    "text4",
+    "text-neut",
+    "primary0",
+    "primary1",
+    "primary2",
+    "primary3",
+    "tr-primary3",
+    "primary4",
+    "primary-neut",
+    "secondary1",
+    "secondary2",
+    "secondary3",
+    "secondary-neut",
+    "accent1",
+    "tr-accent1",
+    "accent2",
+    "accent3",
+    "accent4",
+    "accent-neut",
+    "gls-primary0",
+    "gls-primary0-br",
+    "gls-primary1",
+    "gls-primary1-br",
+    "gls-primary2",
+    "gls-primary2-br",
+    "gls-secondary1",
+    "gls-secondary1-br",
+    "gls-secondary2",
+    "gls-secondary2-br",
+    "gls-accent1",
+    "gls-accent1-br",
+];
+const panels = [
+    "background",
+    "text",
+    "primary",
+    "secondary",
+    "accent"
+];
+const rootTheme = document.querySelector(':root');
+
+const exportModal = document.getElementById('export-modal');
+const exportBtn = document.getElementById('export-btn');
+const cssHolder = document.getElementById('css-holder');
+const copyBtns = document.querySelectorAll('#export-modal>svg');
+
+const colorInput = document.getElementById('color-input');
+
+const backdrop = document.getElementById('backdrop');
+const inputModal = document.getElementById('input-modal');
+const colorPanels = document.querySelectorAll('.color-panel');
+
+const parablob1 = document.getElementById('parablob1');
+const parablob2 = document.getElementById('parablob2');
+const parablob3 = document.getElementById('parablob3');
+const parablob4 = document.getElementById('parablob4');
+
+const panel = document.getElementById('panel');
+const hideButton = document.getElementById('hide-panel');
+const showButton = document.getElementById('show-panel');
+
+let selectedColor = null;
+let previousCssPanels = {};
+
+//consts
+
 let toggle = document.getElementById('theme_toggle');
 let storedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 if (storedTheme) {
@@ -20,9 +97,6 @@ toggle.addEventListener('click', function () {
 });
 // theme switch
 
-const panel = document.getElementById('panel');
-const hideButton = document.getElementById('hide-panel');
-const showButton = document.getElementById('show-panel');
 let storedPanel = localStorage.getItem('panel') || 'open';
 if (storedPanel) {
     document.documentElement.setAttribute('data-panel', storedPanel)
@@ -93,10 +167,23 @@ darkLock.addEventListener('click', function () {
 });
 // dark toggle
 
-const parablob1 = document.getElementById('parablob1');
-const parablob2 = document.getElementById('parablob2');
-const parablob3 = document.getElementById('parablob3');
-const parablob4 = document.getElementById('parablob4');
+panels.forEach(panel => {
+    rootTheme.style.setProperty('--' + panel + '-light', localStorage.getItem('--' + panel + '-light'));
+    rootTheme.style.setProperty('--' + panel + '-dark', localStorage.getItem('--' + panel + '-dark'));
+    rootTheme.style.setProperty('--' + panel + '-light-lit', localStorage.getItem('--' + panel + '-light-lit'));
+    rootTheme.style.setProperty('--' + panel + '-dark-lit', localStorage.getItem('--' + panel + '-dark-lit'));
+});
+
+function updatePrevCssPanels() {
+    previousCssPanels = {};
+    for (let i = 0; i < rootTheme.style.length; i++) {
+        const propertyName = rootTheme.style[i];
+        previousCssPanels[propertyName] = rootTheme.style.getPropertyValue(propertyName);
+    }
+}
+updatePrevCssPanels();
+// color cookies
+
 updateParallax();
 
 function getScrollPercentage() {
@@ -130,11 +217,6 @@ function updateParallax() {
 
 document.addEventListener('scroll', (e) => { updateParallax(); });
 // parallax
-
-let selectedColor = null;
-const backdrop = document.getElementById('backdrop');
-const inputModal = document.getElementById('input-modal');
-const colorPanels = document.querySelectorAll('.color-panel');
 
 backdrop.addEventListener('click', event => {
     inputModal.classList.add('hide');
@@ -173,14 +255,6 @@ function rgbToHsl(r, g, b) {
     return [Math.round(h * 360), Math.round(s * 100), Math.round(l * 100)];
 }
 
-const panels = [
-    "background",
-    "text",
-    "primary",
-    "secondary",
-    "accent"
-];
-const colorInput = document.getElementById('color-input');
 colorInput.addEventListener('input', event => {
     let currentTheme = document.documentElement.getAttribute("data-theme");
     let color = colorInput.value;
@@ -188,18 +262,18 @@ colorInput.addEventListener('input', event => {
     let g = parseInt(color.substr(3, 2), 16);
     let b = parseInt(color.substr(5, 2), 16);
     let hsl = rgbToHsl(r, g, b);
-    root_theme.style.setProperty('--' + panels[selectedColor] + '-' + currentTheme, hsl[0] + 'deg ' + hsl[1] + '%');
-    root_theme.style.setProperty('--' + panels[selectedColor] + '-' + currentTheme + '-lit', hsl[2] / 50);
+
+    rootTheme.style.setProperty('--' + panels[selectedColor] + '-' + currentTheme, hsl[0] + 'deg ' + hsl[1] + '%');
+    rootTheme.style.setProperty('--' + panels[selectedColor] + '-' + currentTheme + '-lit', hsl[2] / 50);
+    localStorage.setItem('--' + panels[selectedColor] + '-' + currentTheme, hsl[0] + 'deg ' + hsl[1] + '%');
+    localStorage.setItem('--' + panels[selectedColor] + '-' + currentTheme + '-lit', hsl[2] / 50);
 });
 // input-modal
 
-const exportModal = document.getElementById('export-modal');
-const exportBtn = document.getElementById('export-btn');
-const cssHolder = document.getElementById('css-holder');
-const copyBtns = document.querySelectorAll('#export-modal>svg');
 exportBtn.addEventListener('click', event => {
     exportModal.classList.remove('hide');
     backdrop.classList.remove('hide');
+    updatePrevCssPanels();
 });
 
 copyBtns[0].addEventListener('click', event => {
@@ -453,55 +527,11 @@ copyBtns[1].addEventListener('click', event => {
 });
 // export-modal
 
-const cssVars = [
-    "border-highlight",
-    "background",
-    "background0",
-    "background1",
-    "background2",
-    "background-neut",
-    "text1",
-    "tr-text1",
-    "text2",
-    "text3",
-    "text4",
-    "text-neut",
-    "primary0",
-    "primary1",
-    "primary2",
-    "primary3",
-    "tr-primary3",
-    "primary4",
-    "primary-neut",
-    "secondary1",
-    "secondary2",
-    "secondary3",
-    "secondary-neut",
-    "accent1",
-    "tr-accent1",
-    "accent2",
-    "accent3",
-    "accent4",
-    "accent-neut",
-    "gls-primary0",
-    "gls-primary0-br",
-    "gls-primary1",
-    "gls-primary1-br",
-    "gls-primary2",
-    "gls-primary2-br",
-    "gls-secondary1",
-    "gls-secondary1-br",
-    "gls-secondary2",
-    "gls-secondary2-br",
-    "gls-accent1",
-    "gls-accent1-br",
-];
-const root_theme = document.querySelector(':root');
 function desaturate(variable) {
     resaturate();
     cssVars.forEach(element => {
         if (variable != element) {
-            root_theme.style.setProperty('--' + element, 'transparent');
+            rootTheme.style.setProperty('--' + element, 'transparent');
         }
     });
     backdrop.style.opacity = '0';
@@ -509,7 +539,10 @@ function desaturate(variable) {
     cssHolder.style.overflow = 'hidden';
 }
 function resaturate() {
-    root_theme.style = '';
+    rootTheme.style = '';
+    for (const property in previousCssPanels) {
+        rootTheme.style.setProperty(property, previousCssPanels[property]);
+    }
     backdrop.style.opacity = '1';
     cssHolder.classList.add('scroll');
     cssHolder.style.overflow = 'auto';
