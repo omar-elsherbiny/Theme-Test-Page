@@ -908,6 +908,7 @@ footer {
     height: clamp(40dvh,30rem,60dvh);
     transform: translate(-50%, -50%);
     border-radius: 1rem;
+    padding: 0.2rem;
     background-color: var(--background);
     box-shadow: var(--shadow-elevation-high);
     pointer-events: auto;
@@ -919,8 +920,8 @@ footer {
     flex-wrap: wrap;
 }
 
-#export-modal>div:nth-child(1),
-#css-holder {
+#export-modal>div {
+    position: relative;
     font-size: 10pt;
     width: 90%;
     height: 40%;
@@ -947,6 +948,13 @@ footer {
 }
 #export-modal pre {margin: 0;}
 #export-modal pre:hover {background-color: var(--border-highlight);}
+#export-modal>svg {
+    position: absolute;
+    top: 1rem;
+    right: 2.5rem;
+}
+#export-modal>svg:nth-last-child(1) {top: calc(50% + 1rem);}
+#export-modal svg:hover {scale: 1.2;}
 /*modals/*/
 
 
