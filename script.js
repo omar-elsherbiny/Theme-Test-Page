@@ -145,6 +145,7 @@ colorInput.addEventListener('input', event => {
     let b = parseInt(color.substr(5, 2), 16);
     let hsl = rgbToHsl(r, g, b);
     root_theme.style.setProperty('--'+panels[selectedColor]+'-' + currentTheme, hsl[0] + 'deg ' + hsl[1] + '%');
+    root_theme.style.setProperty('--'+panels[selectedColor]+'-' + currentTheme + '-lit', hsl[2] / 50);
 });
 // input-modal
 

@@ -21,133 +21,133 @@
 
     /*///////////////////*/
 
-    --txt-50:  var(--text-light) 95%;
-    --txt-100: var(--text-light) 90%;
-    --txt-200: var(--text-light) 80%;
-    --txt-300: var(--text-light) 70%;
-    --txt-400: var(--text-light) 60%;
-    --txt-500: var(--text-light) 50%;
-    --txt-600: var(--text-light) 40%;
-    --txt-700: var(--text-light) 30%;
-    --txt-800: var(--text-light) 20%;
-    --txt-900: var(--text-light) 10%;
-    --txt-950: var(--text-light) 5%;
+    --txt-50:  var(--text-light) calc(95% * var(--text-light-lit));
+    --txt-100: var(--text-light) calc(90% * var(--text-light-lit));
+    --txt-200: var(--text-light) calc(80% * var(--text-light-lit));
+    --txt-300: var(--text-light) calc(70% * var(--text-light-lit));
+    --txt-400: var(--text-light) calc(60% * var(--text-light-lit));
+    --txt-500: var(--text-light) calc(50% * var(--text-light-lit));
+    --txt-600: var(--text-light) calc(40% * var(--text-light-lit));
+    --txt-700: var(--text-light) calc(30% * var(--text-light-lit));
+    --txt-800: var(--text-light) calc(20% * var(--text-light-lit));
+    --txt-900: var(--text-light) calc(10% * var(--text-light-lit));
+    --txt-950: var(--text-light) calc(5% * var(--text-light-lit));
 
-    --txtd-50:  var(--text-dark) 95%;
-    --txtd-100: var(--text-dark) 90%;
-    --txtd-200: var(--text-dark) 80%;
-    --txtd-300: var(--text-dark) 70%;
-    --txtd-400: var(--text-dark) 60%;
-    --txtd-500: var(--text-dark) 50%;
-    --txtd-600: var(--text-dark) 40%;
-    --txtd-700: var(--text-dark) 30%;
-    --txtd-800: var(--text-dark) 20%;
-    --txtd-900: var(--text-dark) 10%;
-    --txtd-950: var(--text-dark) 5%;
+    --txtd-50:  var(--text-dark) calc(95% * var(--text-dark-lit));
+    --txtd-100: var(--text-dark) calc(90% * var(--text-dark-lit));
+    --txtd-200: var(--text-dark) calc(80% * var(--text-dark-lit));
+    --txtd-300: var(--text-dark) calc(70% * var(--text-dark-lit));
+    --txtd-400: var(--text-dark) calc(60% * var(--text-dark-lit));
+    --txtd-500: var(--text-dark) calc(50% * var(--text-dark-lit));
+    --txtd-600: var(--text-dark) calc(40% * var(--text-dark-lit));
+    --txtd-700: var(--text-dark) calc(30% * var(--text-dark-lit));
+    --txtd-800: var(--text-dark) calc(20% * var(--text-dark-lit));
+    --txtd-900: var(--text-dark) calc(10% * var(--text-dark-lit));
+    --txtd-950: var(--text-dark) calc(5% * var(--text-dark-lit));
 
     /*///////////////////*/
 
-    --bgr-50:  var(--background-light) 95%;
-    --bgr-100: var(--background-light) 90%;
-    --bgr-200: var(--background-light) 80%;
-    --bgr-300: var(--background-light) 70%;
-    --bgr-400: var(--background-light) 60%;
-    --bgr-500: var(--background-light) 50%;
-    --bgr-600: var(--background-light) 40%;
-    --bgr-700: var(--background-light) 30%;
-    --bgr-800: var(--background-light) 20%;
-    --bgr-900: var(--background-light) 10%;
-    --bgr-950: var(--background-light) 5%;
+    --bgr-50:  var(--background-light) calc(95% * var(--background-light-lit));
+    --bgr-100: var(--background-light) calc(90% * var(--background-light-lit));
+    --bgr-200: var(--background-light) calc(80% * var(--background-light-lit));
+    --bgr-300: var(--background-light) calc(70% * var(--background-light-lit));
+    --bgr-400: var(--background-light) calc(60% * var(--background-light-lit));
+    --bgr-500: var(--background-light) calc(50% * var(--background-light-lit));
+    --bgr-600: var(--background-light) calc(40% * var(--background-light-lit));
+    --bgr-700: var(--background-light) calc(30% * var(--background-light-lit));
+    --bgr-800: var(--background-light) calc(20% * var(--background-light-lit));
+    --bgr-900: var(--background-light) calc(10% * var(--background-light-lit));
+    --bgr-950: var(--background-light) calc(5% * var(--background-light-lit));
 
-    --bgrd-50:  var(--background-dark) 95%;
-    --bgrd-100: var(--background-dark) 90%;
-    --bgrd-200: var(--background-dark) 80%;
-    --bgrd-300: var(--background-dark) 70%;
-    --bgrd-400: var(--background-dark) 60%;
-    --bgrd-500: var(--background-dark) 50%;
-    --bgrd-600: var(--background-dark) 40%;
-    --bgrd-700: var(--background-dark) 30%;
-    --bgrd-800: var(--background-dark) 20%;
-    --bgrd-900: var(--background-dark) 10%;
-    --bgrd-950: var(--background-dark) 5%;
+    --bgrd-50:  var(--background-dark) calc(95% * var(--background-dark-lit));
+    --bgrd-100: var(--background-dark) calc(90% * var(--background-dark-lit));
+    --bgrd-200: var(--background-dark) calc(80% * var(--background-dark-lit));
+    --bgrd-300: var(--background-dark) calc(70% * var(--background-dark-lit));
+    --bgrd-400: var(--background-dark) calc(60% * var(--background-dark-lit));
+    --bgrd-500: var(--background-dark) calc(50% * var(--background-dark-lit));
+    --bgrd-600: var(--background-dark) calc(40% * var(--background-dark-lit));
+    --bgrd-700: var(--background-dark) calc(30% * var(--background-dark-lit));
+    --bgrd-800: var(--background-dark) calc(20% * var(--background-dark-lit));
+    --bgrd-900: var(--background-dark) calc(10% * var(--background-dark-lit));
+    --bgrd-950: var(--background-dark) calc(5% * var(--background-dark-lit));
 
     /*///////////////////*/  
 
-    --prim-50:  var(--primary-light) 95%;
-    --prim-100: var(--primary-light) 90%;
-    --prim-200: var(--primary-light) 80%;
-    --prim-300: var(--primary-light) 70%;
-    --prim-400: var(--primary-light) 60%;
-    --prim-500: var(--primary-light) 50%;
-    --prim-600: var(--primary-light) 40%;
-    --prim-700: var(--primary-light) 30%;
-    --prim-800: var(--primary-light) 20%;
-    --prim-900: var(--primary-light) 10%;
-    --prim-950: var(--primary-light) 5%;
+    --prim-50:  var(--primary-light) calc(95% * var(--primary-light-lit));
+    --prim-100: var(--primary-light) calc(90% * var(--primary-light-lit));
+    --prim-200: var(--primary-light) calc(80% * var(--primary-light-lit));
+    --prim-300: var(--primary-light) calc(70% * var(--primary-light-lit));
+    --prim-400: var(--primary-light) calc(60% * var(--primary-light-lit));
+    --prim-500: var(--primary-light) calc(50% * var(--primary-light-lit));
+    --prim-600: var(--primary-light) calc(40% * var(--primary-light-lit));
+    --prim-700: var(--primary-light) calc(30% * var(--primary-light-lit));
+    --prim-800: var(--primary-light) calc(20% * var(--primary-light-lit));
+    --prim-900: var(--primary-light) calc(10% * var(--primary-light-lit));
+    --prim-950: var(--primary-light) calc(5% * var(--primary-light-lit));
 
-    --primd-50:  var(--primary-dark) 95%;
-    --primd-100: var(--primary-dark) 90%;
-    --primd-200: var(--primary-dark) 80%;
-    --primd-300: var(--primary-dark) 70%;
-    --primd-400: var(--primary-dark) 60%;
-    --primd-500: var(--primary-dark) 50%;
-    --primd-600: var(--primary-dark) 40%;
-    --primd-700: var(--primary-dark) 30%;
-    --primd-800: var(--primary-dark) 20%;
-    --primd-900: var(--primary-dark) 10%;
-    --primd-950: var(--primary-dark) 5%;
+    --primd-50:  var(--primary-dark) calc(95% * var(--primary-dark-lit));
+    --primd-100: var(--primary-dark) calc(90% * var(--primary-dark-lit));
+    --primd-200: var(--primary-dark) calc(80% * var(--primary-dark-lit));
+    --primd-300: var(--primary-dark) calc(70% * var(--primary-dark-lit));
+    --primd-400: var(--primary-dark) calc(60% * var(--primary-dark-lit));
+    --primd-500: var(--primary-dark) calc(50% * var(--primary-dark-lit));
+    --primd-600: var(--primary-dark) calc(40% * var(--primary-dark-lit));
+    --primd-700: var(--primary-dark) calc(30% * var(--primary-dark-lit));
+    --primd-800: var(--primary-dark) calc(20% * var(--primary-dark-lit));
+    --primd-900: var(--primary-dark) calc(10% * var(--primary-dark-lit));
+    --primd-950: var(--primary-dark) calc(5% * var(--primary-dark-lit));
 
     /*///////////////////*/ 
     
-    --scnd-50:  var(--secondary-light) 95%;
-    --scnd-100: var(--secondary-light) 90%;
-    --scnd-200: var(--secondary-light) 80%;
-    --scnd-300: var(--secondary-light) 70%;
-    --scnd-400: var(--secondary-light) 60%;
-    --scnd-500: var(--secondary-light) 50%;
-    --scnd-600: var(--secondary-light) 40%;
-    --scnd-700: var(--secondary-light) 30%;
-    --scnd-800: var(--secondary-light) 20%;
-    --scnd-900: var(--secondary-light) 10%;
-    --scnd-950: var(--secondary-light) 5%;
+    --scnd-50:  var(--secondary-light) calc(95% * var(--secondary-light-lit));
+    --scnd-100: var(--secondary-light) calc(90% * var(--secondary-light-lit));
+    --scnd-200: var(--secondary-light) calc(80% * var(--secondary-light-lit));
+    --scnd-300: var(--secondary-light) calc(70% * var(--secondary-light-lit));
+    --scnd-400: var(--secondary-light) calc(60% * var(--secondary-light-lit));
+    --scnd-500: var(--secondary-light) calc(50% * var(--secondary-light-lit));
+    --scnd-600: var(--secondary-light) calc(40% * var(--secondary-light-lit));
+    --scnd-700: var(--secondary-light) calc(30% * var(--secondary-light-lit));
+    --scnd-800: var(--secondary-light) calc(20% * var(--secondary-light-lit));
+    --scnd-900: var(--secondary-light) calc(10% * var(--secondary-light-lit));
+    --scnd-950: var(--secondary-light) calc(5% * var(--secondary-light-lit));
 
-    --scndd-50:  var(--secondary-dark) 95%;
-    --scndd-100: var(--secondary-dark) 90%;
-    --scndd-200: var(--secondary-dark) 80%;
-    --scndd-300: var(--secondary-dark) 70%;
-    --scndd-400: var(--secondary-dark) 60%;
-    --scndd-500: var(--secondary-dark) 50%;
-    --scndd-600: var(--secondary-dark) 40%;
-    --scndd-700: var(--secondary-dark) 30%;
-    --scndd-800: var(--secondary-dark) 20%;
-    --scndd-900: var(--secondary-dark) 10%;
-    --scndd-950: var(--secondary-dark) 5%;
+    --scndd-50:  var(--secondary-dark) calc(95% * var(--secondary-dark-lit));
+    --scndd-100: var(--secondary-dark) calc(90% * var(--secondary-dark-lit));
+    --scndd-200: var(--secondary-dark) calc(80% * var(--secondary-dark-lit));
+    --scndd-300: var(--secondary-dark) calc(70% * var(--secondary-dark-lit));
+    --scndd-400: var(--secondary-dark) calc(60% * var(--secondary-dark-lit));
+    --scndd-500: var(--secondary-dark) calc(50% * var(--secondary-dark-lit));
+    --scndd-600: var(--secondary-dark) calc(40% * var(--secondary-dark-lit));
+    --scndd-700: var(--secondary-dark) calc(30% * var(--secondary-dark-lit));
+    --scndd-800: var(--secondary-dark) calc(20% * var(--secondary-dark-lit));
+    --scndd-900: var(--secondary-dark) calc(10% * var(--secondary-dark-lit));
+    --scndd-950: var(--secondary-dark) calc(5% * var(--secondary-dark-lit));
     
     /*///////////////////*/
 
-    --acnt-50:  var(--accent-light) 95%;
-    --acnt-100: var(--accent-light) 90%;
-    --acnt-200: var(--accent-light) 80%;
-    --acnt-300: var(--accent-light) 70%;
-    --acnt-400: var(--accent-light) 60%;
-    --acnt-500: var(--accent-light) 50%;
-    --acnt-600: var(--accent-light) 40%;
-    --acnt-700: var(--accent-light) 30%;
-    --acnt-800: var(--accent-light) 20%;
-    --acnt-900: var(--accent-light) 10%;
-    --acnt-950: var(--accent-light) 5%;
+    --acnt-50:  var(--accent-light) calc(95% * var(--accent-light-lit));
+    --acnt-100: var(--accent-light) calc(90% * var(--accent-light-lit));
+    --acnt-200: var(--accent-light) calc(80% * var(--accent-light-lit));
+    --acnt-300: var(--accent-light) calc(70% * var(--accent-light-lit));
+    --acnt-400: var(--accent-light) calc(60% * var(--accent-light-lit));
+    --acnt-500: var(--accent-light) calc(50% * var(--accent-light-lit));
+    --acnt-600: var(--accent-light) calc(40% * var(--accent-light-lit));
+    --acnt-700: var(--accent-light) calc(30% * var(--accent-light-lit));
+    --acnt-800: var(--accent-light) calc(20% * var(--accent-light-lit));
+    --acnt-900: var(--accent-light) calc(10% * var(--accent-light-lit));
+    --acnt-950: var(--accent-light) calc(5% * var(--accent-light-lit));
 
-    --acntd-50:  var(--accent-dark) 95%;
-    --acntd-100: var(--accent-dark) 90%;
-    --acntd-200: var(--accent-dark) 80%;
-    --acntd-300: var(--accent-dark) 70%;
-    --acntd-400: var(--accent-dark) 60%;
-    --acntd-500: var(--accent-dark) 50%;
-    --acntd-600: var(--accent-dark) 40%;
-    --acntd-700: var(--accent-dark) 30%;
-    --acntd-800: var(--accent-dark) 20%;
-    --acntd-900: var(--accent-dark) 10%;
-    --acntd-950: var(--accent-dark) 5%;
+    --acntd-50:  var(--accent-dark) calc(95% * var(--accent-dark-lit));
+    --acntd-100: var(--accent-dark) calc(90% * var(--accent-dark-lit));
+    --acntd-200: var(--accent-dark) calc(80% * var(--accent-dark-lit));
+    --acntd-300: var(--accent-dark) calc(70% * var(--accent-dark-lit));
+    --acntd-400: var(--accent-dark) calc(60% * var(--accent-dark-lit));
+    --acntd-500: var(--accent-dark) calc(50% * var(--accent-dark-lit));
+    --acntd-600: var(--accent-dark) calc(40% * var(--accent-dark-lit));
+    --acntd-700: var(--accent-dark) calc(30% * var(--accent-dark-lit));
+    --acntd-800: var(--accent-dark) calc(20% * var(--accent-dark-lit));
+    --acntd-900: var(--accent-dark) calc(10% * var(--accent-dark-lit));
+    --acntd-950: var(--accent-dark) calc(5% * var(--accent-dark-lit));
 }
 
 :root[data-theme="light"] {

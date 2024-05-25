@@ -18,6 +18,24 @@
 
     --accent-light: 206deg 86%;
     --accent-dark: 190deg 65%;
+
+    /*///////////////////*/
+
+    --text-light-lit: 1;
+    --text-dark-lit: 1;
+
+    --background-light-lit: 1;
+    --background-dark-lit: 1; 
+
+    --primary-light-lit: 1;
+    --primary-dark-lit: 1;
+
+    --secondary-light-lit: 1;
+    --secondary-dark-lit: 1;
+
+    --accent-light-lit: 1;
+    --accent-dark-lit: 1;
+
     /*
     --degr: 270deg;
 
