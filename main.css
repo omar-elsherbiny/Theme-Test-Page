@@ -879,7 +879,7 @@ footer {
 /*modals*/
 #backdrop {
     position: relative;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.45);
     width: 100%;
     height: 100%;
     z-index: 1000;
@@ -891,7 +891,7 @@ footer {
     top: 50%;
     left: 50%;
     width: clamp(30dvw,20rem,50dvw);
-    height: clamp(30dvw,20rem,50dvw);
+    height: clamp(30dvh,20rem,50dvh);
     transform: translate(-50%, -50%);
     border-radius: 1rem;
     background-color: var(--background);
@@ -904,15 +904,49 @@ footer {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: clamp(30dvw,20rem,50dvw);
-    height: clamp(30dvw,20rem,50dvw);
+    width: clamp(40dvw,30rem,60dvw);
+    height: clamp(40dvh,30rem,60dvh);
     transform: translate(-50%, -50%);
     border-radius: 1rem;
     background-color: var(--background);
     box-shadow: var(--shadow-elevation-high);
     pointer-events: auto;
     z-index: 1001;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
+
+#export-modal>div:nth-child(1),
+#css-holder {
+    font-size: 10pt;
+    width: 90%;
+    height: 40%;
+    background-color: rgba(0,0,0,0.05);
+    border-radius: 0.5rem;
+    border: 1pt solid var(--border-highlight);
+    padding: 0.2rem;
+}
+#css-holder span {
+    cursor: pointer;
+    font-size: 10.3pt;
+    font-weight: 800;
+    text-shadow:
+        0.05em 0 aliceblue,
+        0 0.05em aliceblue,
+        -0.05em 0 aliceblue,
+        0 -0.05em aliceblue,
+        -0.05em -0.05em aliceblue,
+        -0.05em 0.05em aliceblue,
+        0.05em -0.05em aliceblue,
+        0.05em 0.05em aliceblue;
+    color: rgb(33, 33, 33);
+    text-align: center;
+}
+#export-modal pre {margin: 0;}
+#export-modal pre:hover {background-color: var(--border-highlight);}
 /*modals/*/
 
 
