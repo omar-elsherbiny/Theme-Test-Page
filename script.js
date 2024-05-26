@@ -161,6 +161,17 @@ darkLock.addEventListener('click', function () {
     let targetLock = 'unlocked';
     if (currentLock === 'unlocked') {
         targetLock = 'locked';
+        let currentTheme = document.documentElement.getAttribute("data-theme");
+        let invTheme = 'light';
+        if (currentTheme == 'light') {
+            invTheme = 'dark';
+        }
+        panels.forEach(panel => {
+            rootTheme.style.setProperty('--' + panel + '-' + invTheme, rootTheme.style.getPropertyValue('--' + panel + '-' + currentTheme));
+            localStorage.setItem('--' + panel + '-' + invTheme, rootTheme.style.getPropertyValue('--' + panel + '-' + currentTheme));
+            rootTheme.style.setProperty('--' + panel + '-' + invTheme + '-lit', rootTheme.style.getPropertyValue('--' + panel + '-' + currentTheme + '-lit'));
+            localStorage.setItem('--' + panel + '-' + invTheme + '-lit', rootTheme.style.getPropertyValue('--' + panel + '-' + currentTheme + '-lit'));
+        });
     }
     document.documentElement.setAttribute('data-dark', targetLock);
     localStorage.setItem('dark', targetLock);
@@ -256,17 +267,31 @@ function rgbToHsl(r, g, b) {
 }
 
 colorInput.addEventListener('input', event => {
-    let currentTheme = document.documentElement.getAttribute("data-theme");
     let color = colorInput.value;
     let r = parseInt(color.substr(1, 2), 16);
     let g = parseInt(color.substr(3, 2), 16);
     let b = parseInt(color.substr(5, 2), 16);
     let hsl = rgbToHsl(r, g, b);
 
+    let currentTheme = document.documentElement.getAttribute("data-theme");
+    let invTheme = 'light';
+    if (currentTheme == 'light') {
+        invTheme = 'dark';
+    }
+    let currentHue = document.documentElement.getAttribute('data-hue');
+    let currentDark = document.documentElement.getAttribute('data-dark');
+
     rootTheme.style.setProperty('--' + panels[selectedColor] + '-' + currentTheme, hsl[0] + 'deg ' + hsl[1] + '%');
-    rootTheme.style.setProperty('--' + panels[selectedColor] + '-' + currentTheme + '-lit', hsl[2] / 50);
     localStorage.setItem('--' + panels[selectedColor] + '-' + currentTheme, hsl[0] + 'deg ' + hsl[1] + '%');
+    rootTheme.style.setProperty('--' + panels[selectedColor] + '-' + currentTheme + '-lit', hsl[2] / 50);
     localStorage.setItem('--' + panels[selectedColor] + '-' + currentTheme + '-lit', hsl[2] / 50);
+
+    if (currentDark == 'locked') {
+        rootTheme.style.setProperty('--' + panels[selectedColor] + '-' + invTheme, hsl[0] + 'deg ' + hsl[1] + '%');
+        localStorage.setItem('--' + panels[selectedColor] + '-' + invTheme, hsl[0] + 'deg ' + hsl[1] + '%');
+        rootTheme.style.setProperty('--' + panels[selectedColor] + '-' + invTheme + '-lit', hsl[2] / 50);
+        localStorage.setItem('--' + panels[selectedColor] + '-' + invTheme + '-lit', hsl[2] / 50);
+    }
 });
 // input-modal
 
@@ -548,3 +573,17 @@ function resaturate() {
     cssHolder.style.overflow = 'auto';
 }
 // color view
+
+
+
+
+function randomize() {
+    let ht = Math.round(Math.random() * 360);
+    panels.forEach(panel => {
+        let h = ht + Math.round(Math.random() * 20 - 10);
+        rootTheme.style.setProperty('--' + panel + '-light', h + 'deg ' + (50 + Math.round(Math.random() * 30)) + '%');
+        rootTheme.style.setProperty('--' + panel + '-dark', h + 'deg ' + (50 + Math.round(Math.random() * 30)) + '%');
+        rootTheme.style.setProperty('--' + panel + '-light-lit', (0.25 + Math.random() / 2));
+        rootTheme.style.setProperty('--' + panel + '-dark-lit', (0.25 + Math.random() / 2));
+    });
+}
