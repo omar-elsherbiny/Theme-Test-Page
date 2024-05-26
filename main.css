@@ -823,15 +823,15 @@ footer {
     font-size: 10pt;
     font-weight: 800;
     text-shadow:
-        0.05em 0 var(--text1),
-        0 0.05em var(--text1),
-        -0.05em 0 var(--text1),
-        0 -0.05em var(--text1),
-        -0.05em -0.05em var(--text1),
-        -0.05em 0.05em var(--text1),
-        0.05em -0.05em var(--text1),
-        0.05em 0.05em var(--text1);
-    color: var(--text4);
+        0.05em 0 #00080f,
+        0 0.05em #00080f,
+        -0.05em 0 #00080f,
+        0 -0.05em #00080f,
+        -0.05em -0.05em #00080f,
+        -0.05em 0.05em #00080f,
+        0.05em -0.05em #00080f,
+        0.05em 0.05em #00080f;
+    color: aliceblue;
     text-align: center;
     width: 80%;
     padding: 0.7rem 0.3rem;

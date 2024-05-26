@@ -553,11 +553,7 @@ function resaturate() {
 }
 // color view
 
-function monochromaticRand(theme, lock) {
-    let invTheme = 'light';
-    if (theme == 'light') {
-        invTheme = 'dark';
-    }
+function monochromaticRand(theme, invTheme, lock) {
     let ht = Math.round(Math.random() * 360);
     panels.forEach(panel => {
         let h = ht + Math.round(Math.random() * 20 - 10);
@@ -570,11 +566,7 @@ function monochromaticRand(theme, lock) {
     });
 }
 
-function analogousRand(theme, lock) {
-    let invTheme = 'light';
-    if (theme == 'light') {
-        invTheme = 'dark';
-    }
+function analogousRand(theme, invTheme, lock) {
     let h = Math.round(Math.random() * 360);
     let st = (40 + Math.round(Math.random() * 60));
     panels.forEach(panel => {
@@ -589,11 +581,7 @@ function analogousRand(theme, lock) {
     });
 }
 
-function triadRand(theme, lock) {
-    let invTheme = 'light';
-    if (theme == 'light') {
-        invTheme = 'dark';
-    }
+function triadRand(theme, invTheme, lock) {
     let h = Math.round(Math.random() * 360);
     let st = (40 + Math.round(Math.random() * 60));
     let s = st + Math.round(Math.random() * 20 - 10);
@@ -635,11 +623,7 @@ function triadRand(theme, lock) {
     }
 }
 
-function squareRand(theme, lock) {
-    let invTheme = 'light';
-    if (theme == 'light') {
-        invTheme = 'dark';
-    }
+function squareRand(theme, invTheme, lock) {
     let h = Math.round(Math.random() * 360);
     let st = (40 + Math.round(Math.random() * 10));
     panels.forEach(panel => {
@@ -657,8 +641,20 @@ function squareRand(theme, lock) {
 function randomize() {
     let opt = Math.round(Math.random() * 3);
     let theme = document.documentElement.getAttribute('data-theme');
+    let invTheme = 'light';
+    if (theme == 'light') {
+        invTheme = 'dark';
+    }
     let lock = document.documentElement.getAttribute('data-dark') == 'locked' ? true : false;
-    [monochromaticRand, analogousRand, triadRand, squareRand][opt](theme, lock);
+    [monochromaticRand, analogousRand, triadRand, squareRand][opt](theme, invTheme, lock);
+    panels.forEach(panel => {
+        localStorage.setItem('--' + panel + '-' + theme, rootTheme.style.getPropertyValue('--' + panel + '-' + theme));
+        localStorage.setItem('--' + panel + '-' + theme + '-lit', rootTheme.style.getPropertyValue('--' + panel + '-' + theme + '-lit'));
+        if (lock) {
+            localStorage.setItem('--' + panel + '-' + invTheme, rootTheme.style.getPropertyValue('--' + panel + '-' + invTheme));
+            localStorage.setItem('--' + panel + '-' + invTheme + '-lit', rootTheme.style.getPropertyValue('--' + panel + '-' + invTheme + '-lit'));
+        }
+    });
 }
 
 randBtn.addEventListener('click', event => {
