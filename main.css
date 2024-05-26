@@ -806,9 +806,10 @@ footer {
 }
 #panel>div:nth-child(1) {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    margin: 0.5rem;
+    margin: 0.5rem 0;
+    width: 100%;
 }
 #panel>div:nth-child(2) {
     flex: 1;
@@ -855,14 +856,11 @@ footer {
 }
 #show-panel:hover svg {scale: 1.2;}
 
-#hue_lock+label::after {
-    background-size: 1.55rem;
-    background-image: url(./hue.svg);
+#rand-btn {
+    color: var(--text1);
+    cursor: pointer;
 }
-#hue_lock.toggle:checked+label::after {
-    background-size: 1.2rem;
-    background-image: url(https://api.iconify.design/material-symbols:lock-sharp.svg?color=%23fffefa);
-}
+#rand-btn:hover {scale: 1.2;}
 #dark_lock+label::after {
     background-image: url(https://api.iconify.design/iconamoon:mode-dark-fill.svg?color=%2308081a);
 }

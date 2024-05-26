@@ -70,6 +70,8 @@ const panel = document.getElementById('panel');
 const hideButton = document.getElementById('hide-panel');
 const showButton = document.getElementById('show-panel');
 
+const randBtn = document.getElementById('rand-btn');
+
 let selectedColor = null;
 let previousCssPanels = {};
 
@@ -122,28 +124,6 @@ hideButton.addEventListener('click', function () {
     showButton.style.left = '0';
 });
 // panel toggle
-
-let hueLock = document.getElementById('hue_lock');
-let storedHueLock = localStorage.getItem('hue') || 'unlocked';
-if (storedHueLock) {
-    document.documentElement.setAttribute('data-hue', storedHueLock)
-    if (storedHueLock === 'locked') {
-        hueLock.checked = true;
-    }
-    else {
-        hueLock.checked = false;
-    }
-}
-hueLock.addEventListener('click', function () {
-    let currentLock = document.documentElement.getAttribute('data-hue');
-    let targetLock = 'unlocked';
-    if (currentLock === 'unlocked') {
-        targetLock = 'locked';
-    }
-    document.documentElement.setAttribute('data-hue', targetLock);
-    localStorage.setItem('hue', targetLock);
-});
-// hue toggle
 
 let darkLock = document.getElementById('dark_lock');
 let storedDarkLock = localStorage.getItem('dark') || 'unlocked';
@@ -278,7 +258,6 @@ colorInput.addEventListener('input', event => {
     if (currentTheme == 'light') {
         invTheme = 'dark';
     }
-    let currentHue = document.documentElement.getAttribute('data-hue');
     let currentDark = document.documentElement.getAttribute('data-dark');
 
     rootTheme.style.setProperty('--' + panels[selectedColor] + '-' + currentTheme, hsl[0] + 'deg ' + hsl[1] + '%');
@@ -574,77 +553,115 @@ function resaturate() {
 }
 // color view
 
-function monochromaticRand() {
+function monochromaticRand(theme, lock) {
+    let invTheme = 'light';
+    if (theme == 'light') {
+        invTheme = 'dark';
+    }
     let ht = Math.round(Math.random() * 360);
     panels.forEach(panel => {
         let h = ht + Math.round(Math.random() * 20 - 10);
-        rootTheme.style.setProperty('--' + panel + '-light', h + 'deg ' + (40 + Math.round(Math.random() * 60)) + '%');
-        rootTheme.style.setProperty('--' + panel + '-dark', h + 'deg ' + (40 + Math.round(Math.random() * 60)) + '%');
-        rootTheme.style.setProperty('--' + panel + '-light-lit', (0.25 + Math.random() * 0.75));
-        rootTheme.style.setProperty('--' + panel + '-dark-lit', (0.25 + Math.random() * 0.75));
+        rootTheme.style.setProperty('--' + panel + '-' + theme, h + 'deg ' + (40 + Math.round(Math.random() * 60)) + '%');
+        rootTheme.style.setProperty('--' + panel + '-' + theme + '-lit', (0.25 + Math.random() * 0.75));
+        if (lock) {
+            rootTheme.style.setProperty('--' + panel + '-' + invTheme, h + 'deg ' + (40 + Math.round(Math.random() * 60)) + '%');
+            rootTheme.style.setProperty('--' + panel + '-' + invTheme + '-lit', (0.25 + Math.random() * 0.75));
+        }
     });
 }
 
-function analogousRand() {
+function analogousRand(theme, lock) {
+    let invTheme = 'light';
+    if (theme == 'light') {
+        invTheme = 'dark';
+    }
     let h = Math.round(Math.random() * 360);
     let st = (40 + Math.round(Math.random() * 60));
     panels.forEach(panel => {
-        h = (h+24)%360;
+        h = (h + 24) % 360;
         let s = st + Math.round(Math.random() * 20 - 10);
-        rootTheme.style.setProperty('--' + panel + '-light', h + 'deg ' + s + '%');
-        rootTheme.style.setProperty('--' + panel + '-dark', h + 'deg ' + s + '%');
-        rootTheme.style.setProperty('--' + panel + '-light-lit', (0.25 + Math.random() * 0.75));
-        rootTheme.style.setProperty('--' + panel + '-dark-lit', (0.25 + Math.random() * 0.75));
+        rootTheme.style.setProperty('--' + panel + '-' + theme, h + 'deg ' + s + '%');
+        rootTheme.style.setProperty('--' + panel + '-' + theme + '-lit', (0.25 + Math.random() * 0.75));
+        if (lock) {
+            rootTheme.style.setProperty('--' + panel + '-' + invTheme, h + 'deg ' + s + '%');
+            rootTheme.style.setProperty('--' + panel + '-' + invTheme + '-lit', (0.25 + Math.random() * 0.75));
+        }
     });
 }
 
-function triadRand() {
+function triadRand(theme, lock) {
+    let invTheme = 'light';
+    if (theme == 'light') {
+        invTheme = 'dark';
+    }
     let h = Math.round(Math.random() * 360);
     let st = (40 + Math.round(Math.random() * 60));
     let s = st + Math.round(Math.random() * 20 - 10);
-    rootTheme.style.setProperty('--' + panels[0] + '-light', h + 'deg ' + s + '%');
-    rootTheme.style.setProperty('--' + panels[0] + '-dark', h + 'deg ' + s + '%');
-    rootTheme.style.setProperty('--' + panels[0] + '-light-lit', (0.25 + Math.random() * 0.75));
-    rootTheme.style.setProperty('--' + panels[0] + '-dark-lit', (0.25 + Math.random() * 0.75));
+    rootTheme.style.setProperty('--' + panels[0] + '-' + theme, h + 'deg ' + s + '%');
+    rootTheme.style.setProperty('--' + panels[0] + '-' + theme + '-lit', (0.25 + Math.random() * 0.75));
+    if (lock) {
+        rootTheme.style.setProperty('--' + panels[0] + '-' + invTheme, h + 'deg ' + s + '%');
+        rootTheme.style.setProperty('--' + panels[0] + '-' + invTheme + '-lit', (0.25 + Math.random() * 0.75));
+    }
     s = st + Math.round(Math.random() * 20 - 10);
-    rootTheme.style.setProperty('--' + panels[1] + '-light', h + 'deg ' + s + '%');
-    rootTheme.style.setProperty('--' + panels[1] + '-dark', h + 'deg ' + s + '%');
-    rootTheme.style.setProperty('--' + panels[1] + '-light-lit', (0.25 + Math.random() * 0.75));
-    rootTheme.style.setProperty('--' + panels[1] + '-dark-lit', (0.25 + Math.random() * 0.75));
+    rootTheme.style.setProperty('--' + panels[1] + '-' + theme, h + 'deg ' + s + '%');
+    rootTheme.style.setProperty('--' + panels[1] + '-' + theme + '-lit', (0.25 + Math.random() * 0.75));
+    if (lock) {
+        rootTheme.style.setProperty('--' + panels[1] + '-' + invTheme, h + 'deg ' + s + '%');
+        rootTheme.style.setProperty('--' + panels[1] + '-' + invTheme + '-lit', (0.25 + Math.random() * 0.75));
+    }
     s = st + Math.round(Math.random() * 20 - 10);
-    h = (h+120)%360;
-    rootTheme.style.setProperty('--' + panels[2] + '-light', h + 'deg ' + s + '%');
-    rootTheme.style.setProperty('--' + panels[2] + '-dark', h + 'deg ' + s + '%');
-    rootTheme.style.setProperty('--' + panels[2] + '-light-lit', (0.25 + Math.random() * 0.75));
-    rootTheme.style.setProperty('--' + panels[2] + '-dark-lit', (0.25 + Math.random() * 0.75));
+    h = (h + 120) % 360;
+    rootTheme.style.setProperty('--' + panels[2] + '-' + theme, h + 'deg ' + s + '%');
+    rootTheme.style.setProperty('--' + panels[2] + '-' + theme + '-lit', (0.25 + Math.random() * 0.75));
+    if (lock) {
+        rootTheme.style.setProperty('--' + panels[2] + '-' + invTheme, h + 'deg ' + s + '%');
+        rootTheme.style.setProperty('--' + panels[2] + '-' + invTheme + '-lit', (0.25 + Math.random() * 0.75));
+    }
     s = st + Math.round(Math.random() * 20 - 10);
-    h = (h+120)%360;
-    rootTheme.style.setProperty('--' + panels[3] + '-light', h + 'deg ' + s + '%');
-    rootTheme.style.setProperty('--' + panels[3] + '-dark', h + 'deg ' + s + '%');
-    rootTheme.style.setProperty('--' + panels[3] + '-light-lit', (0.25 + Math.random() * 0.75));
-    rootTheme.style.setProperty('--' + panels[3] + '-dark-lit', (0.25 + Math.random() * 0.75));
+    h = (h + 120) % 360;
+    rootTheme.style.setProperty('--' + panels[3] + '-' + theme, h + 'deg ' + s + '%');
+    rootTheme.style.setProperty('--' + panels[3] + '-' + theme + '-lit', (0.25 + Math.random() * 0.75));
+    if (lock) {
+        rootTheme.style.setProperty('--' + panels[3] + '-' + invTheme, h + 'deg ' + s + '%');
+        rootTheme.style.setProperty('--' + panels[3] + '-' + invTheme + '-lit', (0.25 + Math.random() * 0.75));
+    }
     s = st + Math.round(Math.random() * 20 - 10);
-    rootTheme.style.setProperty('--' + panels[4] + '-light', h + 'deg ' + s + '%');
-    rootTheme.style.setProperty('--' + panels[4] + '-dark', h + 'deg ' + s + '%');
-    rootTheme.style.setProperty('--' + panels[4] + '-light-lit', (0.25 + Math.random() * 0.75));
-    rootTheme.style.setProperty('--' + panels[4] + '-dark-lit', (0.25 + Math.random() * 0.75));
+    rootTheme.style.setProperty('--' + panels[4] + '-' + theme, h + 'deg ' + s + '%');
+    rootTheme.style.setProperty('--' + panels[4] + '-' + theme + '-lit', (0.25 + Math.random() * 0.75));
+    if (lock) {
+        rootTheme.style.setProperty('--' + panels[4] + '-' + invTheme, h + 'deg ' + s + '%');
+        rootTheme.style.setProperty('--' + panels[4] + '-' + invTheme + '-lit', (0.25 + Math.random() * 0.75));
+    }
 }
 
-function squareRand() {
+function squareRand(theme, lock) {
+    let invTheme = 'light';
+    if (theme == 'light') {
+        invTheme = 'dark';
+    }
     let h = Math.round(Math.random() * 360);
     let st = (40 + Math.round(Math.random() * 10));
     panels.forEach(panel => {
-        h = (h+45)%360;
+        h = (h + 45) % 360;
         let s = st + Math.round(Math.random() * 20 - 10);
-        rootTheme.style.setProperty('--' + panel + '-light', h + 'deg ' + s + '%');
-        rootTheme.style.setProperty('--' + panel + '-dark', h + 'deg ' + s + '%');
-        rootTheme.style.setProperty('--' + panel + '-light-lit', (0.75 + Math.random() * 0.25));
-        rootTheme.style.setProperty('--' + panel + '-dark-lit', (0.75 + Math.random() * 0.25));
+        rootTheme.style.setProperty('--' + panel + '-' + theme, h + 'deg ' + s + '%');
+        rootTheme.style.setProperty('--' + panel + '-' + theme + '-lit', (0.75 + Math.random() * 0.25));
+        if (lock) {
+            rootTheme.style.setProperty('--' + panel + '-' + invTheme, h + 'deg ' + s + '%');
+            rootTheme.style.setProperty('--' + panel + '-' + invTheme + '-lit', (0.75 + Math.random() * 0.25));
+        }
     });
 }
 
 function randomize() {
     let opt = Math.round(Math.random() * 3);
-    [monochromaticRand, analogousRand, triadRand, squareRand][opt]();
+    let theme = document.documentElement.getAttribute('data-theme');
+    let lock = document.documentElement.getAttribute('data-dark') == 'locked' ? true : false;
+    [monochromaticRand, analogousRand, triadRand, squareRand][opt](theme, lock);
 }
+
+randBtn.addEventListener('click', event => {
+    randomize();
+});
 // randomization
