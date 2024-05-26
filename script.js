@@ -56,6 +56,12 @@ const cssHolder = document.getElementById('css-holder');
 const copyBtns = document.querySelectorAll('#export-modal>svg');
 
 const colorInput = document.getElementById('color-input');
+const hueRange = document.getElementById('hue-range');
+const satRange = document.getElementById('sat-range');
+const litRange = document.getElementById('lit-range');
+const hueVal = document.getElementById('hue-val');
+const satVal = document.getElementById('sat-val');
+const litVal = document.getElementById('lit-val');
 
 const backdrop = document.getElementById('backdrop');
 const inputModal = document.getElementById('input-modal');
@@ -221,11 +227,27 @@ colorPanels.forEach(panel => {
         backdrop.classList.remove('hide');
         selectedColor = [].indexOf.call(colorPanels, panel);
 
+        let theme = document.documentElement.getAttribute('data-theme');
+        let val = rootTheme.style.getPropertyValue('--' + panels[selectedColor] + '-' + theme);
+        let [h, s] = val.split("deg");
+        h = parseFloat(h.trim());
+        s = parseFloat(s.trim().slice(0, -1));
+        let l = 50 * parseFloat(rootTheme.style.getPropertyValue('--' + panels[selectedColor] + '-' + theme + '-lit'));
+        colorInput.value = hslToHex(h, s, l);
+
+        hueRange.value = h;
+        hueVal.innerHTML = h;
+        satRange.value = s;
+        satVal.innerHTML = s;
+        litRange.value = l;
+        litVal.innerHTML = l;
     });
 });
 
-// EXPERIMENTAL
-function rgbToHsl(r, g, b) {
+function hexToHsl(color) {
+    let r = parseInt(color.substr(1, 2), 16);
+    let g = parseInt(color.substr(3, 2), 16);
+    let b = parseInt(color.substr(5, 2), 16);
     r /= 255, g /= 255, b /= 255;
     var max = Math.max(r, g, b), min = Math.min(r, g, b);
     var h, s, l = (max + min) / 2;
@@ -246,12 +268,19 @@ function rgbToHsl(r, g, b) {
     return [Math.round(h * 360), Math.round(s * 100), Math.round(l * 100)];
 }
 
+function hslToHex(h, s, l) {
+    l /= 100;
+    const a = s * Math.min(l, 1 - l) / 100;
+    const f = n => {
+        const k = (n + h / 30) % 12;
+        const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+        return Math.round(255 * color).toString(16).padStart(2, '0');   // convert to Hex and prefix "0" if needed
+    };
+    return `#${f(0)}${f(8)}${f(4)}`;
+}
+
 colorInput.addEventListener('input', event => {
-    let color = colorInput.value;
-    let r = parseInt(color.substr(1, 2), 16);
-    let g = parseInt(color.substr(3, 2), 16);
-    let b = parseInt(color.substr(5, 2), 16);
-    let hsl = rgbToHsl(r, g, b);
+    let hsl = hexToHsl(colorInput.value);
 
     let currentTheme = document.documentElement.getAttribute("data-theme");
     let invTheme = 'light';
