@@ -574,16 +574,77 @@ function resaturate() {
 }
 // color view
 
-
-
-
-function randomize() {
+function monochromaticRand() {
     let ht = Math.round(Math.random() * 360);
     panels.forEach(panel => {
         let h = ht + Math.round(Math.random() * 20 - 10);
-        rootTheme.style.setProperty('--' + panel + '-light', h + 'deg ' + (50 + Math.round(Math.random() * 30)) + '%');
-        rootTheme.style.setProperty('--' + panel + '-dark', h + 'deg ' + (50 + Math.round(Math.random() * 30)) + '%');
-        rootTheme.style.setProperty('--' + panel + '-light-lit', (0.25 + Math.random() / 2));
-        rootTheme.style.setProperty('--' + panel + '-dark-lit', (0.25 + Math.random() / 2));
+        rootTheme.style.setProperty('--' + panel + '-light', h + 'deg ' + (40 + Math.round(Math.random() * 60)) + '%');
+        rootTheme.style.setProperty('--' + panel + '-dark', h + 'deg ' + (40 + Math.round(Math.random() * 60)) + '%');
+        rootTheme.style.setProperty('--' + panel + '-light-lit', (0.25 + Math.random() * 0.75));
+        rootTheme.style.setProperty('--' + panel + '-dark-lit', (0.25 + Math.random() * 0.75));
     });
 }
+
+function analogousRand() {
+    let h = Math.round(Math.random() * 360);
+    let st = (40 + Math.round(Math.random() * 60));
+    panels.forEach(panel => {
+        h = (h+24)%360;
+        let s = st + Math.round(Math.random() * 20 - 10);
+        rootTheme.style.setProperty('--' + panel + '-light', h + 'deg ' + s + '%');
+        rootTheme.style.setProperty('--' + panel + '-dark', h + 'deg ' + s + '%');
+        rootTheme.style.setProperty('--' + panel + '-light-lit', (0.25 + Math.random() * 0.75));
+        rootTheme.style.setProperty('--' + panel + '-dark-lit', (0.25 + Math.random() * 0.75));
+    });
+}
+
+function triadRand() {
+    let h = Math.round(Math.random() * 360);
+    let st = (40 + Math.round(Math.random() * 60));
+    let s = st + Math.round(Math.random() * 20 - 10);
+    rootTheme.style.setProperty('--' + panels[0] + '-light', h + 'deg ' + s + '%');
+    rootTheme.style.setProperty('--' + panels[0] + '-dark', h + 'deg ' + s + '%');
+    rootTheme.style.setProperty('--' + panels[0] + '-light-lit', (0.25 + Math.random() * 0.75));
+    rootTheme.style.setProperty('--' + panels[0] + '-dark-lit', (0.25 + Math.random() * 0.75));
+    s = st + Math.round(Math.random() * 20 - 10);
+    rootTheme.style.setProperty('--' + panels[1] + '-light', h + 'deg ' + s + '%');
+    rootTheme.style.setProperty('--' + panels[1] + '-dark', h + 'deg ' + s + '%');
+    rootTheme.style.setProperty('--' + panels[1] + '-light-lit', (0.25 + Math.random() * 0.75));
+    rootTheme.style.setProperty('--' + panels[1] + '-dark-lit', (0.25 + Math.random() * 0.75));
+    s = st + Math.round(Math.random() * 20 - 10);
+    h = (h+120)%360;
+    rootTheme.style.setProperty('--' + panels[2] + '-light', h + 'deg ' + s + '%');
+    rootTheme.style.setProperty('--' + panels[2] + '-dark', h + 'deg ' + s + '%');
+    rootTheme.style.setProperty('--' + panels[2] + '-light-lit', (0.25 + Math.random() * 0.75));
+    rootTheme.style.setProperty('--' + panels[2] + '-dark-lit', (0.25 + Math.random() * 0.75));
+    s = st + Math.round(Math.random() * 20 - 10);
+    h = (h+120)%360;
+    rootTheme.style.setProperty('--' + panels[3] + '-light', h + 'deg ' + s + '%');
+    rootTheme.style.setProperty('--' + panels[3] + '-dark', h + 'deg ' + s + '%');
+    rootTheme.style.setProperty('--' + panels[3] + '-light-lit', (0.25 + Math.random() * 0.75));
+    rootTheme.style.setProperty('--' + panels[3] + '-dark-lit', (0.25 + Math.random() * 0.75));
+    s = st + Math.round(Math.random() * 20 - 10);
+    rootTheme.style.setProperty('--' + panels[4] + '-light', h + 'deg ' + s + '%');
+    rootTheme.style.setProperty('--' + panels[4] + '-dark', h + 'deg ' + s + '%');
+    rootTheme.style.setProperty('--' + panels[4] + '-light-lit', (0.25 + Math.random() * 0.75));
+    rootTheme.style.setProperty('--' + panels[4] + '-dark-lit', (0.25 + Math.random() * 0.75));
+}
+
+function squareRand() {
+    let h = Math.round(Math.random() * 360);
+    let st = (40 + Math.round(Math.random() * 10));
+    panels.forEach(panel => {
+        h = (h+45)%360;
+        let s = st + Math.round(Math.random() * 20 - 10);
+        rootTheme.style.setProperty('--' + panel + '-light', h + 'deg ' + s + '%');
+        rootTheme.style.setProperty('--' + panel + '-dark', h + 'deg ' + s + '%');
+        rootTheme.style.setProperty('--' + panel + '-light-lit', (0.75 + Math.random() * 0.25));
+        rootTheme.style.setProperty('--' + panel + '-dark-lit', (0.75 + Math.random() * 0.25));
+    });
+}
+
+function randomize() {
+    let opt = Math.round(Math.random() * 3);
+    [monochromaticRand, analogousRand, triadRand, squareRand][opt]();
+}
+// randomization
