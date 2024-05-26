@@ -875,7 +875,7 @@ footer {
 #panel>div:nth-child(2)>div:nth-child(5) {background-color: var(--accent-neut);}
 /*panel/*/
 
-/*modals*/
+/*input modal*/
 #backdrop {
     position: relative;
     background-color: rgba(0,0,0,0.45);
@@ -884,13 +884,12 @@ footer {
     z-index: 1000;
     pointer-events: auto;
 }
-
 #input-modal {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: clamp(40dvw,30rem,60dvw);
-    height: clamp(40dvh,30rem,60dvh);
+    width: clamp(40dvw, 30rem, 60dvw);
+    height: clamp(40dvh, 30rem, 60dvh);
     transform: translate(-50%, -50%);
     border-radius: 1rem;
     padding: 0.2rem;
@@ -900,11 +899,84 @@ footer {
     z-index: 1001;
 
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
+    flex-direction: column;
+}
+#input-modal>div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
 }
 
+#color-input {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.7rem;
+    border: 2pt solid var(--border-highlight);
+    padding: 0;
+}
+#color-input::-moz-color-swatch {
+    border: none;
+    border-radius: 0.5rem;
+}
+#color-input::-webkit-color-swatch-wrapper {
+    padding: 0;
+    border-radius: 0.5rem;
+}
+#color-input::-webkit-color-swatch {
+    border: none;
+    border-radius: 0.5rem;
+}
+
+#color-lock+label::after {
+    background-image: url(https://api.iconify.design/material-symbols:lock-open-right-sharp.svg?color=%2308081);
+}
+#color-lock.toggle:checked+label::after {
+    background-image: url(https://api.iconify.design/material-symbols:lock-sharp.svg?color=%23fffefa);
+}
+
+#input-modal h5 {width: 80%;}
+
+#input-modal input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 90%;
+    cursor: pointer;
+    outline: none;
+    border-radius: 15px;
+    height: 9px;
+    background: #ccc;
+}
+#input-modal input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    background-color: var(--text1);
+    border-radius: 50%;
+    border: none;
+    transition: .2s ease-in-out;
+}
+#input-modal input[type="range"]::-moz-range-thumb {
+    height: 20px;
+    width: 20px;
+    background-color: var(--text1);
+    border-radius: 50%;
+    border: none;
+    transition: .2s ease-in-out;
+}
+#input-modal input[type="range"]::-webkit-slider-thumb:hover {box-shadow: 0 0 0 7px var(--tr-text1);}
+#input-modal input[type="range"]:active::-webkit-slider-thumb {box-shadow: 0 0 0 10px var(--tr-text1);}
+#input-modal input[type="range"]:focus::-webkit-slider-thumb {box-shadow: 0 0 0 10px var(--tr-text1);}
+#input-modal input[type="range"]::-moz-range-thumb:hover {box-shadow: 0 0 0 7px var(--tr-text1);}
+#input-modal input[type="range"]:active::-moz-range-thumb {box-shadow: 0 0 0 10px var(--tr-text1);}
+#input-modal input[type="range"]:focus::-moz-range-thumb {box-shadow: 0 0 0 10px var(--tr-text1);}
+/*input modal/*/
+
+/*export modal*/
 #export-modal {
     position: absolute;
     top: 50%;
@@ -961,7 +1033,7 @@ footer {
 }
 #export-modal>svg:nth-last-child(1) {top: calc(50% + 1rem);}
 #export-modal svg:hover {scale: 1.2;}
-/*modals/*/
+/*export modal/*/
 
 
 @media screen and (max-width: 890px) {

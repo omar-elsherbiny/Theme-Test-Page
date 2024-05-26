@@ -275,7 +275,26 @@
         </div>
         <div id="backdrop" class="hide"></div>
         <div id="input-modal" class="hide">
-            <input type="color" id="color-input" style="width: 80%; height: 80%;">
+            <div>
+                <input type="color" id="color-input">
+                <input type="checkbox" id="color-lock" class="toggle">
+                <label for="color-lock"></label>
+            </div>
+            <h5>Hue:</h5>
+            <div>
+                <input id="hue-range" type="range" min="0" max="360" value="0">
+                <div id="hue-val">0</div>
+            </div>
+            <h5>Saturation:</h5>
+            <div>
+                <input id="sat-range" type="range" min="0" max="100" value="0">
+                <div id="hue-val">0</div>
+            </div>
+            <h5>Lightness:</h5>
+            <div>
+                <input id="lit-range" type="range" min="0" max="100" value="0">
+                <div id="hue-val">0</div>
+            </div>
         </div>
         <div id="export-modal" class="hide">
             <div class="scroll">
