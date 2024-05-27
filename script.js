@@ -79,6 +79,8 @@ const showButton = document.getElementById('show-panel');
 
 const randBtn = document.getElementById('rand-btn');
 
+const exportSpans = document.querySelectorAll('#export-modal>div:nth-child(1)>pre>span');
+
 let selectedColor = null;
 let previousCssPanels = {};
 let lockedPanels = [false, false, false, false, false];
@@ -354,6 +356,9 @@ exportBtn.addEventListener('click', event => {
     exportModal.classList.remove('hide');
     backdrop.classList.remove('hide');
     updatePrevCssPanels();
+    for (let i=0;i<exportSpans.length;i+=2) {
+        exportSpans[i+1].innerHTML = rootTheme.style.getPropertyValue(exportSpans[i].innerHTML); 
+    }
 });
 
 copyBtns[0].addEventListener('click', event => {
@@ -382,37 +387,37 @@ copyBtns[0].addEventListener('click', event => {
             --font: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             --shadow-color: 0deg 0% 0%;
           
-            --text-light: 207deg 70%;
-            --text-dark: 207deg 70%;
+            --text-light: ${rootTheme.style.getPropertyValue('--text-light')};
+            --text-dark: ${rootTheme.style.getPropertyValue('--text-dark')};
           
-            --background-light: 240deg 60%;
-            --background-dark: 218deg 22%;
+            --background-light: ${rootTheme.style.getPropertyValue('--background-light')};
+            --background-dark: ${rootTheme.style.getPropertyValue('--background-dark')};
           
-            --primary-light: 344deg 70%;
-            --primary-dark: 344deg 75%;
+            --primary-light: ${rootTheme.style.getPropertyValue('--primary-light')};
+            --primary-dark: ${rootTheme.style.getPropertyValue('--primary-dark')};
           
-            --secondary-light: 263deg 60%;
-            --secondary-dark: 246deg 56%;
+            --secondary-light: ${rootTheme.style.getPropertyValue('--secondary-light')};
+            --secondary-dark: ${rootTheme.style.getPropertyValue('--secondary-dark')};
           
-            --accent-light: 206deg 86%;
-            --accent-dark: 190deg 65%;
+            --accent-light: ${rootTheme.style.getPropertyValue('--accent-light')};
+            --accent-dark: ${rootTheme.style.getPropertyValue('--accent-dark')};
           
             /*///////////////////*/
           
-            --text-light-lit: 1;
-            --text-dark-lit: 1;
+            --text-light-lit: ${rootTheme.style.getPropertyValue('--text-light-lit')};
+            --text-dark-lit: ${rootTheme.style.getPropertyValue('--text-dark-lit')};
           
-            --background-light-lit: 1;
-            --background-dark-lit: 1;
+            --background-light-lit: ${rootTheme.style.getPropertyValue('--background-light-lit')};
+            --background-dark-lit: ${rootTheme.style.getPropertyValue('--background-dark-lit')};
           
-            --primary-light-lit: 1;
-            --primary-dark-lit: 1;
+            --primary-light-lit: ${rootTheme.style.getPropertyValue('--primary-light-lit')};
+            --primary-dark-lit: ${rootTheme.style.getPropertyValue('--primary-dark-lit')};
           
-            --secondary-light-lit: 1;
-            --secondary-dark-lit: 1;
+            --secondary-light-lit: ${rootTheme.style.getPropertyValue('--secondary-light-lit')};
+            --secondary-dark-lit: ${rootTheme.style.getPropertyValue('--secondary-dark-lit')};
           
-            --accent-light-lit: 1;
-            --accent-dark-lit: 1;
+            --accent-light-lit: ${rootTheme.style.getPropertyValue('--accent-light-lit')};
+            --accent-dark-lit: ${rootTheme.style.getPropertyValue('--accent-dark-lit')};
           
             /*///////////////////*/
           

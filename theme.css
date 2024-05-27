@@ -35,24 +35,6 @@
 
     --accent-light-lit: 1;
     --accent-dark-lit: 1;
-
-    /*
-    --degr: 270deg;
-
-    --text-light: var(--degr) 39%;
-    --text-dark: var(--degr) 40%;
-
-    --background-light: var(--degr) 53%;
-    --background-dark: var(--degr) 50%;
-
-    --primary-light: var(--degr) 61%;
-    --primary-dark: var(--degr) 61%;
-
-    --secondary-light: var(--degr) 72%;
-    --secondary-dark: var(--degr) 72%;
-
-    --accent-light: var(--degr) 83%;
-    --accent-dark: var(--degr) 83%;*/
 }
 
 body {
