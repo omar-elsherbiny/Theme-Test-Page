@@ -796,11 +796,11 @@ footer {
     align-items: center;
     flex-direction: column;
     position: absolute;
-    top: 15dvh;
+    top: 15lvh;
     left: -20rem;
     min-width: 7rem;
-    width: 7dvw;
-    height: 60dvh;
+    width: 7lvw;
+    height: 60lvh;
     border-radius: 0 1rem 1rem 0;
     background-color: var(--background);
     pointer-events: auto;
@@ -853,7 +853,7 @@ footer {
     display: flex;
     position: absolute;
     left: 0;
-    top: 50dvh;
+    top: 50lvh;
     padding: 0.5rem;
     border-radius: 0 1rem 1rem 0;
     background-color: var(--background);
@@ -916,8 +916,8 @@ footer {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: clamp(40dvw, 30rem, 60dvw);
-    height: clamp(40dvh, 30rem, 60dvh);
+    width: clamp(40lvw, 30rem, 60lvw);
+    height: clamp(40lvh, 30rem, 60lvh);
     transform: translate(-50%, -50%);
     border-radius: 1rem;
     padding: 0.2rem;
@@ -1010,8 +1010,8 @@ footer {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: clamp(40dvw,30rem,60dvw);
-    height: clamp(40dvh,30rem,60dvh);
+    width: clamp(40lvw,30rem,60lvw);
+    height: clamp(40lvh,30rem,60lvh);
     transform: translate(-50%, -50%);
     border-radius: 1rem;
     padding: 0.2rem;
