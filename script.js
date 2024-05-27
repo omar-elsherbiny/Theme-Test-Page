@@ -165,12 +165,19 @@ darkLock.addEventListener('click', function () {
     localStorage.setItem('dark', targetLock);
 });
 // dark toggle
-
+rootTheme.style.setProperty('--text-light', localStorage.getItem('--text-light')||'207deg 70%');
+rootTheme.style.setProperty('--text-dark', localStorage.getItem('--text-dark')||'207deg 70%');
+rootTheme.style.setProperty('--background-light', localStorage.getItem('--background-light')||'240deg 60%');
+rootTheme.style.setProperty('--background-dark', localStorage.getItem('--background-dark')||'218deg 22%');
+rootTheme.style.setProperty('--primary-light', localStorage.getItem('--primary-light')||'344deg 70%');
+rootTheme.style.setProperty('--primary-dark', localStorage.getItem('--primary-dark')||'344deg 75%');
+rootTheme.style.setProperty('--secondary-light', localStorage.getItem('--secondary-light')||'263deg 60%');
+rootTheme.style.setProperty('--secondary-dark', localStorage.getItem('--secondary-dark')||'246deg 56%');
+rootTheme.style.setProperty('--accent-light', localStorage.getItem('--accent-light')||'206deg 86%%');
+rootTheme.style.setProperty('--accent-dark', localStorage.getItem('--accent-dark')||'190deg 65%');
 panels.forEach(panel => {
-    rootTheme.style.setProperty('--' + panel + '-light', localStorage.getItem('--' + panel + '-light'));
-    rootTheme.style.setProperty('--' + panel + '-dark', localStorage.getItem('--' + panel + '-dark'));
-    rootTheme.style.setProperty('--' + panel + '-light-lit', localStorage.getItem('--' + panel + '-light-lit'));
-    rootTheme.style.setProperty('--' + panel + '-dark-lit', localStorage.getItem('--' + panel + '-dark-lit'));
+    rootTheme.style.setProperty('--' + panel + '-light-lit', localStorage.getItem('--' + panel + '-light-lit')||'1');
+    rootTheme.style.setProperty('--' + panel + '-dark-lit', localStorage.getItem('--' + panel + '-dark-lit')||'1');
 });
 
 function updatePrevCssPanels() {
