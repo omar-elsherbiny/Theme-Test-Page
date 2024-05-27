@@ -336,9 +336,9 @@ litRange.addEventListener('input', event => {
 colorLock.addEventListener('click', function () {
     lockedPanels[selectedColor] = colorLock.checked;
     if (colorLock.checked) {
-        colorPanels[selectedColor].style.filter = 'grayscale(1)'; // EDIT
+        colorPanels[selectedColor].classList.add('locked-panel');
     } else {
-        colorPanels[selectedColor].style.filter = 'none';
+        colorPanels[selectedColor].classList.remove('locked-panel');
     }
 });
 // input-modal

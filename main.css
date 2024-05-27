@@ -820,6 +820,7 @@ footer {
     width: 100%;
 }
 #panel>div:nth-child(2)>div {
+    position: relative;
     font-size: 10pt;
     font-weight: 800;
     text-shadow:
@@ -873,6 +874,25 @@ footer {
 #panel>div:nth-child(2)>div:nth-child(3) {background-color: var(--primary-neut);}
 #panel>div:nth-child(2)>div:nth-child(4) {background-color: var(--secondary-neut);}
 #panel>div:nth-child(2)>div:nth-child(5) {background-color: var(--accent-neut);}
+
+.locked-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
+}
+.locked-panel::after {
+    content: '🔒';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 15pt;
+}
 /*panel/*/
 
 /*input modal*/
