@@ -356,8 +356,8 @@ exportBtn.addEventListener('click', event => {
     exportModal.classList.remove('hide');
     backdrop.classList.remove('hide');
     updatePrevCssPanels();
-    for (let i=0;i<exportSpans.length;i+=2) {
-        exportSpans[i+1].innerHTML = rootTheme.style.getPropertyValue(exportSpans[i].innerHTML); 
+    for (let i = 0; i < exportSpans.length; i += 2) {
+        exportSpans[i + 1].innerHTML = rootTheme.style.getPropertyValue(exportSpans[i].innerHTML);
     }
 });
 

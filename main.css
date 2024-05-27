@@ -242,7 +242,10 @@
 /*setup*/
 h1, h2, h3, h4, h5, h6, small, p {font-family: var(--font); margin:0;}
 
-body * {transition: all ease-in-out 0.2s;}
+body * {
+    transition: color ease-in-out 0.2s, background-color ease-in-out 0.2s,
+        scale ease-in-out 0.2s, box-shadow ease-in-out 0.2s;
+}
 body {
     position: relative;
     margin: 0;
