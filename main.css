@@ -836,6 +836,7 @@ footer {
     text-align: center;
     width: 80%;
     padding: 0.7rem 0.3rem;
+    margin-bottom: 0.1rem;
     border-radius: 1rem;
     background: #ff0000;
     border: 1.5pt solid var(--text1);
@@ -1181,4 +1182,12 @@ footer {
     }
 
     #css-holder span {text-shadow: none;}
+}
+
+@media screen and (max-height: 480px) {
+    #panel>div:nth-child(1) {margin: 0.1rem 0px;}
+    #panel>div:nth-child(2)>div {
+        font-size: 9.5pt;
+        padding: 0.3rem 0.3rem;
+    }
 }

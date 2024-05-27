@@ -165,19 +165,19 @@ darkLock.addEventListener('click', function () {
     localStorage.setItem('dark', targetLock);
 });
 // dark toggle
-rootTheme.style.setProperty('--text-light', localStorage.getItem('--text-light')||'207deg 70%');
-rootTheme.style.setProperty('--text-dark', localStorage.getItem('--text-dark')||'207deg 70%');
-rootTheme.style.setProperty('--background-light', localStorage.getItem('--background-light')||'240deg 60%');
-rootTheme.style.setProperty('--background-dark', localStorage.getItem('--background-dark')||'218deg 22%');
-rootTheme.style.setProperty('--primary-light', localStorage.getItem('--primary-light')||'344deg 70%');
-rootTheme.style.setProperty('--primary-dark', localStorage.getItem('--primary-dark')||'344deg 75%');
-rootTheme.style.setProperty('--secondary-light', localStorage.getItem('--secondary-light')||'263deg 60%');
-rootTheme.style.setProperty('--secondary-dark', localStorage.getItem('--secondary-dark')||'246deg 56%');
-rootTheme.style.setProperty('--accent-light', localStorage.getItem('--accent-light')||'206deg 86%%');
-rootTheme.style.setProperty('--accent-dark', localStorage.getItem('--accent-dark')||'190deg 65%');
+rootTheme.style.setProperty('--text-light', localStorage.getItem('--text-light') || '207deg 70%');
+rootTheme.style.setProperty('--text-dark', localStorage.getItem('--text-dark') || '207deg 70%');
+rootTheme.style.setProperty('--background-light', localStorage.getItem('--background-light') || '240deg 60%');
+rootTheme.style.setProperty('--background-dark', localStorage.getItem('--background-dark') || '218deg 22%');
+rootTheme.style.setProperty('--primary-light', localStorage.getItem('--primary-light') || '344deg 70%');
+rootTheme.style.setProperty('--primary-dark', localStorage.getItem('--primary-dark') || '344deg 75%');
+rootTheme.style.setProperty('--secondary-light', localStorage.getItem('--secondary-light') || '263deg 60%');
+rootTheme.style.setProperty('--secondary-dark', localStorage.getItem('--secondary-dark') || '246deg 56%');
+rootTheme.style.setProperty('--accent-light', localStorage.getItem('--accent-light') || '206deg 86%');
+rootTheme.style.setProperty('--accent-dark', localStorage.getItem('--accent-dark') || '190deg 65%');
 panels.forEach(panel => {
-    rootTheme.style.setProperty('--' + panel + '-light-lit', localStorage.getItem('--' + panel + '-light-lit')||'1');
-    rootTheme.style.setProperty('--' + panel + '-dark-lit', localStorage.getItem('--' + panel + '-dark-lit')||'1');
+    rootTheme.style.setProperty('--' + panel + '-light-lit', localStorage.getItem('--' + panel + '-light-lit') || '1');
+    rootTheme.style.setProperty('--' + panel + '-dark-lit', localStorage.getItem('--' + panel + '-dark-lit') || '1');
 });
 
 function updatePrevCssPanels() {
@@ -685,7 +685,7 @@ function analogousRand(theme, invTheme, lock) {
     panels.forEach(panel => {
         if (!lockedPanels[[].indexOf.call(panels, panel)]) {
             h = (h + 24) % 360;
-            let s = st + Math.round(Math.random() * 20 - 10);
+            let s = Math.round(Math.random() * 10 + 60);
             rootTheme.style.setProperty('--' + panel + '-' + theme, h + 'deg ' + s + '%');
             rootTheme.style.setProperty('--' + panel + '-' + theme + '-lit', (0.25 + Math.random() * 0.75));
             if (lock) {
@@ -765,15 +765,70 @@ function squareRand(theme, invTheme, lock) {
     });
 }
 
+function pastelRand(theme, invTheme, lock) {
+    let h = Math.round(Math.random() * 360);
+    let s = Math.round(Math.random() * 10 + 60);
+    let l = Math.round(Math.random() * 15 / 100 + 0.7);
+    if (!lockedPanels[0]) {
+        rootTheme.style.setProperty('--' + panels[0] + '-' + theme, h + 'deg ' + s + '%');
+        rootTheme.style.setProperty('--' + panels[0] + '-' + theme + '-lit', l);
+        if (lock) {
+            rootTheme.style.setProperty('--' + panels[0] + '-' + invTheme, h + 'deg ' + s + '%');
+            rootTheme.style.setProperty('--' + panels[0] + '-' + invTheme + '-lit', l);
+        }
+    }
+    s = Math.round(Math.random() * 10 + 60);
+    l = Math.round(Math.random() * 15 / 100 + 0.7);
+    if (!lockedPanels[1]) {
+        rootTheme.style.setProperty('--' + panels[1] + '-' + theme, h + 'deg ' + s + '%');
+        rootTheme.style.setProperty('--' + panels[1] + '-' + theme + '-lit', l);
+        if (lock) {
+            rootTheme.style.setProperty('--' + panels[1] + '-' + invTheme, h + 'deg ' + s + '%');
+            rootTheme.style.setProperty('--' + panels[1] + '-' + invTheme + '-lit', l);
+        }
+    }
+    s = Math.round(Math.random() * 10 + 60);
+    l = Math.round(Math.random() * 15 / 100 + 0.7);
+    if (!lockedPanels[2]) {
+        rootTheme.style.setProperty('--' + panels[2] + '-' + theme, h + 'deg ' + s + '%');
+        rootTheme.style.setProperty('--' + panels[2] + '-' + theme + '-lit', l);
+        if (lock) {
+            rootTheme.style.setProperty('--' + panels[2] + '-' + invTheme, h + 'deg ' + s + '%');
+            rootTheme.style.setProperty('--' + panels[2] + '-' + invTheme + '-lit', l);
+        }
+    }
+    h = (h + (Math.round(Math.random()) == 1 ? 120 : 240)) % 360;
+    s = Math.round(Math.random() * 10 + 60);
+    l = Math.round(Math.random() * 15 / 100 + 0.7);
+    if (!lockedPanels[3]) {
+        rootTheme.style.setProperty('--' + panels[3] + '-' + theme, h + 'deg ' + s + '%');
+        rootTheme.style.setProperty('--' + panels[3] + '-' + theme + '-lit', l);
+        if (lock) {
+            rootTheme.style.setProperty('--' + panels[3] + '-' + invTheme, h + 'deg ' + s + '%');
+            rootTheme.style.setProperty('--' + panels[3] + '-' + invTheme + '-lit', l);
+        }
+    }
+    s = Math.round(Math.random() * 10 + 60);
+    l = Math.round(Math.random() * 15 / 100 + 0.7);
+    if (!lockedPanels[4]) {
+        rootTheme.style.setProperty('--' + panels[4] + '-' + theme, h + 'deg ' + s + '%');
+        rootTheme.style.setProperty('--' + panels[4] + '-' + theme + '-lit', l);
+        if (lock) {
+            rootTheme.style.setProperty('--' + panels[4] + '-' + invTheme, h + 'deg ' + s + '%');
+            rootTheme.style.setProperty('--' + panels[4] + '-' + invTheme + '-lit', l);
+        }
+    }
+}
+
 function randomize() {
-    let opt = Math.round(Math.random() * 3);
+    let opt = Math.round(Math.random() * 4);
     let theme = document.documentElement.getAttribute('data-theme');
     let invTheme = 'light';
     if (theme == 'light') {
         invTheme = 'dark';
     }
     let lock = document.documentElement.getAttribute('data-dark') == 'locked' ? true : false;
-    [monochromaticRand, analogousRand, triadRand, squareRand][opt](theme, invTheme, lock);
+    [monochromaticRand, analogousRand, triadRand, squareRand, pastelRand][opt](theme, invTheme, lock);
     panels.forEach(panel => {
         localStorage.setItem('--' + panel + '-' + theme, rootTheme.style.getPropertyValue('--' + panel + '-' + theme));
         localStorage.setItem('--' + panel + '-' + theme + '-lit', rootTheme.style.getPropertyValue('--' + panel + '-' + theme + '-lit'));
