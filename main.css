@@ -917,6 +917,7 @@ footer {
     border-radius: 0.7rem;
     border: 2pt solid var(--border-highlight);
     padding: 0;
+    cursor: pointer;
 }
 #color-input::-moz-color-swatch {
     border: none;

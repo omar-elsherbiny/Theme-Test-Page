@@ -62,6 +62,7 @@ const litRange = document.getElementById('lit-range');
 const hueVal = document.getElementById('hue-val');
 const satVal = document.getElementById('sat-val');
 const litVal = document.getElementById('lit-val');
+const colorLock = document.getElementById('color-lock');
 
 const backdrop = document.getElementById('backdrop');
 const inputModal = document.getElementById('input-modal');
@@ -80,6 +81,7 @@ const randBtn = document.getElementById('rand-btn');
 
 let selectedColor = null;
 let previousCssPanels = {};
+let lockedPanels = [false, false, false, false, false];
 
 //consts
 
@@ -236,11 +238,13 @@ colorPanels.forEach(panel => {
         colorInput.value = hslToHex(h, s, l);
 
         hueRange.value = h;
-        hueVal.innerHTML = h;
+        hueVal.innerHTML = Math.round(h);
         satRange.value = s;
-        satVal.innerHTML = s;
+        satVal.innerHTML = Math.round(s);
         litRange.value = l;
-        litVal.innerHTML = l;
+        litVal.innerHTML = Math.round(l);
+
+        colorLock.checked = lockedPanels[selectedColor];
     });
 });
 
@@ -279,9 +283,7 @@ function hslToHex(h, s, l) {
     return `#${f(0)}${f(8)}${f(4)}`;
 }
 
-colorInput.addEventListener('input', event => {
-    let hsl = hexToHsl(colorInput.value);
-
+function updateColorFromRange() {
     let currentTheme = document.documentElement.getAttribute("data-theme");
     let invTheme = 'light';
     if (currentTheme == 'light') {
@@ -289,16 +291,54 @@ colorInput.addEventListener('input', event => {
     }
     let currentDark = document.documentElement.getAttribute('data-dark');
 
-    rootTheme.style.setProperty('--' + panels[selectedColor] + '-' + currentTheme, hsl[0] + 'deg ' + hsl[1] + '%');
-    localStorage.setItem('--' + panels[selectedColor] + '-' + currentTheme, hsl[0] + 'deg ' + hsl[1] + '%');
-    rootTheme.style.setProperty('--' + panels[selectedColor] + '-' + currentTheme + '-lit', hsl[2] / 50);
-    localStorage.setItem('--' + panels[selectedColor] + '-' + currentTheme + '-lit', hsl[2] / 50);
+    rootTheme.style.setProperty('--' + panels[selectedColor] + '-' + currentTheme, hueRange.value + 'deg ' + satRange.value + '%');
+    localStorage.setItem('--' + panels[selectedColor] + '-' + currentTheme, hueRange.value + 'deg ' + satRange.value + '%');
+    rootTheme.style.setProperty('--' + panels[selectedColor] + '-' + currentTheme + '-lit', litRange.value / 50);
+    localStorage.setItem('--' + panels[selectedColor] + '-' + currentTheme + '-lit', litRange.value / 50);
 
     if (currentDark == 'locked') {
-        rootTheme.style.setProperty('--' + panels[selectedColor] + '-' + invTheme, hsl[0] + 'deg ' + hsl[1] + '%');
-        localStorage.setItem('--' + panels[selectedColor] + '-' + invTheme, hsl[0] + 'deg ' + hsl[1] + '%');
-        rootTheme.style.setProperty('--' + panels[selectedColor] + '-' + invTheme + '-lit', hsl[2] / 50);
-        localStorage.setItem('--' + panels[selectedColor] + '-' + invTheme + '-lit', hsl[2] / 50);
+        rootTheme.style.setProperty('--' + panels[selectedColor] + '-' + invTheme, hueRange.value + 'deg ' + satRange.value + '%');
+        localStorage.setItem('--' + panels[selectedColor] + '-' + invTheme, hueRange.value + 'deg ' + satRange.value + '%');
+        rootTheme.style.setProperty('--' + panels[selectedColor] + '-' + invTheme + '-lit', litRange.value / 50);
+        localStorage.setItem('--' + panels[selectedColor] + '-' + invTheme + '-lit', litRange.value / 50);
+    }
+}
+
+colorInput.addEventListener('input', event => {
+    let hsl = hexToHsl(colorInput.value);
+
+    hueRange.value = hsl[0];
+    hueVal.innerHTML = Math.round(hsl[0]);
+    satRange.value = hsl[1];
+    satVal.innerHTML = Math.round(hsl[1]);
+    litRange.value = hsl[2];
+    litVal.innerHTML = Math.round(hsl[2]);
+
+    updateColorFromRange();
+});
+
+hueRange.addEventListener('input', event => {
+    hueVal.innerHTML = Math.round(hueRange.value);
+    colorInput.value = hslToHex(hueRange.value, satRange.value, litRange.value);
+    updateColorFromRange();
+});
+satRange.addEventListener('input', event => {
+    satVal.innerHTML = Math.round(satRange.value);
+    colorInput.value = hslToHex(hueRange.value, satRange.value, litRange.value);
+    updateColorFromRange();
+});
+litRange.addEventListener('input', event => {
+    litVal.innerHTML = Math.round(litRange.value);
+    colorInput.value = hslToHex(hueRange.value, satRange.value, litRange.value);
+    updateColorFromRange();
+});
+
+colorLock.addEventListener('click', function () {
+    lockedPanels[selectedColor] = colorLock.checked;
+    if (colorLock.checked) {
+        colorPanels[selectedColor].style.filter = 'grayscale(1)'; // EDIT
+    } else {
+        colorPanels[selectedColor].style.filter = 'none';
     }
 });
 // input-modal
@@ -585,12 +625,14 @@ function resaturate() {
 function monochromaticRand(theme, invTheme, lock) {
     let ht = Math.round(Math.random() * 360);
     panels.forEach(panel => {
-        let h = ht + Math.round(Math.random() * 20 - 10);
-        rootTheme.style.setProperty('--' + panel + '-' + theme, h + 'deg ' + (40 + Math.round(Math.random() * 60)) + '%');
-        rootTheme.style.setProperty('--' + panel + '-' + theme + '-lit', (0.25 + Math.random() * 0.75));
-        if (lock) {
-            rootTheme.style.setProperty('--' + panel + '-' + invTheme, h + 'deg ' + (40 + Math.round(Math.random() * 60)) + '%');
-            rootTheme.style.setProperty('--' + panel + '-' + invTheme + '-lit', (0.25 + Math.random() * 0.75));
+        if (!lockedPanels[[].indexOf.call(panels, panel)]) {
+            let h = ht + Math.round(Math.random() * 20 - 10);
+            rootTheme.style.setProperty('--' + panel + '-' + theme, h + 'deg ' + (40 + Math.round(Math.random() * 60)) + '%');
+            rootTheme.style.setProperty('--' + panel + '-' + theme + '-lit', (0.25 + Math.random() * 0.75));
+            if (lock) {
+                rootTheme.style.setProperty('--' + panel + '-' + invTheme, h + 'deg ' + (40 + Math.round(Math.random() * 60)) + '%');
+                rootTheme.style.setProperty('--' + panel + '-' + invTheme + '-lit', (0.25 + Math.random() * 0.75));
+            }
         }
     });
 }
@@ -599,13 +641,15 @@ function analogousRand(theme, invTheme, lock) {
     let h = Math.round(Math.random() * 360);
     let st = (40 + Math.round(Math.random() * 60));
     panels.forEach(panel => {
-        h = (h + 24) % 360;
-        let s = st + Math.round(Math.random() * 20 - 10);
-        rootTheme.style.setProperty('--' + panel + '-' + theme, h + 'deg ' + s + '%');
-        rootTheme.style.setProperty('--' + panel + '-' + theme + '-lit', (0.25 + Math.random() * 0.75));
-        if (lock) {
-            rootTheme.style.setProperty('--' + panel + '-' + invTheme, h + 'deg ' + s + '%');
-            rootTheme.style.setProperty('--' + panel + '-' + invTheme + '-lit', (0.25 + Math.random() * 0.75));
+        if (!lockedPanels[[].indexOf.call(panels, panel)]) {
+            h = (h + 24) % 360;
+            let s = st + Math.round(Math.random() * 20 - 10);
+            rootTheme.style.setProperty('--' + panel + '-' + theme, h + 'deg ' + s + '%');
+            rootTheme.style.setProperty('--' + panel + '-' + theme + '-lit', (0.25 + Math.random() * 0.75));
+            if (lock) {
+                rootTheme.style.setProperty('--' + panel + '-' + invTheme, h + 'deg ' + s + '%');
+                rootTheme.style.setProperty('--' + panel + '-' + invTheme + '-lit', (0.25 + Math.random() * 0.75));
+            }
         }
     });
 }
@@ -614,41 +658,51 @@ function triadRand(theme, invTheme, lock) {
     let h = Math.round(Math.random() * 360);
     let st = (40 + Math.round(Math.random() * 60));
     let s = st + Math.round(Math.random() * 20 - 10);
-    rootTheme.style.setProperty('--' + panels[0] + '-' + theme, h + 'deg ' + s + '%');
-    rootTheme.style.setProperty('--' + panels[0] + '-' + theme + '-lit', (0.25 + Math.random() * 0.75));
-    if (lock) {
-        rootTheme.style.setProperty('--' + panels[0] + '-' + invTheme, h + 'deg ' + s + '%');
-        rootTheme.style.setProperty('--' + panels[0] + '-' + invTheme + '-lit', (0.25 + Math.random() * 0.75));
+    if (!lockedPanels[0]) {
+        rootTheme.style.setProperty('--' + panels[0] + '-' + theme, h + 'deg ' + s + '%');
+        rootTheme.style.setProperty('--' + panels[0] + '-' + theme + '-lit', (0.25 + Math.random() * 0.75));
+        if (lock) {
+            rootTheme.style.setProperty('--' + panels[0] + '-' + invTheme, h + 'deg ' + s + '%');
+            rootTheme.style.setProperty('--' + panels[0] + '-' + invTheme + '-lit', (0.25 + Math.random() * 0.75));
+        }
     }
     s = st + Math.round(Math.random() * 20 - 10);
-    rootTheme.style.setProperty('--' + panels[1] + '-' + theme, h + 'deg ' + s + '%');
-    rootTheme.style.setProperty('--' + panels[1] + '-' + theme + '-lit', (0.25 + Math.random() * 0.75));
-    if (lock) {
-        rootTheme.style.setProperty('--' + panels[1] + '-' + invTheme, h + 'deg ' + s + '%');
-        rootTheme.style.setProperty('--' + panels[1] + '-' + invTheme + '-lit', (0.25 + Math.random() * 0.75));
-    }
-    s = st + Math.round(Math.random() * 20 - 10);
-    h = (h + 120) % 360;
-    rootTheme.style.setProperty('--' + panels[2] + '-' + theme, h + 'deg ' + s + '%');
-    rootTheme.style.setProperty('--' + panels[2] + '-' + theme + '-lit', (0.25 + Math.random() * 0.75));
-    if (lock) {
-        rootTheme.style.setProperty('--' + panels[2] + '-' + invTheme, h + 'deg ' + s + '%');
-        rootTheme.style.setProperty('--' + panels[2] + '-' + invTheme + '-lit', (0.25 + Math.random() * 0.75));
+    if (!lockedPanels[1]) {
+        rootTheme.style.setProperty('--' + panels[1] + '-' + theme, h + 'deg ' + s + '%');
+        rootTheme.style.setProperty('--' + panels[1] + '-' + theme + '-lit', (0.25 + Math.random() * 0.75));
+        if (lock) {
+            rootTheme.style.setProperty('--' + panels[1] + '-' + invTheme, h + 'deg ' + s + '%');
+            rootTheme.style.setProperty('--' + panels[1] + '-' + invTheme + '-lit', (0.25 + Math.random() * 0.75));
+        }
     }
     s = st + Math.round(Math.random() * 20 - 10);
     h = (h + 120) % 360;
-    rootTheme.style.setProperty('--' + panels[3] + '-' + theme, h + 'deg ' + s + '%');
-    rootTheme.style.setProperty('--' + panels[3] + '-' + theme + '-lit', (0.25 + Math.random() * 0.75));
-    if (lock) {
-        rootTheme.style.setProperty('--' + panels[3] + '-' + invTheme, h + 'deg ' + s + '%');
-        rootTheme.style.setProperty('--' + panels[3] + '-' + invTheme + '-lit', (0.25 + Math.random() * 0.75));
+    if (!lockedPanels[2]) {
+        rootTheme.style.setProperty('--' + panels[2] + '-' + theme, h + 'deg ' + s + '%');
+        rootTheme.style.setProperty('--' + panels[2] + '-' + theme + '-lit', (0.25 + Math.random() * 0.75));
+        if (lock) {
+            rootTheme.style.setProperty('--' + panels[2] + '-' + invTheme, h + 'deg ' + s + '%');
+            rootTheme.style.setProperty('--' + panels[2] + '-' + invTheme + '-lit', (0.25 + Math.random() * 0.75));
+        }
     }
     s = st + Math.round(Math.random() * 20 - 10);
-    rootTheme.style.setProperty('--' + panels[4] + '-' + theme, h + 'deg ' + s + '%');
-    rootTheme.style.setProperty('--' + panels[4] + '-' + theme + '-lit', (0.25 + Math.random() * 0.75));
-    if (lock) {
-        rootTheme.style.setProperty('--' + panels[4] + '-' + invTheme, h + 'deg ' + s + '%');
-        rootTheme.style.setProperty('--' + panels[4] + '-' + invTheme + '-lit', (0.25 + Math.random() * 0.75));
+    h = (h + 120) % 360;
+    if (!lockedPanels[3]) {
+        rootTheme.style.setProperty('--' + panels[3] + '-' + theme, h + 'deg ' + s + '%');
+        rootTheme.style.setProperty('--' + panels[3] + '-' + theme + '-lit', (0.25 + Math.random() * 0.75));
+        if (lock) {
+            rootTheme.style.setProperty('--' + panels[3] + '-' + invTheme, h + 'deg ' + s + '%');
+            rootTheme.style.setProperty('--' + panels[3] + '-' + invTheme + '-lit', (0.25 + Math.random() * 0.75));
+        }
+    }
+    s = st + Math.round(Math.random() * 20 - 10);
+    if (!lockedPanels[4]) {
+        rootTheme.style.setProperty('--' + panels[4] + '-' + theme, h + 'deg ' + s + '%');
+        rootTheme.style.setProperty('--' + panels[4] + '-' + theme + '-lit', (0.25 + Math.random() * 0.75));
+        if (lock) {
+            rootTheme.style.setProperty('--' + panels[4] + '-' + invTheme, h + 'deg ' + s + '%');
+            rootTheme.style.setProperty('--' + panels[4] + '-' + invTheme + '-lit', (0.25 + Math.random() * 0.75));
+        }
     }
 }
 
@@ -656,13 +710,15 @@ function squareRand(theme, invTheme, lock) {
     let h = Math.round(Math.random() * 360);
     let st = (40 + Math.round(Math.random() * 10));
     panels.forEach(panel => {
-        h = (h + 45) % 360;
-        let s = st + Math.round(Math.random() * 20 - 10);
-        rootTheme.style.setProperty('--' + panel + '-' + theme, h + 'deg ' + s + '%');
-        rootTheme.style.setProperty('--' + panel + '-' + theme + '-lit', (0.75 + Math.random() * 0.25));
-        if (lock) {
-            rootTheme.style.setProperty('--' + panel + '-' + invTheme, h + 'deg ' + s + '%');
-            rootTheme.style.setProperty('--' + panel + '-' + invTheme + '-lit', (0.75 + Math.random() * 0.25));
+        if (!lockedPanels[[].indexOf.call(panels, panel)]) {
+            h = (h + 45) % 360;
+            let s = st + Math.round(Math.random() * 20 - 10);
+            rootTheme.style.setProperty('--' + panel + '-' + theme, h + 'deg ' + s + '%');
+            rootTheme.style.setProperty('--' + panel + '-' + theme + '-lit', (0.75 + Math.random() * 0.25));
+            if (lock) {
+                rootTheme.style.setProperty('--' + panel + '-' + invTheme, h + 'deg ' + s + '%');
+                rootTheme.style.setProperty('--' + panel + '-' + invTheme + '-lit', (0.75 + Math.random() * 0.25));
+            }
         }
     });
 }
