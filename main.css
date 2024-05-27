@@ -1198,3 +1198,11 @@ footer {
         padding: 0.3rem 0.3rem;
     }
 }
+
+@media screen and (max-height: 380px) {
+    #panel>div:nth-child(1) {margin: 0.1rem 0px;}
+    #panel>div:nth-child(2)>div {
+        font-size: 8.7pt;
+        padding: 0.1rem 0.3rem;
+    }
+}
