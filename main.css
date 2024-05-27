@@ -806,6 +806,8 @@ footer {
     pointer-events: auto;
     border: 2pt solid var(--border-highlight);
     box-shadow: var(--shadow-elevation-medium);
+    transition: color ease-in-out 0.2s, background-color ease-in-out 0.2s,
+        scale ease-in-out 0.2s, box-shadow ease-in-out 0.2s, left ease-in-out 0.2s;
 }
 #panel>div:nth-child(1) {
     display: flex;
@@ -858,6 +860,8 @@ footer {
     pointer-events: auto;
     border: 2pt solid var(--border-highlight);
     box-shadow: var(--shadow-elevation-medium);
+    transition: color ease-in-out 0.2s, background-color ease-in-out 0.2s,
+        scale ease-in-out 0.2s, box-shadow ease-in-out 0.2s, left ease-in-out 0.2s;
 }
 #show-panel:hover svg {scale: 1.2;}
 

@@ -18,7 +18,9 @@ s='''
         22.1px 28.1px 36.2px -2.3px hsl(var(--shadow-color) / 0.1),
         34.8px 44.1px 56.9px -2.8px hsl(var(--shadow-color) / 0.09),
         52.3px 66.3px 85.5px -3.2px hsl(var(--shadow-color) / 0.09);
-    --font: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --font: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+        'Helvetica Neue', sans-serif;
     --shadow-color: 0deg 0% 0%;
     --text-light: 207deg 70%;
     --text-dark: 207deg 70%;
