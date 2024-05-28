@@ -85,7 +85,7 @@ const showButton = document.getElementById('show-panel');
 
 const randBtn = document.getElementById('rand-btn');
 
-const exportSpans = document.querySelectorAll('#export-modal>div:nth-child(1)>pre>span');
+const exportSpans = document.querySelectorAll('#export-tab>div:nth-child(1)>pre>span');
 
 let selectedColor = null;
 let previousCssPanels = {};
