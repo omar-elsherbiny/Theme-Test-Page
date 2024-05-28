@@ -90,6 +90,7 @@ const exportSpans = document.querySelectorAll('#export-tab>div:nth-child(1)>pre>
 let selectedColor = null;
 let previousCssPanels = {};
 let lockedPanels = [false, false, false, false, false];
+let prevScroll = -1;
 
 //consts
 
@@ -213,20 +214,23 @@ function lerp(a, b, t, capped = true) {
     if (capped) {
         t = Math.max(Math.min(t, 1), 0);
     }
-    return (1 - t) * a + t * b;
+    return ((1 - t) * a + t * b).toFixed(1);
 }
 
 function updateParallax() {
     const scrollValue = getScrollPercentage();
-    parablob1.style.top = lerp(80, -20, 2 * scrollValue) + '%';
-    parablob2.style.top = lerp(90, -20, 1.5 * scrollValue) + '%';
-    parablob3.style.top = lerp(95, -20, scrollValue) + '%';
-    if (scrollValue >= 0.965 && scrollValue <= 1) {
-        parablob4.style.bottom = 0 + '%';
-        document.querySelector('footer').style.opacity = '1';
-    } else {
-        parablob4.style.bottom = -60 + '%';
-        document.querySelector('footer').style.opacity = '0';
+    if ((Math.abs(scrollValue - prevScroll)).toFixed(4)>=0.025) {
+        prevScroll = scrollValue;
+        parablob1.style.top = lerp(80, -20, 2 * scrollValue) + '%';
+        parablob2.style.top = lerp(90, -20, 1.5 * scrollValue) + '%';
+        parablob3.style.top = lerp(95, -20, scrollValue) + '%';
+        if (scrollValue >= 0.965 && scrollValue <= 1) {
+            parablob4.style.bottom = 0 + '%';
+            document.querySelector('footer').style.opacity = '1';
+        } else {
+            parablob4.style.bottom = -60 + '%';
+            document.querySelector('footer').style.opacity = '0';
+        }
     }
 }
 
@@ -368,33 +372,7 @@ exportBtn.addEventListener('click', event => {
     for (let i = 0; i < exportSpans.length; i += 2) {
         exportSpans[i + 1].innerHTML = rootTheme.style.getPropertyValue(exportSpans[i].innerHTML);
     }
-    // TODO:  handle loading from storage
-    let offest = document.documentElement.getAttribute('data-theme') == 'light' ? 0 : 1;
-    savedTab.innerHTML = '';
-    for (let i = 0; i < getNumberOfSavedThemes(); i++) {
-        let code = localStorage.getItem('theme-' + i).split('#');
-        savedTab.innerHTML += `
-        <div class="saved-theme">
-            <div class="pallete">
-                <div style="background-color:#${code[1 + offest]}"></div>
-                <div style="background-color:#${code[3 + offest]}"></div>
-                <div style="background-color:#${code[5 + offest]}"></div>
-                <div style="background-color:#${code[7 + offest]}"></div>
-                <div style="background-color:#${code[9 + offest]}"></div>
-            </div>
-            <div style="color: var(--border-highlight);" class="prevent-select">|</div>
-            <div class="pallete-ctrl">
-                <svg onclick="applySavedTheme(${i})" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 256 256">
-                    <path fill="currentColor"
-                        d="M216 20H72a44.05 44.05 0 0 0-44 44v72a28 28 0 0 0 28 28h39.64L92 207v1a36 36 0 0 0 72 0v-1l-3.6-43H200a28 28 0 0 0 28-28V32a12 12 0 0 0-12-12M72 44h88v24a12 12 0 0 0 24 0V44h20v52H52V64a20 20 0 0 1 20-20m128 96h-44a20 20 0 0 0-19.85 22.4l3.84 46a12 12 0 0 1-24 0l3.84-46A20 20 0 0 0 100 140H56a4 4 0 0 1-4-4v-16h152v16a4 4 0 0 1-4 4" />
-                </svg>
-                <svg onclick="deleteSavedTheme(${i})" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
-                    <path fill="currentColor"
-                        d="M7 21q-.825 0-1.412-.587T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.587 1.413T17 21zm2-4h2V8H9zm4 0h2V8h-2z" />
-                </svg>
-            </div>
-        </div>`
-    }
+    updateSavedThemesHtml();
 });
 
 copyBtns[0].addEventListener('click', event => {
@@ -718,21 +696,50 @@ function applySavedTheme(i) {
     }
 }
 
+function updateSavedThemesHtml() {
+    let offest = document.documentElement.getAttribute('data-theme') == 'light' ? 0 : 1;
+    savedTab.innerHTML = '';
+    for (let i = 0; i < getNumberOfSavedThemes(); i++) {
+        let code = localStorage.getItem('theme-' + i).split('#');
+        savedTab.innerHTML += `
+        <div class="saved-theme">
+            <div class="pallete">
+                <div style="background-color:#${code[1 + offest]}"></div>
+                <div style="background-color:#${code[3 + offest]}"></div>
+                <div style="background-color:#${code[5 + offest]}"></div>
+                <div style="background-color:#${code[7 + offest]}"></div>
+                <div style="background-color:#${code[9 + offest]}"></div>
+            </div>
+            <div style="color: var(--border-highlight);" class="prevent-select">|</div>
+            <div class="pallete-ctrl">
+                <svg onclick="applySavedTheme(${i})" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 256 256">
+                    <path fill="currentColor"
+                        d="M216 20H72a44.05 44.05 0 0 0-44 44v72a28 28 0 0 0 28 28h39.64L92 207v1a36 36 0 0 0 72 0v-1l-3.6-43H200a28 28 0 0 0 28-28V32a12 12 0 0 0-12-12M72 44h88v24a12 12 0 0 0 24 0V44h20v52H52V64a20 20 0 0 1 20-20m128 96h-44a20 20 0 0 0-19.85 22.4l3.84 46a12 12 0 0 1-24 0l3.84-46A20 20 0 0 0 100 140H56a4 4 0 0 1-4-4v-16h152v16a4 4 0 0 1-4 4" />
+                </svg>
+                <svg onclick="deleteSavedTheme(${i})" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="M7 21q-.825 0-1.412-.587T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.587 1.413T17 21zm2-4h2V8H9zm4 0h2V8h-2z" />
+                </svg>
+            </div>
+        </div>`;
+    }
+}
+
 function deleteSavedTheme(i) {
-    document.querySelectorAll('.saved-theme')[i].remove();
+    const htmlTheme = document.querySelectorAll('.saved-theme')[i];
+    if (htmlTheme != null) { htmlTheme.remove(); }
     let p = getNumberOfSavedThemes();
     localStorage.removeItem('theme-' + i);
     for (let j = i + 1; j < p; j++) {
         localStorage.setItem('theme-' + (j - 1), localStorage.getItem('theme-' + j));
     }
     localStorage.removeItem('theme-' + (p - 1));
-    exportBtn.dispatchEvent(new Event('click', { niggers: true }));
+    updateSavedThemesHtml();
 }
 
 saveBtn.addEventListener('click', event => {
     if (!saveBtn.classList.contains('saved')) {
         saveBtn.classList.add('saved');
-        //  TODO: handle adding to storage
         let code = '';
         panels.forEach(panel => {
             let [h, s] = rootTheme.style.getPropertyValue('--' + panel + '-light').split("deg");
@@ -747,6 +754,9 @@ saveBtn.addEventListener('click', event => {
             code += hslToHex(h, s, l);
         });
         localStorage.setItem('theme-' + getNumberOfSavedThemes(), code);
+    } else {
+        saveBtn.classList.remove('saved');
+        deleteSavedTheme(getNumberOfSavedThemes() - 1);
     }
 });
 // saving

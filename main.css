@@ -773,7 +773,8 @@ footer {
 
 .background-svg {
     position: absolute;
-    transition: top ease-in-out 10ms;
+    transition: top ease 1000ms;
+    will-change: top;
 }
 /*parallax/*/
 
@@ -922,10 +923,6 @@ footer {
 #save-btn:hover svg {
     scale: 1.2;
     color: color-mix(in lab, var(--text1), #d4af37 70%);
-}
-#save-btn.saved:hover svg {
-    scale: 1;
-    color:#d4af37;
 }
 #save-btn.saved svg {color: #d4af37;}
 #save-btn.saved path:nth-child(2) {color: #d4af37;}
