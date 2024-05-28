@@ -297,267 +297,296 @@
             </div>
         </div>
         <div id="export-modal" class="hide">
-            <div class="scroll">
-                <pre>1   :root {</pre>
-                <pre>2       --shadow-elevation-low:</pre>
-                <pre>3           0.5px 0.6px 0.8px hsl(var(--shadow-color) / 0.15),</pre>
-                <pre>4           0.8px 1px 1.3px -1.6px hsl(var(--shadow-color) / 0.13),</pre>
-                <pre>5           2px 2.5px 3.2px -3.2px hsl(var(--shadow-color) / 0.1);</pre>
-                <pre>6       --shadow-elevation-medium:</pre>
-                <pre>7           0.5px 0.6px 0.8px hsl(var(--shadow-color) / 0.16),</pre>
-                <pre>8           1.4px 1.8px 2.3px -1.1px hsl(var(--shadow-color) / 0.14),</pre>
-                <pre>9           3.8px 4.9px 6.3px -2.2px hsl(var(--shadow-color) / 0.12),</pre>
-                <pre>10          10px 12.7px 16.4px -3.2px hsl(var(--shadow-color) / 0.1);</pre>
-                <pre>11      --shadow-elevation-high:</pre>
-                <pre>12          0.5px 0.6px 0.8px hsl(var(--shadow-color) / 0.14),</pre>
-                <pre>13          2.3px 2.9px 3.7px -0.5px hsl(var(--shadow-color) / 0.14),</pre>
-                <pre>14          4.5px 5.7px 7.4px -0.9px hsl(var(--shadow-color) / 0.13),</pre>
-                <pre>15          7.9px 10px 12.9px -1.4px hsl(var(--shadow-color) / 0.12),</pre>
-                <pre>16          13.5px 17.1px 22.1px -1.9px hsl(var(--shadow-color) / 0.11),</pre>
-                <pre>17          22.1px 28.1px 36.2px -2.3px hsl(var(--shadow-color) / 0.1),</pre>
-                <pre>18          34.8px 44.1px 56.9px -2.8px hsl(var(--shadow-color) / 0.09),</pre>
-                <pre>19          52.3px 66.3px 85.5px -3.2px hsl(var(--shadow-color) / 0.09);</pre>
-                <pre>20      --font: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont,</pre>
-                <pre>21          'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',</pre>
-                <pre>22          'Helvetica Neue', sans-serif;</pre>
-                <pre>23      --shadow-color: 0deg 0% 0%;</pre>
-                <pre>24      --text-light: 207deg 70%;</pre>
-                <pre>25      --text-dark: 207deg 70%;</pre>
-                <pre>26      --background-light: 240deg 60%;</pre>
-                <pre>27      --background-dark: 218deg 22%;</pre>
-                <pre>28      --primary-light: 344deg 70%;</pre>
-                <pre>29      --primary-dark: 344deg 75%;</pre>
-                <pre>30      --secondary-light: 263deg 60%;</pre>
-                <pre>31      --secondary-dark: 246deg 56%;</pre>
-                <pre>32      --accent-light: 206deg 86%;</pre>
-                <pre>33      --accent-dark: 190deg 65%;</pre>
-                <pre>34      /*///////////////////*/</pre>
-                <pre>35      --text-light-lit: 1;</pre>
-                <pre>36      --text-dark-lit: 1;</pre>
-                <pre>37      --background-light-lit: 1;</pre>
-                <pre>38      --background-dark-lit: 1;</pre>
-                <pre>39      --primary-light-lit: 1;</pre>
-                <pre>40      --primary-dark-lit: 1;</pre>
-                <pre>41      --secondary-light-lit: 1;</pre>
-                <pre>42      --secondary-dark-lit: 1;</pre>
-                <pre>43      --accent-light-lit: 1;</pre>
-                <pre>44      --accent-dark-lit: 1;</pre>
-                <pre>45      /*///////////////////*/</pre>
-                <pre>46      --txt-50: var(--text-light) calc(95% * var(--text-light-lit));</pre>
-                <pre>47      --txt-100: var(--text-light) calc(90% * var(--text-light-lit));</pre>
-                <pre>48      --txt-200: var(--text-light) calc(80% * var(--text-light-lit));</pre>
-                <pre>49      --txt-300: var(--text-light) calc(70% * var(--text-light-lit));</pre>
-                <pre>50      --txt-400: var(--text-light) calc(60% * var(--text-light-lit));</pre>
-                <pre>51      --txt-500: var(--text-light) calc(50% * var(--text-light-lit));</pre>
-                <pre>52      --txt-600: var(--text-light) calc(40% * var(--text-light-lit));</pre>
-                <pre>53      --txt-700: var(--text-light) calc(30% * var(--text-light-lit));</pre>
-                <pre>54      --txt-800: var(--text-light) calc(20% * var(--text-light-lit));</pre>
-                <pre>55      --txt-900: var(--text-light) calc(10% * var(--text-light-lit));</pre>
-                <pre>56      --txt-950: var(--text-light) calc(5% * var(--text-light-lit));</pre>
-                <pre>57      --txtd-50: var(--text-dark) calc(95% * var(--text-dark-lit));</pre>
-                <pre>58      --txtd-100: var(--text-dark) calc(90% * var(--text-dark-lit));</pre>
-                <pre>59      --txtd-200: var(--text-dark) calc(80% * var(--text-dark-lit));</pre>
-                <pre>60      --txtd-300: var(--text-dark) calc(70% * var(--text-dark-lit));</pre>
-                <pre>61      --txtd-400: var(--text-dark) calc(60% * var(--text-dark-lit));</pre>
-                <pre>62      --txtd-500: var(--text-dark) calc(50% * var(--text-dark-lit));</pre>
-                <pre>63      --txtd-600: var(--text-dark) calc(40% * var(--text-dark-lit));</pre>
-                <pre>64      --txtd-700: var(--text-dark) calc(30% * var(--text-dark-lit));</pre>
-                <pre>65      --txtd-800: var(--text-dark) calc(20% * var(--text-dark-lit));</pre>
-                <pre>66      --txtd-900: var(--text-dark) calc(10% * var(--text-dark-lit));</pre>
-                <pre>67      --txtd-950: var(--text-dark) calc(5% * var(--text-dark-lit));</pre>
-                <pre>68      /*///////////////////*/</pre>
-                <pre>69      --bgr-50: var(--background-light) calc(95% * var(--background-light-lit));</pre>
-                <pre>70      --bgr-100: var(--background-light) calc(90% * var(--background-light-lit));</pre>
-                <pre>71      --bgr-200: var(--background-light) calc(80% * var(--background-light-lit));</pre>
-                <pre>72      --bgr-300: var(--background-light) calc(70% * var(--background-light-lit));</pre>
-                <pre>73      --bgr-400: var(--background-light) calc(60% * var(--background-light-lit));</pre>
-                <pre>74      --bgr-500: var(--background-light) calc(50% * var(--background-light-lit));</pre>
-                <pre>75      --bgr-600: var(--background-light) calc(40% * var(--background-light-lit));</pre>
-                <pre>76      --bgr-700: var(--background-light) calc(30% * var(--background-light-lit));</pre>
-                <pre>77      --bgr-800: var(--background-light) calc(20% * var(--background-light-lit));</pre>
-                <pre>78      --bgr-900: var(--background-light) calc(10% * var(--background-light-lit));</pre>
-                <pre>79      --bgr-950: var(--background-light) calc(5% * var(--background-light-lit));  </pre>
-                <pre>80      --bgrd-50: var(--background-dark) calc(95% * var(--background-dark-lit));</pre>
-                <pre>81      --bgrd-100: var(--background-dark) calc(90% * var(--background-dark-lit));</pre>
-                <pre>82      --bgrd-200: var(--background-dark) calc(80% * var(--background-dark-lit));</pre>
-                <pre>83      --bgrd-300: var(--background-dark) calc(70% * var(--background-dark-lit));</pre>
-                <pre>84      --bgrd-400: var(--background-dark) calc(60% * var(--background-dark-lit));</pre>
-                <pre>85      --bgrd-500: var(--background-dark) calc(50% * var(--background-dark-lit));</pre>
-                <pre>86      --bgrd-600: var(--background-dark) calc(40% * var(--background-dark-lit));</pre>
-                <pre>87      --bgrd-700: var(--background-dark) calc(30% * var(--background-dark-lit));</pre>
-                <pre>88      --bgrd-800: var(--background-dark) calc(20% * var(--background-dark-lit));</pre>
-                <pre>89      --bgrd-900: var(--background-dark) calc(10% * var(--background-dark-lit));</pre>
-                <pre>90      --bgrd-950: var(--background-dark) calc(5% * var(--background-dark-lit));</pre>
-                <pre>91      /*///////////////////*/</pre>
-                <pre>92      --prim-50: var(--primary-light) calc(95% * var(--primary-light-lit));</pre>
-                <pre>93      --prim-100: var(--primary-light) calc(90% * var(--primary-light-lit));</pre>
-                <pre>94      --prim-200: var(--primary-light) calc(80% * var(--primary-light-lit));</pre>
-                <pre>95      --prim-300: var(--primary-light) calc(70% * var(--primary-light-lit));</pre>
-                <pre>96      --prim-400: var(--primary-light) calc(60% * var(--primary-light-lit));</pre>
-                <pre>97      --prim-500: var(--primary-light) calc(50% * var(--primary-light-lit));</pre>
-                <pre>98      --prim-600: var(--primary-light) calc(40% * var(--primary-light-lit));</pre>
-                <pre>99      --prim-700: var(--primary-light) calc(30% * var(--primary-light-lit));</pre>
-                <pre>100     --prim-800: var(--primary-light) calc(20% * var(--primary-light-lit));</pre>
-                <pre>101     --prim-900: var(--primary-light) calc(10% * var(--primary-light-lit));</pre>
-                <pre>102     --prim-950: var(--primary-light) calc(5% * var(--primary-light-lit));</pre>
-                <pre>103     --primd-50: var(--primary-dark) calc(95% * var(--primary-dark-lit));</pre>
-                <pre>104     --primd-100: var(--primary-dark) calc(90% * var(--primary-dark-lit));</pre>
-                <pre>105     --primd-200: var(--primary-dark) calc(80% * var(--primary-dark-lit));</pre>
-                <pre>106     --primd-300: var(--primary-dark) calc(70% * var(--primary-dark-lit));</pre>
-                <pre>107     --primd-400: var(--primary-dark) calc(60% * var(--primary-dark-lit));</pre>
-                <pre>108     --primd-500: var(--primary-dark) calc(50% * var(--primary-dark-lit));</pre>
-                <pre>109     --primd-600: var(--primary-dark) calc(40% * var(--primary-dark-lit));</pre>
-                <pre>110     --primd-700: var(--primary-dark) calc(30% * var(--primary-dark-lit));</pre>
-                <pre>111     --primd-800: var(--primary-dark) calc(20% * var(--primary-dark-lit));</pre>
-                <pre>112     --primd-900: var(--primary-dark) calc(10% * var(--primary-dark-lit));</pre>
-                <pre>113     --primd-950: var(--primary-dark) calc(5% * var(--primary-dark-lit));</pre>
-                <pre>114     /*///////////////////*/</pre>
-                <pre>115     --scnd-50: var(--secondary-light) calc(95% * var(--secondary-light-lit));</pre>
-                <pre>116     --scnd-100: var(--secondary-light) calc(90% * var(--secondary-light-lit));</pre>
-                <pre>117     --scnd-200: var(--secondary-light) calc(80% * var(--secondary-light-lit));</pre>
-                <pre>118     --scnd-300: var(--secondary-light) calc(70% * var(--secondary-light-lit));</pre>
-                <pre>119     --scnd-400: var(--secondary-light) calc(60% * var(--secondary-light-lit));</pre>
-                <pre>120     --scnd-500: var(--secondary-light) calc(50% * var(--secondary-light-lit));</pre>
-                <pre>121     --scnd-600: var(--secondary-light) calc(40% * var(--secondary-light-lit));</pre>
-                <pre>122     --scnd-700: var(--secondary-light) calc(30% * var(--secondary-light-lit));</pre>
-                <pre>123     --scnd-800: var(--secondary-light) calc(20% * var(--secondary-light-lit));</pre>
-                <pre>124     --scnd-900: var(--secondary-light) calc(10% * var(--secondary-light-lit));</pre>
-                <pre>125     --scnd-950: var(--secondary-light) calc(5% * var(--secondary-light-lit));</pre>
-                <pre>126     --scndd-50: var(--secondary-dark) calc(95% * var(--secondary-dark-lit));</pre>
-                <pre>127     --scndd-100: var(--secondary-dark) calc(90% * var(--secondary-dark-lit));</pre>
-                <pre>128     --scndd-200: var(--secondary-dark) calc(80% * var(--secondary-dark-lit));</pre>
-                <pre>129     --scndd-300: var(--secondary-dark) calc(70% * var(--secondary-dark-lit));</pre>
-                <pre>130     --scndd-400: var(--secondary-dark) calc(60% * var(--secondary-dark-lit));</pre>
-                <pre>131     --scndd-500: var(--secondary-dark) calc(50% * var(--secondary-dark-lit));</pre>
-                <pre>132     --scndd-600: var(--secondary-dark) calc(40% * var(--secondary-dark-lit));</pre>
-                <pre>133     --scndd-700: var(--secondary-dark) calc(30% * var(--secondary-dark-lit));</pre>
-                <pre>134     --scndd-800: var(--secondary-dark) calc(20% * var(--secondary-dark-lit));</pre>
-                <pre>135     --scndd-900: var(--secondary-dark) calc(10% * var(--secondary-dark-lit));</pre>
-                <pre>136     --scndd-950: var(--secondary-dark) calc(5% * var(--secondary-dark-lit));</pre>
-                <pre>137     /*///////////////////*/</pre>
-                <pre>138     --acnt-50: var(--accent-light) calc(95% * var(--accent-light-lit));</pre>
-                <pre>139     --acnt-100: var(--accent-light) calc(90% * var(--accent-light-lit));</pre>
-                <pre>140     --acnt-200: var(--accent-light) calc(80% * var(--accent-light-lit));</pre>
-                <pre>141     --acnt-300: var(--accent-light) calc(70% * var(--accent-light-lit));</pre>
-                <pre>142     --acnt-400: var(--accent-light) calc(60% * var(--accent-light-lit));</pre>
-                <pre>143     --acnt-500: var(--accent-light) calc(50% * var(--accent-light-lit));</pre>
-                <pre>144     --acnt-600: var(--accent-light) calc(40% * var(--accent-light-lit));</pre>
-                <pre>145     --acnt-700: var(--accent-light) calc(30% * var(--accent-light-lit));</pre>
-                <pre>146     --acnt-800: var(--accent-light) calc(20% * var(--accent-light-lit));</pre>
-                <pre>147     --acnt-900: var(--accent-light) calc(10% * var(--accent-light-lit));</pre>
-                <pre>148     --acnt-950: var(--accent-light) calc(5% * var(--accent-light-lit));</pre>
-                <pre>149     --acntd-50: var(--accent-dark) calc(95% * var(--accent-dark-lit));</pre>
-                <pre>150     --acntd-100: var(--accent-dark) calc(90% * var(--accent-dark-lit));</pre>
-                <pre>151     --acntd-200: var(--accent-dark) calc(80% * var(--accent-dark-lit));</pre>
-                <pre>152     --acntd-300: var(--accent-dark) calc(70% * var(--accent-dark-lit));</pre>
-                <pre>153     --acntd-400: var(--accent-dark) calc(60% * var(--accent-dark-lit));</pre>
-                <pre>154     --acntd-500: var(--accent-dark) calc(50% * var(--accent-dark-lit));</pre>
-                <pre>155     --acntd-600: var(--accent-dark) calc(40% * var(--accent-dark-lit));</pre>
-                <pre>156     --acntd-700: var(--accent-dark) calc(30% * var(--accent-dark-lit));</pre>
-                <pre>157     --acntd-800: var(--accent-dark) calc(20% * var(--accent-dark-lit));</pre>
-                <pre>158     --acntd-900: var(--accent-dark) calc(10% * var(--accent-dark-lit));</pre>
-                <pre>159     --acntd-950: var(--accent-dark) calc(5% * var(--accent-dark-lit));</pre>
-                <pre>160 }</pre>
+            <div id="tabs">
+                <div id="export-tab-selector" class="current-tab">Export</div>
+                <div style="color: var(--border-highlight)" class="prevent-select">|</div>
+                <div id="saved-tab-selector">Saved</div>
             </div>
-            <div id="css-holder" class="scroll">
-                <pre>1   :root[data-theme="light"] {</pre>
-                <pre>2       <span onmouseleave="resaturate()"onmouseenter="desaturate('border-highlight')">--border-highlight</span>: rgba(0, 0, 0, 0.2);</pre>
-                <pre>3       <span onmouseleave="resaturate()"onmouseenter="desaturate('background')">--background</span>: #fbfbfe;</pre>
-                <pre>4       <span onmouseleave="resaturate()"onmouseenter="desaturate('background0')">--background0</span>: hsl(var(--bgr-600));</pre>
-                <pre>5       <span onmouseleave="resaturate()"onmouseenter="desaturate('background1')">--background1</span>: hsl(var(--bgr-400));</pre>
-                <pre>6       <span onmouseleave="resaturate()"onmouseenter="desaturate('background2')">--background2</span>: hsl(var(--bgr-200));</pre>
-                <pre>7       <span onmouseleave="resaturate()"onmouseenter="desaturate('background-neut')">--background-neut</span>: hsl(var(--bgr-500));</pre>
-                <pre>8       <span onmouseleave="resaturate()"onmouseenter="desaturate('text1')">--text1</span>: hsl(var(--txt-900));</pre>
-                <pre>9       <span onmouseleave="resaturate()"onmouseenter="desaturate('tr-text1')">--tr-text1</span>: hsl(var(--txt-900)/ 50%);</pre>
-                <pre>10      <span onmouseleave="resaturate()"onmouseenter="desaturate('text2')">--text2</span>: hsl(var(--txt-900));</pre>
-                <pre>11      <span onmouseleave="resaturate()"onmouseenter="desaturate('text3')">--text3</span>: hsl(var(--txt-950));</pre>
-                <pre>12      <span onmouseleave="resaturate()"onmouseenter="desaturate('text4')">--text4</span>: hsl(var(--txt-50));</pre>
-                <pre>13      <span onmouseleave="resaturate()"onmouseenter="desaturate('text-neut')">--text-neut</span>: hsl(var(--txt-500));</pre>
-                <pre>14      <span onmouseleave="resaturate()"onmouseenter="desaturate('primary0')">--primary0</span>: hsl(var(--prim-700));</pre>
-                <pre>15      <span onmouseleave="resaturate()"onmouseenter="desaturate('primary1')">--primary1</span>: hsl(var(--prim-600));</pre>
-                <pre>16      <span onmouseleave="resaturate()"onmouseenter="desaturate('primary2')">--primary2</span>: hsl(var(--prim-500));</pre>
-                <pre>17      <span onmouseleave="resaturate()"onmouseenter="desaturate('primary3')">--primary3</span>: hsl(var(--prim-300));</pre>
-                <pre>18      <span onmouseleave="resaturate()"onmouseenter="desaturate('tr-primary3')">--tr-primary3</span>: hsl(var(--prim-300) / 0.2);</pre>
-                <pre>19      <span onmouseleave="resaturate()"onmouseenter="desaturate('primary4')">--primary4</span>: color-mix(in lab, hsl(var(--prim-200)), </pre>
-                <pre>20      hsl(1deg 35% 80%));</pre>
-                <pre>21      <span onmouseleave="resaturate()"onmouseenter="desaturate('primary-neut')">--primary-neut</span>: hsl(var(--prim-500));</pre>
-                <pre>22      <span onmouseleave="resaturate()"onmouseenter="desaturate('secondary1')">--secondary1</span>: hsl(var(--scnd-300));</pre>
-                <pre>23      <span onmouseleave="resaturate()"onmouseenter="desaturate('secondary2')">--secondary2</span>: hsl(var(--scnd-500));</pre>
-                <pre>24      <span onmouseleave="resaturate()"onmouseenter="desaturate('secondary3')">--secondary3</span>: hsl(var(--scnd-400));</pre>
-                <pre>25      <span onmouseleave="resaturate()"onmouseenter="desaturate('secondary-neut')">--secondary-neut</span>: hsl(var(--scnd-500));</pre>
-                <pre>26      <span onmouseleave="resaturate()"onmouseenter="desaturate('accent1')">--accent1</span>: hsl(var(--acnt-500));</pre>
-                <pre>27      <span onmouseleave="resaturate()"onmouseenter="desaturate('tr-accent1')">--tr-accent1</span>: hsl(var(--acnt-500)/ 0.3);</pre>
-                <pre>28      <span onmouseleave="resaturate()"onmouseenter="desaturate('accent2')">--accent2</span>: hsl(var(--acnt-100));</pre>
-                <pre>29      <span onmouseleave="resaturate()"onmouseenter="desaturate('accent3')">--accent3</span>: hsl(var(--acnt-500));</pre>
-                <pre>30      <span onmouseleave="resaturate()"onmouseenter="desaturate('accent4')">--accent4</span>: hsl(var(--acnt-200));</pre>
-                <pre>31      <span onmouseleave="resaturate()"onmouseenter="desaturate('accent-neut')">--accent-neut</span>: hsl(var(--acnt-500));</pre>
-                <pre>32      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-primary0')">--gls-primary0</span>: hsl(var(--prim-700)/ 0.2);</pre>
-                <pre>33      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-primary0-br')">--gls-primary0-br</span>: hsl(var(--prim-700)/ 0.3);</pre>
-                <pre>34      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-primary1')">--gls-primary1</span>: hsl(var(--prim-600)/ 0.2);</pre>
-                <pre>35      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-primary1-br')">--gls-primary1-br</span>: hsl(var(--prim-600)/ 0.3);</pre>
-                <pre>36      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-primary2')">--gls-primary2</span>: hsl(var(--prim-500)/ 0.2);</pre>
-                <pre>37      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-primary2-br')">--gls-primary2-br</span>: hsl(var(--prim-500)/ 0.3);</pre>
-                <pre>38      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-secondary1')">--gls-secondary1</span>: hsl(var(--scnd-300)/ 0.2);</pre>
-                <pre>39      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-secondary1-br')">--gls-secondary1-br</span>: hsl(var(--scnd-300)/ 0.3);</pre>
-                <pre>40      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-secondary2')">--gls-secondary2</span>: hsl(var(--scnd-500)/ 0.2);</pre>
-                <pre>41      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-secondary2-br')">--gls-secondary2-br</span>: hsl(var(--scnd-500)/ 0.3);</pre>
-                <pre>42      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-accent1')">--gls-accent1</span>: hsl(var(--acnt-500)/ 0.2);</pre>
-                <pre>43      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-accent1-br')">--gls-accent1-br</span>: hsl(var(--acnt-500)/ 0.3);</pre>
-                <pre>44  }</pre>
-                <pre>45  /*///////////////////*/</pre>
-                <pre>46  :root[data-theme="dark"] {</pre>
-                <pre>47      <span onmouseleave="resaturate()"onmouseenter="desaturate('border-highlight')">--border-highlight</span>: rgba(255, 255, 255, 0.2);</pre>
-                <pre>48      <span onmouseleave="resaturate()"onmouseenter="desaturate('background')">--background</span>: #0E1116;</pre>
-                <pre>49      <span onmouseleave="resaturate()"onmouseenter="desaturate('background0')">--background0</span>: hsl(var(--bgrd-400));</pre>
-                <pre>50      <span onmouseleave="resaturate()"onmouseenter="desaturate('background1')">--background1</span>: hsl(var(--bgrd-600));</pre>
-                <pre>51      <span onmouseleave="resaturate()"onmouseenter="desaturate('background2')">--background2</span>: hsl(var(--bgrd-800));</pre>
-                <pre>52      <span onmouseleave="resaturate()"onmouseenter="desaturate('background-neut')">--background-neut</span>: hsl(var(--bgrd-500));</pre>
-                <pre>53      <span onmouseleave="resaturate()"onmouseenter="desaturate('text1')">--text1</span>: hsl(var(--txtd-50));</pre>
-                <pre>54      <span onmouseleave="resaturate()"onmouseenter="desaturate('tr-text1')">--tr-text1</span>: hsl(var(--txtd-50)/ 50%);</pre>
-                <pre>55      <span onmouseleave="resaturate()"onmouseenter="desaturate('text2')">--text2</span>: hsl(var(--txtd-200));</pre>
-                <pre>56      <span onmouseleave="resaturate()"onmouseenter="desaturate('text3')">--text3</span>: hsl(var(--txtd-900));</pre>
-                <pre>57      <span onmouseleave="resaturate()"onmouseenter="desaturate('text4')">--text4</span>: hsl(var(--txtd-900));</pre>
-                <pre>58      <span onmouseleave="resaturate()"onmouseenter="desaturate('text-neut')">--text-neut</span>: hsl(var(--txtd-500));</pre>
-                <pre>59      <span onmouseleave="resaturate()"onmouseenter="desaturate('primary0')">--primary0</span>: hsl(var(--primd-700));</pre>
-                <pre>60      <span onmouseleave="resaturate()"onmouseenter="desaturate('primary1')">--primary1</span>: hsl(var(--primd-600));</pre>
-                <pre>61      <span onmouseleave="resaturate()"onmouseenter="desaturate('primary2')">--primary2</span>: hsl(var(--primd-500));</pre>
-                <pre>62      <span onmouseleave="resaturate()"onmouseenter="desaturate('primary3')">--primary3</span>: hsl(var(--primd-300));</pre>
-                <pre>63      <span onmouseleave="resaturate()"onmouseenter="desaturate('tr-primary3')">--tr-primary3</span>: hsl(var(--primd-300)/ 0.2);</pre>
-                <pre>64      <span onmouseleave="resaturate()"onmouseenter="desaturate('primary4')">--primary4</span>: color-mix(in lab, hsl(var(--primd-600)),</pre>
-                <pre>65      hsl(1deg 35% 40%));</pre>
-                <pre>66      <span onmouseleave="resaturate()"onmouseenter="desaturate('primary-neut')">--primary-neut</span>: hsl(var(--primd-500));</pre>
-                <pre>67      <span onmouseleave="resaturate()"onmouseenter="desaturate('secondary1')">--secondary1</span>: hsl(var(--scndd-400));</pre>
-                <pre>68      <span onmouseleave="resaturate()"onmouseenter="desaturate('secondary2')">--secondary2</span>: hsl(var(--scndd-500));</pre>
-                <pre>69      <span onmouseleave="resaturate()"onmouseenter="desaturate('secondary3')">--secondary3</span>: hsl(var(--scndd-600));</pre>
-                <pre>70      <span onmouseleave="resaturate()"onmouseenter="desaturate('secondary-neut')">--secondary-neut</span>: hsl(var(--scndd-500));</pre>
-                <pre>71      <span onmouseleave="resaturate()"onmouseenter="desaturate('accent1')">--accent1</span>: hsl(var(--acntd-400));</pre>
-                <pre>72      <span onmouseleave="resaturate()"onmouseenter="desaturate('tr-accent1')">--tr-accent1</span>: hsl(var(--acntd-400)/ 0.3);</pre>
-                <pre>73      <span onmouseleave="resaturate()"onmouseenter="desaturate('accent2')">--accent2</span>: hsl(var(--acntd-900));</pre>
-                <pre>74      <span onmouseleave="resaturate()"onmouseenter="desaturate('accent3')">--accent3</span>: hsl(var(--acntd-500));</pre>
-                <pre>75      <span onmouseleave="resaturate()"onmouseenter="desaturate('accent4')">--accent4</span>: hsl(var(--acntd-800));</pre>
-                <pre>76      <span onmouseleave="resaturate()"onmouseenter="desaturate('accent-neut')">--accent-neut</span>: hsl(var(--acntd-500));</pre>
-                <pre>77      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-primary0')">--gls-primary0</span>: hsl(var(--primd-700)/ 0.2);</pre>
-                <pre>78      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-primary0-br')">--gls-primary0-br</span>: hsl(var(--primd-700)/ 0.3);</pre>
-                <pre>79      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-primary1')">--gls-primary1</span>: hsl(var(--primd-600)/ 0.2);</pre>
-                <pre>80      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-primary1-br')">--gls-primary1-br</span>: hsl(var(--primd-600)/ 0.3);</pre>
-                <pre>81      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-primary2')">--gls-primary2</span>: hsl(var(--primd-500)/ 0.2);</pre>
-                <pre>82      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-primary2-br')">--gls-primary2-br</span>: hsl(var(--primd-500)/ 0.3);</pre>
-                <pre>83      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-secondary1')">--gls-secondary1</span>: hsl(var(--scndd-400)/ 0.2);</pre>
-                <pre>84      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-secondary1-br')">--gls-secondary1-br</span>: hsl(var(--scndd-400)/ 0.3);</pre>
-                <pre>85      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-secondary2')">--gls-secondary2</span>: hsl(var(--scndd-500)/ 0.2);</pre>
-                <pre>86      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-secondary2-br')">--gls-secondary2-br</span>: hsl(var(--scndd-500)/ 0.3);</pre>
-                <pre>87      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-accent1')">--gls-accent1</span>: hsl(var(--acntd-400)/ 0.2);</pre>
-                <pre>88      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-accent1-br')">--gls-accent1-br</span>: hsl(var(--acntd-400)/ 0.3);</pre>
-                <pre>89  }</pre>
+            <div id="export-tab">
+                <div class="scroll">
+                    <pre>1   :root {</pre>
+                    <pre>2       --shadow-elevation-low:</pre>
+                    <pre>3           0.5px 0.6px 0.8px hsl(var(--shadow-color) / 0.15),</pre>
+                    <pre>4           0.8px 1px 1.3px -1.6px hsl(var(--shadow-color) / 0.13),</pre>
+                    <pre>5           2px 2.5px 3.2px -3.2px hsl(var(--shadow-color) / 0.1);</pre>
+                    <pre>6       --shadow-elevation-medium:</pre>
+                    <pre>7           0.5px 0.6px 0.8px hsl(var(--shadow-color) / 0.16),</pre>
+                    <pre>8           1.4px 1.8px 2.3px -1.1px hsl(var(--shadow-color) / 0.14),</pre>
+                    <pre>9           3.8px 4.9px 6.3px -2.2px hsl(var(--shadow-color) / 0.12),</pre>
+                    <pre>10          10px 12.7px 16.4px -3.2px hsl(var(--shadow-color) / 0.1);</pre>
+                    <pre>11      --shadow-elevation-high:</pre>
+                    <pre>12          0.5px 0.6px 0.8px hsl(var(--shadow-color) / 0.14),</pre>
+                    <pre>13          2.3px 2.9px 3.7px -0.5px hsl(var(--shadow-color) / 0.14),</pre>
+                    <pre>14          4.5px 5.7px 7.4px -0.9px hsl(var(--shadow-color) / 0.13),</pre>
+                    <pre>15          7.9px 10px 12.9px -1.4px hsl(var(--shadow-color) / 0.12),</pre>
+                    <pre>16          13.5px 17.1px 22.1px -1.9px hsl(var(--shadow-color) / 0.11),</pre>
+                    <pre>17          22.1px 28.1px 36.2px -2.3px hsl(var(--shadow-color) / 0.1),</pre>
+                    <pre>18          34.8px 44.1px 56.9px -2.8px hsl(var(--shadow-color) / 0.09),</pre>
+                    <pre>19          52.3px 66.3px 85.5px -3.2px hsl(var(--shadow-color) / 0.09);</pre>
+                    <pre>20      --font: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont,</pre>
+                    <pre>21          'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',</pre>
+                    <pre>22          'Helvetica Neue', sans-serif;</pre>
+                    <pre>23      --shadow-color: 0deg 0% 0%;</pre>
+                    <pre>24      --text-light: 207deg 70%;</pre>
+                    <pre>25      --text-dark: 207deg 70%;</pre>
+                    <pre>26      --background-light: 240deg 60%;</pre>
+                    <pre>27      --background-dark: 218deg 22%;</pre>
+                    <pre>28      --primary-light: 344deg 70%;</pre>
+                    <pre>29      --primary-dark: 344deg 75%;</pre>
+                    <pre>30      --secondary-light: 263deg 60%;</pre>
+                    <pre>31      --secondary-dark: 246deg 56%;</pre>
+                    <pre>32      --accent-light: 206deg 86%;</pre>
+                    <pre>33      --accent-dark: 190deg 65%;</pre>
+                    <pre>34      /*///////////////////*/</pre>
+                    <pre>35      --text-light-lit: 1;</pre>
+                    <pre>36      --text-dark-lit: 1;</pre>
+                    <pre>37      --background-light-lit: 1;</pre>
+                    <pre>38      --background-dark-lit: 1;</pre>
+                    <pre>39      --primary-light-lit: 1;</pre>
+                    <pre>40      --primary-dark-lit: 1;</pre>
+                    <pre>41      --secondary-light-lit: 1;</pre>
+                    <pre>42      --secondary-dark-lit: 1;</pre>
+                    <pre>43      --accent-light-lit: 1;</pre>
+                    <pre>44      --accent-dark-lit: 1;</pre>
+                    <pre>45      /*///////////////////*/</pre>
+                    <pre>46      --txt-50: var(--text-light) calc(95% * var(--text-light-lit));</pre>
+                    <pre>47      --txt-100: var(--text-light) calc(90% * var(--text-light-lit));</pre>
+                    <pre>48      --txt-200: var(--text-light) calc(80% * var(--text-light-lit));</pre>
+                    <pre>49      --txt-300: var(--text-light) calc(70% * var(--text-light-lit));</pre>
+                    <pre>50      --txt-400: var(--text-light) calc(60% * var(--text-light-lit));</pre>
+                    <pre>51      --txt-500: var(--text-light) calc(50% * var(--text-light-lit));</pre>
+                    <pre>52      --txt-600: var(--text-light) calc(40% * var(--text-light-lit));</pre>
+                    <pre>53      --txt-700: var(--text-light) calc(30% * var(--text-light-lit));</pre>
+                    <pre>54      --txt-800: var(--text-light) calc(20% * var(--text-light-lit));</pre>
+                    <pre>55      --txt-900: var(--text-light) calc(10% * var(--text-light-lit));</pre>
+                    <pre>56      --txt-950: var(--text-light) calc(5% * var(--text-light-lit));</pre>
+                    <pre>57      --txtd-50: var(--text-dark) calc(95% * var(--text-dark-lit));</pre>
+                    <pre>58      --txtd-100: var(--text-dark) calc(90% * var(--text-dark-lit));</pre>
+                    <pre>59      --txtd-200: var(--text-dark) calc(80% * var(--text-dark-lit));</pre>
+                    <pre>60      --txtd-300: var(--text-dark) calc(70% * var(--text-dark-lit));</pre>
+                    <pre>61      --txtd-400: var(--text-dark) calc(60% * var(--text-dark-lit));</pre>
+                    <pre>62      --txtd-500: var(--text-dark) calc(50% * var(--text-dark-lit));</pre>
+                    <pre>63      --txtd-600: var(--text-dark) calc(40% * var(--text-dark-lit));</pre>
+                    <pre>64      --txtd-700: var(--text-dark) calc(30% * var(--text-dark-lit));</pre>
+                    <pre>65      --txtd-800: var(--text-dark) calc(20% * var(--text-dark-lit));</pre>
+                    <pre>66      --txtd-900: var(--text-dark) calc(10% * var(--text-dark-lit));</pre>
+                    <pre>67      --txtd-950: var(--text-dark) calc(5% * var(--text-dark-lit));</pre>
+                    <pre>68      /*///////////////////*/</pre>
+                    <pre>69      --bgr-50: var(--background-light) calc(95% * var(--background-light-lit));</pre>
+                    <pre>70      --bgr-100: var(--background-light) calc(90% * var(--background-light-lit));</pre>
+                    <pre>71      --bgr-200: var(--background-light) calc(80% * var(--background-light-lit));</pre>
+                    <pre>72      --bgr-300: var(--background-light) calc(70% * var(--background-light-lit));</pre>
+                    <pre>73      --bgr-400: var(--background-light) calc(60% * var(--background-light-lit));</pre>
+                    <pre>74      --bgr-500: var(--background-light) calc(50% * var(--background-light-lit));</pre>
+                    <pre>75      --bgr-600: var(--background-light) calc(40% * var(--background-light-lit));</pre>
+                    <pre>76      --bgr-700: var(--background-light) calc(30% * var(--background-light-lit));</pre>
+                    <pre>77      --bgr-800: var(--background-light) calc(20% * var(--background-light-lit));</pre>
+                    <pre>78      --bgr-900: var(--background-light) calc(10% * var(--background-light-lit));</pre>
+                    <pre>79      --bgr-950: var(--background-light) calc(5% * var(--background-light-lit));  </pre>
+                    <pre>80      --bgrd-50: var(--background-dark) calc(95% * var(--background-dark-lit));</pre>
+                    <pre>81      --bgrd-100: var(--background-dark) calc(90% * var(--background-dark-lit));</pre>
+                    <pre>82      --bgrd-200: var(--background-dark) calc(80% * var(--background-dark-lit));</pre>
+                    <pre>83      --bgrd-300: var(--background-dark) calc(70% * var(--background-dark-lit));</pre>
+                    <pre>84      --bgrd-400: var(--background-dark) calc(60% * var(--background-dark-lit));</pre>
+                    <pre>85      --bgrd-500: var(--background-dark) calc(50% * var(--background-dark-lit));</pre>
+                    <pre>86      --bgrd-600: var(--background-dark) calc(40% * var(--background-dark-lit));</pre>
+                    <pre>87      --bgrd-700: var(--background-dark) calc(30% * var(--background-dark-lit));</pre>
+                    <pre>88      --bgrd-800: var(--background-dark) calc(20% * var(--background-dark-lit));</pre>
+                    <pre>89      --bgrd-900: var(--background-dark) calc(10% * var(--background-dark-lit));</pre>
+                    <pre>90      --bgrd-950: var(--background-dark) calc(5% * var(--background-dark-lit));</pre>
+                    <pre>91      /*///////////////////*/</pre>
+                    <pre>92      --prim-50: var(--primary-light) calc(95% * var(--primary-light-lit));</pre>
+                    <pre>93      --prim-100: var(--primary-light) calc(90% * var(--primary-light-lit));</pre>
+                    <pre>94      --prim-200: var(--primary-light) calc(80% * var(--primary-light-lit));</pre>
+                    <pre>95      --prim-300: var(--primary-light) calc(70% * var(--primary-light-lit));</pre>
+                    <pre>96      --prim-400: var(--primary-light) calc(60% * var(--primary-light-lit));</pre>
+                    <pre>97      --prim-500: var(--primary-light) calc(50% * var(--primary-light-lit));</pre>
+                    <pre>98      --prim-600: var(--primary-light) calc(40% * var(--primary-light-lit));</pre>
+                    <pre>99      --prim-700: var(--primary-light) calc(30% * var(--primary-light-lit));</pre>
+                    <pre>100     --prim-800: var(--primary-light) calc(20% * var(--primary-light-lit));</pre>
+                    <pre>101     --prim-900: var(--primary-light) calc(10% * var(--primary-light-lit));</pre>
+                    <pre>102     --prim-950: var(--primary-light) calc(5% * var(--primary-light-lit));</pre>
+                    <pre>103     --primd-50: var(--primary-dark) calc(95% * var(--primary-dark-lit));</pre>
+                    <pre>104     --primd-100: var(--primary-dark) calc(90% * var(--primary-dark-lit));</pre>
+                    <pre>105     --primd-200: var(--primary-dark) calc(80% * var(--primary-dark-lit));</pre>
+                    <pre>106     --primd-300: var(--primary-dark) calc(70% * var(--primary-dark-lit));</pre>
+                    <pre>107     --primd-400: var(--primary-dark) calc(60% * var(--primary-dark-lit));</pre>
+                    <pre>108     --primd-500: var(--primary-dark) calc(50% * var(--primary-dark-lit));</pre>
+                    <pre>109     --primd-600: var(--primary-dark) calc(40% * var(--primary-dark-lit));</pre>
+                    <pre>110     --primd-700: var(--primary-dark) calc(30% * var(--primary-dark-lit));</pre>
+                    <pre>111     --primd-800: var(--primary-dark) calc(20% * var(--primary-dark-lit));</pre>
+                    <pre>112     --primd-900: var(--primary-dark) calc(10% * var(--primary-dark-lit));</pre>
+                    <pre>113     --primd-950: var(--primary-dark) calc(5% * var(--primary-dark-lit));</pre>
+                    <pre>114     /*///////////////////*/</pre>
+                    <pre>115     --scnd-50: var(--secondary-light) calc(95% * var(--secondary-light-lit));</pre>
+                    <pre>116     --scnd-100: var(--secondary-light) calc(90% * var(--secondary-light-lit));</pre>
+                    <pre>117     --scnd-200: var(--secondary-light) calc(80% * var(--secondary-light-lit));</pre>
+                    <pre>118     --scnd-300: var(--secondary-light) calc(70% * var(--secondary-light-lit));</pre>
+                    <pre>119     --scnd-400: var(--secondary-light) calc(60% * var(--secondary-light-lit));</pre>
+                    <pre>120     --scnd-500: var(--secondary-light) calc(50% * var(--secondary-light-lit));</pre>
+                    <pre>121     --scnd-600: var(--secondary-light) calc(40% * var(--secondary-light-lit));</pre>
+                    <pre>122     --scnd-700: var(--secondary-light) calc(30% * var(--secondary-light-lit));</pre>
+                    <pre>123     --scnd-800: var(--secondary-light) calc(20% * var(--secondary-light-lit));</pre>
+                    <pre>124     --scnd-900: var(--secondary-light) calc(10% * var(--secondary-light-lit));</pre>
+                    <pre>125     --scnd-950: var(--secondary-light) calc(5% * var(--secondary-light-lit));</pre>
+                    <pre>126     --scndd-50: var(--secondary-dark) calc(95% * var(--secondary-dark-lit));</pre>
+                    <pre>127     --scndd-100: var(--secondary-dark) calc(90% * var(--secondary-dark-lit));</pre>
+                    <pre>128     --scndd-200: var(--secondary-dark) calc(80% * var(--secondary-dark-lit));</pre>
+                    <pre>129     --scndd-300: var(--secondary-dark) calc(70% * var(--secondary-dark-lit));</pre>
+                    <pre>130     --scndd-400: var(--secondary-dark) calc(60% * var(--secondary-dark-lit));</pre>
+                    <pre>131     --scndd-500: var(--secondary-dark) calc(50% * var(--secondary-dark-lit));</pre>
+                    <pre>132     --scndd-600: var(--secondary-dark) calc(40% * var(--secondary-dark-lit));</pre>
+                    <pre>133     --scndd-700: var(--secondary-dark) calc(30% * var(--secondary-dark-lit));</pre>
+                    <pre>134     --scndd-800: var(--secondary-dark) calc(20% * var(--secondary-dark-lit));</pre>
+                    <pre>135     --scndd-900: var(--secondary-dark) calc(10% * var(--secondary-dark-lit));</pre>
+                    <pre>136     --scndd-950: var(--secondary-dark) calc(5% * var(--secondary-dark-lit));</pre>
+                    <pre>137     /*///////////////////*/</pre>
+                    <pre>138     --acnt-50: var(--accent-light) calc(95% * var(--accent-light-lit));</pre>
+                    <pre>139     --acnt-100: var(--accent-light) calc(90% * var(--accent-light-lit));</pre>
+                    <pre>140     --acnt-200: var(--accent-light) calc(80% * var(--accent-light-lit));</pre>
+                    <pre>141     --acnt-300: var(--accent-light) calc(70% * var(--accent-light-lit));</pre>
+                    <pre>142     --acnt-400: var(--accent-light) calc(60% * var(--accent-light-lit));</pre>
+                    <pre>143     --acnt-500: var(--accent-light) calc(50% * var(--accent-light-lit));</pre>
+                    <pre>144     --acnt-600: var(--accent-light) calc(40% * var(--accent-light-lit));</pre>
+                    <pre>145     --acnt-700: var(--accent-light) calc(30% * var(--accent-light-lit));</pre>
+                    <pre>146     --acnt-800: var(--accent-light) calc(20% * var(--accent-light-lit));</pre>
+                    <pre>147     --acnt-900: var(--accent-light) calc(10% * var(--accent-light-lit));</pre>
+                    <pre>148     --acnt-950: var(--accent-light) calc(5% * var(--accent-light-lit));</pre>
+                    <pre>149     --acntd-50: var(--accent-dark) calc(95% * var(--accent-dark-lit));</pre>
+                    <pre>150     --acntd-100: var(--accent-dark) calc(90% * var(--accent-dark-lit));</pre>
+                    <pre>151     --acntd-200: var(--accent-dark) calc(80% * var(--accent-dark-lit));</pre>
+                    <pre>152     --acntd-300: var(--accent-dark) calc(70% * var(--accent-dark-lit));</pre>
+                    <pre>153     --acntd-400: var(--accent-dark) calc(60% * var(--accent-dark-lit));</pre>
+                    <pre>154     --acntd-500: var(--accent-dark) calc(50% * var(--accent-dark-lit));</pre>
+                    <pre>155     --acntd-600: var(--accent-dark) calc(40% * var(--accent-dark-lit));</pre>
+                    <pre>156     --acntd-700: var(--accent-dark) calc(30% * var(--accent-dark-lit));</pre>
+                    <pre>157     --acntd-800: var(--accent-dark) calc(20% * var(--accent-dark-lit));</pre>
+                    <pre>158     --acntd-900: var(--accent-dark) calc(10% * var(--accent-dark-lit));</pre>
+                    <pre>159     --acntd-950: var(--accent-dark) calc(5% * var(--accent-dark-lit));</pre>
+                    <pre>160 }</pre>
+                </div>
+                <div id="css-holder" class="scroll">
+                    <pre>1   :root[data-theme="light"] {</pre>
+                    <pre>2       <span onmouseleave="resaturate()"onmouseenter="desaturate('border-highlight')">--border-highlight</span>: rgba(0, 0, 0, 0.2);</pre>
+                    <pre>3       <span onmouseleave="resaturate()"onmouseenter="desaturate('background')">--background</span>: #fbfbfe;</pre>
+                    <pre>4       <span onmouseleave="resaturate()"onmouseenter="desaturate('background0')">--background0</span>: hsl(var(--bgr-600));</pre>
+                    <pre>5       <span onmouseleave="resaturate()"onmouseenter="desaturate('background1')">--background1</span>: hsl(var(--bgr-400));</pre>
+                    <pre>6       <span onmouseleave="resaturate()"onmouseenter="desaturate('background2')">--background2</span>: hsl(var(--bgr-200));</pre>
+                    <pre>7       <span onmouseleave="resaturate()"onmouseenter="desaturate('background-neut')">--background-neut</span>: hsl(var(--bgr-500));</pre>
+                    <pre>8       <span onmouseleave="resaturate()"onmouseenter="desaturate('text1')">--text1</span>: hsl(var(--txt-900));</pre>
+                    <pre>9       <span onmouseleave="resaturate()"onmouseenter="desaturate('tr-text1')">--tr-text1</span>: hsl(var(--txt-900)/ 50%);</pre>
+                    <pre>10      <span onmouseleave="resaturate()"onmouseenter="desaturate('text2')">--text2</span>: hsl(var(--txt-900));</pre>
+                    <pre>11      <span onmouseleave="resaturate()"onmouseenter="desaturate('text3')">--text3</span>: hsl(var(--txt-950));</pre>
+                    <pre>12      <span onmouseleave="resaturate()"onmouseenter="desaturate('text4')">--text4</span>: hsl(var(--txt-50));</pre>
+                    <pre>13      <span onmouseleave="resaturate()"onmouseenter="desaturate('text-neut')">--text-neut</span>: hsl(var(--txt-500));</pre>
+                    <pre>14      <span onmouseleave="resaturate()"onmouseenter="desaturate('primary0')">--primary0</span>: hsl(var(--prim-700));</pre>
+                    <pre>15      <span onmouseleave="resaturate()"onmouseenter="desaturate('primary1')">--primary1</span>: hsl(var(--prim-600));</pre>
+                    <pre>16      <span onmouseleave="resaturate()"onmouseenter="desaturate('primary2')">--primary2</span>: hsl(var(--prim-500));</pre>
+                    <pre>17      <span onmouseleave="resaturate()"onmouseenter="desaturate('primary3')">--primary3</span>: hsl(var(--prim-300));</pre>
+                    <pre>18      <span onmouseleave="resaturate()"onmouseenter="desaturate('tr-primary3')">--tr-primary3</span>: hsl(var(--prim-300) / 0.2);</pre>
+                    <pre>19      <span onmouseleave="resaturate()"onmouseenter="desaturate('primary4')">--primary4</span>: color-mix(in lab, hsl(var(--prim-200)), </pre>
+                    <pre>20      hsl(1deg 35% 80%));</pre>
+                    <pre>21      <span onmouseleave="resaturate()"onmouseenter="desaturate('primary-neut')">--primary-neut</span>: hsl(var(--prim-500));</pre>
+                    <pre>22      <span onmouseleave="resaturate()"onmouseenter="desaturate('secondary1')">--secondary1</span>: hsl(var(--scnd-300));</pre>
+                    <pre>23      <span onmouseleave="resaturate()"onmouseenter="desaturate('secondary2')">--secondary2</span>: hsl(var(--scnd-500));</pre>
+                    <pre>24      <span onmouseleave="resaturate()"onmouseenter="desaturate('secondary3')">--secondary3</span>: hsl(var(--scnd-400));</pre>
+                    <pre>25      <span onmouseleave="resaturate()"onmouseenter="desaturate('secondary-neut')">--secondary-neut</span>: hsl(var(--scnd-500));</pre>
+                    <pre>26      <span onmouseleave="resaturate()"onmouseenter="desaturate('accent1')">--accent1</span>: hsl(var(--acnt-500));</pre>
+                    <pre>27      <span onmouseleave="resaturate()"onmouseenter="desaturate('tr-accent1')">--tr-accent1</span>: hsl(var(--acnt-500)/ 0.3);</pre>
+                    <pre>28      <span onmouseleave="resaturate()"onmouseenter="desaturate('accent2')">--accent2</span>: hsl(var(--acnt-100));</pre>
+                    <pre>29      <span onmouseleave="resaturate()"onmouseenter="desaturate('accent3')">--accent3</span>: hsl(var(--acnt-500));</pre>
+                    <pre>30      <span onmouseleave="resaturate()"onmouseenter="desaturate('accent4')">--accent4</span>: hsl(var(--acnt-200));</pre>
+                    <pre>31      <span onmouseleave="resaturate()"onmouseenter="desaturate('accent-neut')">--accent-neut</span>: hsl(var(--acnt-500));</pre>
+                    <pre>32      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-primary0')">--gls-primary0</span>: hsl(var(--prim-700)/ 0.2);</pre>
+                    <pre>33      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-primary0-br')">--gls-primary0-br</span>: hsl(var(--prim-700)/ 0.3);</pre>
+                    <pre>34      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-primary1')">--gls-primary1</span>: hsl(var(--prim-600)/ 0.2);</pre>
+                    <pre>35      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-primary1-br')">--gls-primary1-br</span>: hsl(var(--prim-600)/ 0.3);</pre>
+                    <pre>36      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-primary2')">--gls-primary2</span>: hsl(var(--prim-500)/ 0.2);</pre>
+                    <pre>37      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-primary2-br')">--gls-primary2-br</span>: hsl(var(--prim-500)/ 0.3);</pre>
+                    <pre>38      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-secondary1')">--gls-secondary1</span>: hsl(var(--scnd-300)/ 0.2);</pre>
+                    <pre>39      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-secondary1-br')">--gls-secondary1-br</span>: hsl(var(--scnd-300)/ 0.3);</pre>
+                    <pre>40      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-secondary2')">--gls-secondary2</span>: hsl(var(--scnd-500)/ 0.2);</pre>
+                    <pre>41      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-secondary2-br')">--gls-secondary2-br</span>: hsl(var(--scnd-500)/ 0.3);</pre>
+                    <pre>42      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-accent1')">--gls-accent1</span>: hsl(var(--acnt-500)/ 0.2);</pre>
+                    <pre>43      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-accent1-br')">--gls-accent1-br</span>: hsl(var(--acnt-500)/ 0.3);</pre>
+                    <pre>44  }</pre>
+                    <pre>45  /*///////////////////*/</pre>
+                    <pre>46  :root[data-theme="dark"] {</pre>
+                    <pre>47      <span onmouseleave="resaturate()"onmouseenter="desaturate('border-highlight')">--border-highlight</span>: rgba(255, 255, 255, 0.2);</pre>
+                    <pre>48      <span onmouseleave="resaturate()"onmouseenter="desaturate('background')">--background</span>: #0E1116;</pre>
+                    <pre>49      <span onmouseleave="resaturate()"onmouseenter="desaturate('background0')">--background0</span>: hsl(var(--bgrd-400));</pre>
+                    <pre>50      <span onmouseleave="resaturate()"onmouseenter="desaturate('background1')">--background1</span>: hsl(var(--bgrd-600));</pre>
+                    <pre>51      <span onmouseleave="resaturate()"onmouseenter="desaturate('background2')">--background2</span>: hsl(var(--bgrd-800));</pre>
+                    <pre>52      <span onmouseleave="resaturate()"onmouseenter="desaturate('background-neut')">--background-neut</span>: hsl(var(--bgrd-500));</pre>
+                    <pre>53      <span onmouseleave="resaturate()"onmouseenter="desaturate('text1')">--text1</span>: hsl(var(--txtd-50));</pre>
+                    <pre>54      <span onmouseleave="resaturate()"onmouseenter="desaturate('tr-text1')">--tr-text1</span>: hsl(var(--txtd-50)/ 50%);</pre>
+                    <pre>55      <span onmouseleave="resaturate()"onmouseenter="desaturate('text2')">--text2</span>: hsl(var(--txtd-200));</pre>
+                    <pre>56      <span onmouseleave="resaturate()"onmouseenter="desaturate('text3')">--text3</span>: hsl(var(--txtd-900));</pre>
+                    <pre>57      <span onmouseleave="resaturate()"onmouseenter="desaturate('text4')">--text4</span>: hsl(var(--txtd-900));</pre>
+                    <pre>58      <span onmouseleave="resaturate()"onmouseenter="desaturate('text-neut')">--text-neut</span>: hsl(var(--txtd-500));</pre>
+                    <pre>59      <span onmouseleave="resaturate()"onmouseenter="desaturate('primary0')">--primary0</span>: hsl(var(--primd-700));</pre>
+                    <pre>60      <span onmouseleave="resaturate()"onmouseenter="desaturate('primary1')">--primary1</span>: hsl(var(--primd-600));</pre>
+                    <pre>61      <span onmouseleave="resaturate()"onmouseenter="desaturate('primary2')">--primary2</span>: hsl(var(--primd-500));</pre>
+                    <pre>62      <span onmouseleave="resaturate()"onmouseenter="desaturate('primary3')">--primary3</span>: hsl(var(--primd-300));</pre>
+                    <pre>63      <span onmouseleave="resaturate()"onmouseenter="desaturate('tr-primary3')">--tr-primary3</span>: hsl(var(--primd-300)/ 0.2);</pre>
+                    <pre>64      <span onmouseleave="resaturate()"onmouseenter="desaturate('primary4')">--primary4</span>: color-mix(in lab, hsl(var(--primd-600)),</pre>
+                    <pre>65      hsl(1deg 35% 40%));</pre>
+                    <pre>66      <span onmouseleave="resaturate()"onmouseenter="desaturate('primary-neut')">--primary-neut</span>: hsl(var(--primd-500));</pre>
+                    <pre>67      <span onmouseleave="resaturate()"onmouseenter="desaturate('secondary1')">--secondary1</span>: hsl(var(--scndd-400));</pre>
+                    <pre>68      <span onmouseleave="resaturate()"onmouseenter="desaturate('secondary2')">--secondary2</span>: hsl(var(--scndd-500));</pre>
+                    <pre>69      <span onmouseleave="resaturate()"onmouseenter="desaturate('secondary3')">--secondary3</span>: hsl(var(--scndd-600));</pre>
+                    <pre>70      <span onmouseleave="resaturate()"onmouseenter="desaturate('secondary-neut')">--secondary-neut</span>: hsl(var(--scndd-500));</pre>
+                    <pre>71      <span onmouseleave="resaturate()"onmouseenter="desaturate('accent1')">--accent1</span>: hsl(var(--acntd-400));</pre>
+                    <pre>72      <span onmouseleave="resaturate()"onmouseenter="desaturate('tr-accent1')">--tr-accent1</span>: hsl(var(--acntd-400)/ 0.3);</pre>
+                    <pre>73      <span onmouseleave="resaturate()"onmouseenter="desaturate('accent2')">--accent2</span>: hsl(var(--acntd-900));</pre>
+                    <pre>74      <span onmouseleave="resaturate()"onmouseenter="desaturate('accent3')">--accent3</span>: hsl(var(--acntd-500));</pre>
+                    <pre>75      <span onmouseleave="resaturate()"onmouseenter="desaturate('accent4')">--accent4</span>: hsl(var(--acntd-800));</pre>
+                    <pre>76      <span onmouseleave="resaturate()"onmouseenter="desaturate('accent-neut')">--accent-neut</span>: hsl(var(--acntd-500));</pre>
+                    <pre>77      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-primary0')">--gls-primary0</span>: hsl(var(--primd-700)/ 0.2);</pre>
+                    <pre>78      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-primary0-br')">--gls-primary0-br</span>: hsl(var(--primd-700)/ 0.3);</pre>
+                    <pre>79      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-primary1')">--gls-primary1</span>: hsl(var(--primd-600)/ 0.2);</pre>
+                    <pre>80      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-primary1-br')">--gls-primary1-br</span>: hsl(var(--primd-600)/ 0.3);</pre>
+                    <pre>81      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-primary2')">--gls-primary2</span>: hsl(var(--primd-500)/ 0.2);</pre>
+                    <pre>82      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-primary2-br')">--gls-primary2-br</span>: hsl(var(--primd-500)/ 0.3);</pre>
+                    <pre>83      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-secondary1')">--gls-secondary1</span>: hsl(var(--scndd-400)/ 0.2);</pre>
+                    <pre>84      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-secondary1-br')">--gls-secondary1-br</span>: hsl(var(--scndd-400)/ 0.3);</pre>
+                    <pre>85      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-secondary2')">--gls-secondary2</span>: hsl(var(--scndd-500)/ 0.2);</pre>
+                    <pre>86      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-secondary2-br')">--gls-secondary2-br</span>: hsl(var(--scndd-500)/ 0.3);</pre>
+                    <pre>87      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-accent1')">--gls-accent1</span>: hsl(var(--acntd-400)/ 0.2);</pre>
+                    <pre>88      <span onmouseleave="resaturate()"onmouseenter="desaturate('gls-accent1-br')">--gls-accent1-br</span>: hsl(var(--acntd-400)/ 0.3);</pre>
+                    <pre>89  }</pre>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="M9 18q-.825 0-1.412-.587T7 16V4q0-.825.588-1.412T9 2h9q.825 0 1.413.588T20 4v12q0 .825-.587 1.413T18 18zm0-2h9V4H9zm-4 6q-.825 0-1.412-.587T3 20V7q0-.425.288-.712T4 6t.713.288T5 7v13h10q.425 0 .713.288T16 21t-.288.713T15 22zm4-6V4z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="M9 18q-.825 0-1.412-.587T7 16V4q0-.825.588-1.412T9 2h9q.825 0 1.413.588T20 4v12q0 .825-.587 1.413T18 18zm0-2h9V4H9zm-4 6q-.825 0-1.412-.587T3 20V7q0-.425.288-.712T4 6t.713.288T5 7v13h10q.425 0 .713.288T16 21t-.288.713T15 22zm4-6V4z" />
+                </svg>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                    d="M9 18q-.825 0-1.412-.587T7 16V4q0-.825.588-1.412T9 2h9q.825 0 1.413.588T20 4v12q0 .825-.587 1.413T18 18zm0-2h9V4H9zm-4 6q-.825 0-1.412-.587T3 20V7q0-.425.288-.712T4 6t.713.288T5 7v13h10q.425 0 .713.288T16 21t-.288.713T15 22zm4-6V4z" />
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                    d="M9 18q-.825 0-1.412-.587T7 16V4q0-.825.588-1.412T9 2h9q.825 0 1.413.588T20 4v12q0 .825-.587 1.413T18 18zm0-2h9V4H9zm-4 6q-.825 0-1.412-.587T3 20V7q0-.425.288-.712T4 6t.713.288T5 7v13h10q.425 0 .713.288T16 21t-.288.713T15 22zm4-6V4z" />
-            </svg>
+            <div id="saved-tab" class="hide">
+                <div class="saved-theme">
+                    <div class="pallete">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div style="color: var(--border-highlight);" class="prevent-select">|</div>
+                    <div class="pallete-ctrl">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 256 256">
+                            <path fill="currentColor"
+                                d="M216 20H72a44.05 44.05 0 0 0-44 44v72a28 28 0 0 0 28 28h39.64L92 207v1a36 36 0 0 0 72 0v-1l-3.6-43H200a28 28 0 0 0 28-28V32a12 12 0 0 0-12-12M72 44h88v24a12 12 0 0 0 24 0V44h20v52H52V64a20 20 0 0 1 20-20m128 96h-44a20 20 0 0 0-19.85 22.4l3.84 46a12 12 0 0 1-24 0l3.84-46A20 20 0 0 0 100 140H56a4 4 0 0 1-4-4v-16h152v16a4 4 0 0 1-4 4" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M7 21q-.825 0-1.412-.587T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.587 1.413T17 21zm2-4h2V8H9zm4 0h2V8h-2z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>

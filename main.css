@@ -274,12 +274,8 @@ body *::selection {
 /*setup/*/
 
 /*general*/
-.scroll {
-    overflow-y: auto;
-}
-.scroll::-webkit-scrollbar {
-    width: 10px;
-}
+.scroll {overflow-y: auto;}
+.scroll::-webkit-scrollbar {width: 10px;}
 .scroll::-webkit-scrollbar-track {
     background-color: color-mix(in lab,var(--background),var(--border-highlight));
     border: solid 5px transparent;
@@ -289,6 +285,9 @@ body *::selection {
     border-radius: 50px;
     background-clip: content-box;
     border: solid 1pt transparent;
+}
+.scroll::-webkit-scrollbar-corner {
+    background: color-mix(in lab,var(--background),var(--border-highlight));
 }
 
 .link {
@@ -1013,20 +1012,54 @@ footer {
     width: clamp(40lvw,30rem,60lvw);
     height: clamp(40lvh,30rem,60lvh);
     transform: translate(-50%, -50%);
-    border-radius: 1rem;
+    border-radius: 0 1rem 1rem 1rem;
     padding: 0.2rem;
     background-color: var(--background);
     box-shadow: var(--shadow-elevation-high);
     pointer-events: auto;
     z-index: 1001;
-    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#export-modal>#tabs {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 8rem;
+    height: fit-content;
+    bottom: calc(100% - 0.5pt);
+    left: 0;
+    background-color: var(--background);
+    border: none;
+    border-radius: 0.5rem 0.5rem 0 0;
+    font-size: 10.2pt;
+    padding: 0.2rem 0.2rem 0rem 0.2rem;
+}
+#export-tab-selector,
+#saved-tab-selector {
+    border-radius: 1rem;
+    padding: 0.1rem 0.3rem;
+    cursor: pointer;
+}
+#export-tab-selector:hover,
+#saved-tab-selector:hover,
+#export-tab-selector.current-tab,
+#saved-tab-selector.current-tab {background-color: var(--border-highlight);}
+/*export modal/*/
+
+/*export tab*/
+#export-tab {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
 }
-
-#export-modal>div {
+#export-tab>div {
     position: relative;
     font-size: 10pt;
     width: 90%;
@@ -1053,17 +1086,61 @@ footer {
     text-align: center;
 }
 #css-holder span:hover {font-size: 11.5pt;}
-#export-modal pre {margin: 0;}
-#export-modal pre:hover {background-color: var(--border-highlight);}
-#export-modal>svg {
+#export-tab pre {margin: 0;}
+#export-tab pre:hover {background-color: var(--border-highlight);}
+#export-tab>svg {
     position: absolute;
     top: 1rem;
     right: 2.5rem;
 }
-#export-modal>svg:nth-last-child(1) {top: calc(50% + 1rem);}
-#export-modal svg:hover {scale: 1.2;}
-/*export modal/*/
+#export-tab>svg:nth-last-child(1) {top: calc(50% + 1rem);}
+#export-tab svg:hover {scale: 1.2;}
+/*export tab/*/
 
+/*saved tab*/
+#saved-tab {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    position: relative;
+    font-size: 10pt;
+    width: 90%;
+    height: 90%;
+    background-color: rgba(0,0,0,0.05);
+    border-radius: 0.5rem;
+    border: 1pt solid var(--border-highlight);
+    padding: 0.2rem;
+}
+
+.saved-theme {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    min-height: 3rem;
+    width: 95%;
+    margin: 0.25rem 0.1rem;
+    box-shadow: var(--shadow-elevation-low);
+    font-size: 15pt;
+    border: 1pt solid var(--border-highlight);
+    border-radius: 0.5rem;
+}
+.pallete-ctrl {gap: 0.5rem;}
+.pallete-ctrl,
+.pallete {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.pallete>div {
+    width: clamp(3lvw,1.5rem,3rem);
+    height: clamp(3lvw,1.5rem,3rem);
+    background-color: #ff0000;
+    margin: 0.2rem;
+    border-radius: 0.5rem;
+}
+/*saved tab/*/
 
 @media screen and (max-width: 890px) {
     nav {

@@ -53,7 +53,11 @@ const rootTheme = document.querySelector(':root');
 const exportModal = document.getElementById('export-modal');
 const exportBtn = document.getElementById('export-btn');
 const cssHolder = document.getElementById('css-holder');
-const copyBtns = document.querySelectorAll('#export-modal>svg');
+const copyBtns = document.querySelectorAll('#export-tab>svg');
+const exportTabSelector = document.getElementById('export-tab-selector');
+const savedTabSelector = document.getElementById('saved-tab-selector');
+const exportTab = document.getElementById('export-tab');
+const savedTab = document.getElementById('saved-tab');
 
 const colorInput = document.getElementById('color-input');
 const hueRange = document.getElementById('hue-range');
@@ -644,6 +648,19 @@ copyBtns[1].addEventListener('click', event => {
     }`
     );
     alert("Copied the code");
+});
+
+exportTabSelector.addEventListener('click', event => {
+    exportTab.classList.remove('hide');
+    savedTab.classList.add('hide');
+    exportTabSelector.classList.add('current-tab');
+    savedTabSelector.classList.remove('current-tab');
+});
+savedTabSelector.addEventListener('click', event => {
+    exportTab.classList.add('hide');
+    savedTab.classList.remove('hide');
+    exportTabSelector.classList.remove('current-tab');
+    savedTabSelector.classList.add('current-tab');
 });
 // export-modal
 
