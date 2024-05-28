@@ -171,6 +171,7 @@ darkLock.addEventListener('click', function () {
     }
     document.documentElement.setAttribute('data-dark', targetLock);
     localStorage.setItem('dark', targetLock);
+    saveBtn.classList.remove('saved');
 });
 // dark toggle
 rootTheme.style.setProperty('--text-light', localStorage.getItem('--text-light') || '207deg 70%');
@@ -299,6 +300,8 @@ function hslToHex(h, s, l) {
 }
 
 function updateColorFromRange() {
+    saveBtn.classList.remove('saved');
+
     let currentTheme = document.documentElement.getAttribute("data-theme");
     let invTheme = 'light';
     if (currentTheme == 'light') {
@@ -364,6 +367,33 @@ exportBtn.addEventListener('click', event => {
     updatePrevCssPanels();
     for (let i = 0; i < exportSpans.length; i += 2) {
         exportSpans[i + 1].innerHTML = rootTheme.style.getPropertyValue(exportSpans[i].innerHTML);
+    }
+    // TODO:  handle loading from storage
+    let offest = document.documentElement.getAttribute('data-theme') == 'light' ? 0 : 1;
+    savedTab.innerHTML = '';
+    for (let i = 0; i < getNumberOfSavedThemes(); i++) {
+        let code = localStorage.getItem('theme-' + i).split('#');
+        savedTab.innerHTML += `
+        <div class="saved-theme">
+            <div class="pallete">
+                <div style="background-color:#${code[1 + offest]}"></div>
+                <div style="background-color:#${code[3 + offest]}"></div>
+                <div style="background-color:#${code[5 + offest]}"></div>
+                <div style="background-color:#${code[7 + offest]}"></div>
+                <div style="background-color:#${code[9 + offest]}"></div>
+            </div>
+            <div style="color: var(--border-highlight);" class="prevent-select">|</div>
+            <div class="pallete-ctrl">
+                <svg onclick="applySavedTheme(${i})" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 256 256">
+                    <path fill="currentColor"
+                        d="M216 20H72a44.05 44.05 0 0 0-44 44v72a28 28 0 0 0 28 28h39.64L92 207v1a36 36 0 0 0 72 0v-1l-3.6-43H200a28 28 0 0 0 28-28V32a12 12 0 0 0-12-12M72 44h88v24a12 12 0 0 0 24 0V44h20v52H52V64a20 20 0 0 1 20-20m128 96h-44a20 20 0 0 0-19.85 22.4l3.84 46a12 12 0 0 1-24 0l3.84-46A20 20 0 0 0 100 140H56a4 4 0 0 1-4-4v-16h152v16a4 4 0 0 1-4 4" />
+                </svg>
+                <svg onclick="deleteSavedTheme(${i})" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="M7 21q-.825 0-1.412-.587T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.587 1.413T17 21zm2-4h2V8H9zm4 0h2V8h-2z" />
+                </svg>
+            </div>
+        </div>`
     }
 });
 
@@ -666,8 +696,58 @@ savedTabSelector.addEventListener('click', event => {
 });
 // export-modal
 
+function getNumberOfSavedThemes() {
+    let i = 0;
+    while (localStorage.getItem('theme-' + i) != null) i++;
+    return i;
+}
+
+function applySavedTheme(i) {
+    let code = localStorage.getItem('theme-' + i).split('#');
+    for (let i = 1; i <= 5; i++) {
+        let hsl = hexToHsl('#' + code[2 * i - 1]);
+        rootTheme.style.setProperty('--' + panels[i - 1] + '-light', hsl[0] + 'deg ' + hsl[1] + '%');
+        rootTheme.style.setProperty('--' + panels[i - 1] + '-light-lit', hsl[2] / 50);
+        localStorage.setItem('--' + panels[i - 1] + '-light', hsl[0] + 'deg ' + hsl[1] + '%');
+        localStorage.setItem('--' + panels[i - 1] + '-light-lit', hsl[2] / 50);
+        hsl = hexToHsl('#' + code[2 * i]);
+        rootTheme.style.setProperty('--' + panels[i - 1] + '-dark', hsl[0] + 'deg ' + hsl[1] + '%');
+        rootTheme.style.setProperty('--' + panels[i - 1] + '-dark-lit', hsl[2] / 50);
+        localStorage.setItem('--' + panels[i - 1] + '-dark', hsl[0] + 'deg ' + hsl[1] + '%');
+        localStorage.setItem('--' + panels[i - 1] + '-dark-lit', hsl[2] / 50);
+    }
+}
+
+function deleteSavedTheme(i) {
+    document.querySelectorAll('.saved-theme')[i].remove();
+    let p = getNumberOfSavedThemes();
+    localStorage.removeItem('theme-' + i);
+    for (let j = i + 1; j < p; j++) {
+        localStorage.setItem('theme-' + (j - 1), localStorage.getItem('theme-' + j));
+    }
+    localStorage.removeItem('theme-' + (p - 1));
+    exportBtn.dispatchEvent(new Event('click', { niggers: true }));
+}
+
 saveBtn.addEventListener('click', event => {
-    saveBtn.classList.add('saved');
+    if (!saveBtn.classList.contains('saved')) {
+        saveBtn.classList.add('saved');
+        //  TODO: handle adding to storage
+        let code = '';
+        panels.forEach(panel => {
+            let [h, s] = rootTheme.style.getPropertyValue('--' + panel + '-light').split("deg");
+            h = parseFloat(h.trim());
+            s = parseFloat(s.trim().slice(0, -1));
+            let l = 50 * parseFloat(rootTheme.style.getPropertyValue('--' + panel + '-light-lit'));
+            code += hslToHex(h, s, l);
+            [h, s] = rootTheme.style.getPropertyValue('--' + panel + '-dark').split("deg");
+            h = parseFloat(h.trim());
+            s = parseFloat(s.trim().slice(0, -1));
+            l = 50 * parseFloat(rootTheme.style.getPropertyValue('--' + panel + '-dark-lit'));
+            code += hslToHex(h, s, l);
+        });
+        localStorage.setItem('theme-' + getNumberOfSavedThemes(), code);
+    }
 });
 // saving
 
@@ -866,6 +946,7 @@ function randomize() {
             localStorage.setItem('--' + panel + '-' + invTheme + '-lit', rootTheme.style.getPropertyValue('--' + panel + '-' + invTheme + '-lit'));
         }
     });
+    saveBtn.classList.remove('saved');
 }
 
 randBtn.addEventListener('click', event => {
