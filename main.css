@@ -1040,8 +1040,10 @@ footer {
 }
 #export-tab-selector,
 #saved-tab-selector {
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     padding: 0.1rem 0.3rem;
+    margin: 0.1rem;
+    margin-bottom: 0;
     cursor: pointer;
 }
 #export-tab-selector:hover,
@@ -1090,7 +1092,7 @@ footer {
 #export-tab pre:hover {background-color: var(--border-highlight);}
 #export-tab>svg {
     position: absolute;
-    top: 1rem;
+    top: 1.2rem;
     right: 2.5rem;
 }
 #export-tab>svg:nth-last-child(1) {top: calc(50% + 1rem);}
@@ -1105,8 +1107,8 @@ footer {
     flex-direction: column;
     position: relative;
     font-size: 10pt;
-    width: 90%;
-    height: 90%;
+    width: 95%;
+    height: 95%;
     background-color: rgba(0,0,0,0.05);
     border-radius: 0.5rem;
     border: 1pt solid var(--border-highlight);
@@ -1127,6 +1129,7 @@ footer {
     border-radius: 0.5rem;
 }
 .pallete-ctrl {gap: 0.5rem;}
+.pallete-ctrl>svg:hover {scale: 1.2;}
 .pallete-ctrl,
 .pallete {
     display: flex;
@@ -1266,6 +1269,11 @@ footer {
     }
 
     #css-holder span {text-shadow: none;}
+}
+
+@media screen and (max-width: 430px) {
+    .saved-theme>div:nth-child(2) {display: none;}
+    .pallete-ctrl {gap: 1rem;}
 }
 
 @media screen and (max-height: 480px) {
