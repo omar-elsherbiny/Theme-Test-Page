@@ -902,6 +902,35 @@ footer {
 }
 /*panel/*/
 
+/*saving button*/
+#save-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 4%;
+    bottom: 4%;
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 50%;
+    background-color: var(--background);
+    pointer-events: auto;
+    border: 2pt solid var(--border-highlight);
+    box-shadow: var(--shadow-elevation-medium);
+}
+#save-btn path:nth-child(2) {color: transparent;}
+#save-btn:hover svg {
+    scale: 1.2;
+    color: color-mix(in lab, var(--text1), #d4af37 70%);
+}
+#save-btn.saved:hover svg {
+    scale: 1;
+    color:#d4af37;
+}
+#save-btn.saved svg {color: #d4af37;}
+#save-btn.saved path:nth-child(2) {color: #d4af37;}
+/*saving button/*/
+
 /*input modal*/
 #backdrop {
     position: relative;

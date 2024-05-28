@@ -72,6 +72,8 @@ const backdrop = document.getElementById('backdrop');
 const inputModal = document.getElementById('input-modal');
 const colorPanels = document.querySelectorAll('.color-panel');
 
+const saveBtn = document.getElementById('save-btn');
+
 const parablob1 = document.getElementById('parablob1');
 const parablob2 = document.getElementById('parablob2');
 const parablob3 = document.getElementById('parablob3');
@@ -663,6 +665,11 @@ savedTabSelector.addEventListener('click', event => {
     savedTabSelector.classList.add('current-tab');
 });
 // export-modal
+
+saveBtn.addEventListener('click', event => {
+    saveBtn.classList.add('saved');
+});
+// saving
 
 function desaturate(variable) {
     resaturate();
