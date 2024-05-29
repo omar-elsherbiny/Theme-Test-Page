@@ -708,7 +708,8 @@ table>thead tr:hover {background-color: var(--secondary3);}
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid var(--gls-primary0-br);
 }
-#glass>div {
+#glass>div {perspective: 600px;}
+#glass>div>div {
     padding: 1rem;
     width: 6rem;
     height: 6rem;
@@ -716,32 +717,33 @@ table>thead tr:hover {background-color: var(--secondary3);}
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
-#glass:has(>div:hover) {
+#glass:has(>div>div:hover) {
     box-shadow: var(--shadow-elevation-high);
     scale: 1.02;
 }
-#glass>div:hover {
+#glass>div>div:hover {
     box-shadow: var(--shadow-elevation-high);
     scale: 1.1;
 }
-#glass>div:nth-child(1) {
+#glass>div:nth-child(1)>div {
     background: var(--gls-primary1);
     border: 1px solid var(--gls-primary1-br);
 }
-#glass>div:nth-child(2) {
+#glass>div:nth-child(2)>div {
     background: var(--gls-primary2);
     border: 1px solid var(--gls-primary1-br);
 }
-#glass>div:nth-child(3) {
+#glass>div:nth-child(3)>div {
     background: var(--gls-secondary1);
     border: 1px solid var(--gls-secondary1-br);
 }
-#glass>div:nth-child(4) {
+#glass>div:nth-child(4)>div {
     background: var(--gls-secondary2);
     border: 1px solid var(--gls-secondary2-br);
 }
-#glass>div:nth-child(5) {
+#glass>div:nth-child(5)>div {
     background: var(--gls-accent1);
     border: 1px solid var(--gls-accent1-br);
 }
@@ -918,6 +920,7 @@ footer {
     pointer-events: auto;
     border: 2pt solid var(--border-highlight);
     box-shadow: var(--shadow-elevation-medium);
+    cursor: pointer;
 }
 #save-btn path:nth-child(2) {color: transparent;}
 #save-btn:hover svg {
@@ -1289,7 +1292,7 @@ footer {
         font-size: 10pt;
     }
 
-    #glass>div {
+    #glass>div>div {
         width: 3rem;
         height: 3rem;
     }

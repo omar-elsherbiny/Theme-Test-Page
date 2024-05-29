@@ -87,6 +87,8 @@ const randBtn = document.getElementById('rand-btn');
 
 const exportSpans = document.querySelectorAll('#export-tab>div:nth-child(1)>pre>span');
 
+const glassContainers = document.querySelectorAll('#glass>div');
+
 let selectedColor = null;
 let previousCssPanels = {};
 let lockedPanels = [false, false, false, false, false];
@@ -963,3 +965,41 @@ randBtn.addEventListener('click', event => {
     randomize();
 });
 // randomization
+
+// the element you want to rotate should be contained in a container
+function createRotatingCard(elementContainer) {
+    const element = elementContainer.children[0]
+
+    elementContainer.addEventListener('mouseenter', e => {
+        element.style.transition = `transform 100ms ease-in-out, scale 150ms ease, box-shadow 150ms ease`
+        const aTimeout = setTimeout(() => {
+            rotateCard(e)
+        }, 50);
+        const anotherTimeout = setTimeout(() => {
+            element.style.transition = `scale 150ms ease, box-shadow 150ms ease`
+            elementContainer.addEventListener('mousemove', rotateCard)
+        }, 100);
+
+        elementContainer.addEventListener('mouseleave', e => {
+            clearTimeout(aTimeout)
+            clearTimeout(anotherTimeout)
+
+            elementContainer.removeEventListener('mousemove', rotateCard)
+            element.style.transition = `transform 100ms ease-in-out, scale 150ms ease, box-shadow 150ms ease`
+            element.style.transform = ``
+        })
+    })
+
+    function rotateCard(e) {
+        const mousePos = {
+            x: (((e.clientX - elementContainer.getBoundingClientRect().x) / elementContainer.getBoundingClientRect().width * (45 / 2)) - (45 / 2) / 2),
+            y: (((e.clientY - elementContainer.getBoundingClientRect().y) / elementContainer.getBoundingClientRect().height * (45 / 2)) - (45 / 2) / 2)
+        }
+        element.style.transform = `rotateY(${mousePos.x}deg) rotateX(${-mousePos.y}deg) scale(1.025)`
+    }
+}
+
+glassContainers.forEach(container => {
+    createRotatingCard(container);
+});
+// glass skew
