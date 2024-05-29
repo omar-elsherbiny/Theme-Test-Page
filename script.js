@@ -742,8 +742,8 @@ function deleteSavedTheme(i) {
 saveBtn.addEventListener('click', event => {
     if (!saveBtn.classList.contains('saved')) {
         saveBtn.classList.add('saved');
-        saveBtn.style.animation = 'star-anim 2s cubic-bezier(.25,1.05,.37,.99)';
-        exportBtn.style.animation = 'export-btn-anim 1.5s ease 1s';
+        saveBtn.style.animation = 'star-anim 2s cubic-bezier(.72,-0.06,.25,1.1)';
+        exportBtn.style.animation = 'export-btn-anim 2s ease 1s';
         let code = '';
         panels.forEach(panel => {
             let [h, s] = rootTheme.style.getPropertyValue('--' + panel + '-light').split("deg");

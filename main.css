@@ -849,6 +849,11 @@ footer {
     border: 1.5pt solid var(--text1);
     cursor: pointer;
 }
+#panel>div:nth-child(3) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 #panel>div:nth-child(3):hover svg {scale: 1.2;}
 
 #show-panel {
@@ -933,6 +938,7 @@ footer {
 @keyframes star-anim {
     0% {
         bottom: 4%;
+        right: 4%;
     }
     50% {
         border: 2pt solid transparent;
