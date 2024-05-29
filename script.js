@@ -786,6 +786,8 @@ saveBtn.addEventListener('click', event => {
 importText.addEventListener('keydown', event => {
     if (importValid && event.key === 'Enter') {
         applySavedTheme(0, importText.value);
+        saveBtn.classList.remove('saved');
+        exportBtn.dispatchEvent(new Event('click', {bubbles:true}));
     }
 });
 importText.addEventListener('input', event => {

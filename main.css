@@ -1146,7 +1146,7 @@ footer {
     border: 1pt solid var(--border-highlight);
     padding: 0.2rem;
 }
-#css-holder span {
+#css-holder2 span {
     cursor: pointer;
     font-size: 10.3pt;
     font-weight: 800;
@@ -1162,7 +1162,7 @@ footer {
     color: rgb(33, 33, 33);
     text-align: center;
 }
-#css-holder span:hover {font-size: 11.5pt;}
+#css-holder2 span:hover {font-size: 11.5pt;}
 #export-tab pre {margin: 0;}
 #export-tab pre:hover {background-color: var(--border-highlight);}
 #export-tab svg {
@@ -1369,7 +1369,7 @@ footer {
         height: 3rem;
     }
 
-    #css-holder span {text-shadow: none;}
+    #css-holder2 span {text-shadow: none;}
 }
 
 @media screen and (max-width: 430px) {
