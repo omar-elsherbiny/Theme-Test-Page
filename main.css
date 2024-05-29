@@ -245,6 +245,8 @@ h1, h2, h3, h4, h5, h6, small, p {font-family: var(--font); margin:0;}
 body * {
     transition: color ease-in-out 0.2s, background-color ease-in-out 0.2s,
         scale ease-in-out 0.2s, box-shadow ease-in-out 0.2s;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -moz-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 body {
     position: relative;
