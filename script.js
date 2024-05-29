@@ -59,6 +59,7 @@ const savedTabSelector = document.getElementById('saved-tab-selector');
 const exportTab = document.getElementById('export-tab');
 const savedTab = document.getElementById('saved-tab');
 const savedTabDiv = document.querySelector('#saved-tab>div:nth-child(1)');
+const importText = document.getElementById('import-text');
 
 const colorInput = document.getElementById('color-input');
 const hueRange = document.getElementById('hue-range');
@@ -72,7 +73,6 @@ const colorLock = document.getElementById('color-lock');
 const backdrop = document.getElementById('backdrop');
 const inputModal = document.getElementById('input-modal');
 const colorPanels = document.querySelectorAll('.color-panel');
-
 const saveBtn = document.getElementById('save-btn');
 
 const parablob1 = document.getElementById('parablob1');
@@ -94,6 +94,7 @@ let selectedColor = null;
 let previousCssPanels = {};
 let lockedPanels = [false, false, false, false, false];
 let prevScroll = -1;
+let importValid = false;
 
 //consts
 
@@ -686,8 +687,13 @@ function getNumberOfSavedThemes() {
     return i;
 }
 
-function applySavedTheme(i) {
-    let code = localStorage.getItem('theme-' + i).split('#');
+function applySavedTheme(ind = null, cd = null) {
+    let code
+    if (cd == null) {
+        code = localStorage.getItem('theme-' + ind).split('#');
+    } else {
+        code = cd.split('#');
+    }
     for (let i = 1; i <= 5; i++) {
         let hsl = hexToHsl('#' + code[2 * i - 1]);
         rootTheme.style.setProperty('--' + panels[i - 1] + '-light', hsl[0] + 'deg ' + hsl[1] + '%');
@@ -769,6 +775,24 @@ saveBtn.addEventListener('click', event => {
     } else {
         saveBtn.classList.remove('saved');
         deleteSavedTheme(getNumberOfSavedThemes() - 1);
+    }
+});
+
+importText.addEventListener('keydown', event => {
+    if (importValid && event.key === 'Enter') {
+        applySavedTheme(0, importText.value);
+    }
+});
+importText.addEventListener('input', event => {
+    let match = importText.value.match(/#([0-9A-Fa-f]{6})/g);
+    importValid = false;
+    if (match!=null && match.length == 10) {
+        importText.style.borderColor = '#38D926';
+        importValid = true;
+    } else if (importText.value.length == 0) {
+        importText.style.borderColor = '';
+    } else {
+        importText.style.borderColor = '#D92626';
     }
 });
 // saving

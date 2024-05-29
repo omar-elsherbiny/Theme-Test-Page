@@ -1223,9 +1223,21 @@ footer {
     border-radius: 0.5rem;
 }
 
+#import-text:-webkit-autofill,
+#import-text:-webkit-autofill:hover,
+#import-text:-webkit-autofill:focus,
+#import-text:-webkit-autofill:active {transition: background-color 600000s 0s, color 600000s 0s;}
 #import-text {
     width: 85%;
+    outline: 0;
+    border: 0;
+    border-bottom: 1.5pt solid var(--border-highlight);
+    background-color: transparent;
+    font-size: 10pt;
+    color: var(--text1);
+    transition: border-color 0.2s ease-in-out;
 }
+#import-text::placeholder {font-size: 12pt;}
 /*saved tab/*/
 
 @media screen and (max-width: 890px) {
