@@ -1173,13 +1173,21 @@ footer {
 /*saved tab*/
 #saved-tab {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+#saved-tab>div {
+    display: flex;
     align-items: center;
     justify-content: start;
     flex-direction: column;
     position: relative;
     font-size: 10pt;
     width: 95%;
-    height: 95%;
+    height: 85%;
     background-color: rgba(0,0,0,0.05);
     border-radius: 0.5rem;
     border: 1pt solid var(--border-highlight);
@@ -1213,6 +1221,10 @@ footer {
     background-color: #ff0000;
     margin: 0.2rem;
     border-radius: 0.5rem;
+}
+
+#import-text {
+    width: 85%;
 }
 /*saved tab/*/
 

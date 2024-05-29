@@ -58,6 +58,7 @@ const exportTabSelector = document.getElementById('export-tab-selector');
 const savedTabSelector = document.getElementById('saved-tab-selector');
 const exportTab = document.getElementById('export-tab');
 const savedTab = document.getElementById('saved-tab');
+const savedTabDiv = document.querySelector('#saved-tab>div:nth-child(1)');
 
 const colorInput = document.getElementById('color-input');
 const hueRange = document.getElementById('hue-range');
@@ -371,7 +372,8 @@ exportBtn.addEventListener('click', event => {
     exportModal.classList.remove('hide');
     backdrop.classList.remove('hide');
     updatePrevCssPanels();
-    for (let i = 0; i < exportSpans.length; i += 2) {
+    exportSpans[0].innerHTML = generateThemeCode();
+    for (let i = 1; i < exportSpans.length; i += 2) {
         exportSpans[i + 1].innerHTML = rootTheme.style.getPropertyValue(exportSpans[i].innerHTML);
     }
     updateSavedThemesHtml();
@@ -403,6 +405,8 @@ copyBtns[0].addEventListener('click', event => {
             --font: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             --shadow-color: 0deg 0% 0%;
           
+            /*Theme code: ${generateThemeCode()}*/
+
             --text-light: ${rootTheme.style.getPropertyValue('--text-light')};
             --text-dark: ${rootTheme.style.getPropertyValue('--text-dark')};
           
@@ -700,10 +704,10 @@ function applySavedTheme(i) {
 
 function updateSavedThemesHtml() {
     let offest = document.documentElement.getAttribute('data-theme') == 'light' ? 0 : 1;
-    savedTab.innerHTML = '';
+    savedTabDiv.innerHTML = '';
     for (let i = 0; i < getNumberOfSavedThemes(); i++) {
         let code = localStorage.getItem('theme-' + i).split('#');
-        savedTab.innerHTML += `
+        savedTabDiv.innerHTML += `
         <div class="saved-theme">
             <div class="pallete">
                 <div style="background-color:#${code[1 + offest]}"></div>
@@ -739,25 +743,29 @@ function deleteSavedTheme(i) {
     updateSavedThemesHtml();
 }
 
+function generateThemeCode() {
+    let code = '';
+    panels.forEach(panel => {
+        let [h, s] = rootTheme.style.getPropertyValue('--' + panel + '-light').split("deg");
+        h = parseFloat(h.trim());
+        s = parseFloat(s.trim().slice(0, -1));
+        let l = 50 * parseFloat(rootTheme.style.getPropertyValue('--' + panel + '-light-lit'));
+        code += hslToHex(h, s, l);
+        [h, s] = rootTheme.style.getPropertyValue('--' + panel + '-dark').split("deg");
+        h = parseFloat(h.trim());
+        s = parseFloat(s.trim().slice(0, -1));
+        l = 50 * parseFloat(rootTheme.style.getPropertyValue('--' + panel + '-dark-lit'));
+        code += hslToHex(h, s, l);
+    });
+    return code;
+}
+
 saveBtn.addEventListener('click', event => {
     if (!saveBtn.classList.contains('saved')) {
         saveBtn.classList.add('saved');
         saveBtn.style.animation = 'star-anim 2s cubic-bezier(.72,-0.06,.25,1.1)';
         exportBtn.style.animation = 'export-btn-anim 2s ease 1s';
-        let code = '';
-        panels.forEach(panel => {
-            let [h, s] = rootTheme.style.getPropertyValue('--' + panel + '-light').split("deg");
-            h = parseFloat(h.trim());
-            s = parseFloat(s.trim().slice(0, -1));
-            let l = 50 * parseFloat(rootTheme.style.getPropertyValue('--' + panel + '-light-lit'));
-            code += hslToHex(h, s, l);
-            [h, s] = rootTheme.style.getPropertyValue('--' + panel + '-dark').split("deg");
-            h = parseFloat(h.trim());
-            s = parseFloat(s.trim().slice(0, -1));
-            l = 50 * parseFloat(rootTheme.style.getPropertyValue('--' + panel + '-dark-lit'));
-            code += hslToHex(h, s, l);
-        });
-        localStorage.setItem('theme-' + getNumberOfSavedThemes(), code);
+        localStorage.setItem('theme-' + getNumberOfSavedThemes(), generateThemeCode());
     } else {
         saveBtn.classList.remove('saved');
         deleteSavedTheme(getNumberOfSavedThemes() - 1);
