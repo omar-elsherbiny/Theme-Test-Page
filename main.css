@@ -1377,6 +1377,15 @@ footer {
     .pallete-ctrl {gap: 1rem;}
 }
 
+@media screen and (max-width: 376px) {
+    nav {
+        padding: 0 0.1rem;
+        width: calc(100% - 0.2rem);
+    }
+    nav>h4 {font-size: 12pt;}
+    #export-btn {font-size: 10pt;}
+}
+
 @media screen and (max-height: 480px) {
     #panel>div:nth-child(1) {margin: 0.1rem 0px;}
     #panel>div:nth-child(2)>div {
