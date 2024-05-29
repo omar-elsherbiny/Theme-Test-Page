@@ -929,6 +929,40 @@ footer {
 }
 #save-btn.saved svg {color: #d4af37;}
 #save-btn.saved path:nth-child(2) {color: #d4af37;}
+
+@keyframes star-anim {
+    0% {
+        bottom: 4%;
+    }
+    50% {
+        border: 2pt solid transparent;
+        background-color: transparent;
+        box-shadow: none;
+        width: 2rem;
+        height: 2rem;
+        opacity: 1;
+    }
+    90% {color: #d4af37;}
+    100% {
+        bottom: calc(100% - 2.5rem);
+        right: 6.7rem;
+        border: 2pt solid transparent;
+        background-color: transparent;
+        box-shadow: none;
+        width: 2rem;
+        height: 2rem;
+        color: transparent !important;
+        opacity: 0;
+    }
+}
+@keyframes export-btn-anim {
+    0%,50%,100% {
+        outline: 3pt solid transparent;
+    }
+    25%,75% {
+        outline: 3pt solid #d4af37;
+    }
+}
 /*saving button/*/
 
 /*input modal*/

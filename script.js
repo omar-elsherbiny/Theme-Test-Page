@@ -221,7 +221,7 @@ function lerp(a, b, t, capped = true) {
 
 function updateParallax() {
     const scrollValue = getScrollPercentage();
-    if ((Math.abs(scrollValue - prevScroll)).toFixed(4)>=0.025) {
+    if ((Math.abs(scrollValue - prevScroll)).toFixed(4) >= 0.025) {
         prevScroll = scrollValue;
         parablob1.style.top = lerp(80, -20, 2 * scrollValue) + '%';
         parablob2.style.top = lerp(90, -20, 1.5 * scrollValue) + '%';
@@ -742,6 +742,8 @@ function deleteSavedTheme(i) {
 saveBtn.addEventListener('click', event => {
     if (!saveBtn.classList.contains('saved')) {
         saveBtn.classList.add('saved');
+        saveBtn.style.animation = 'star-anim 2s cubic-bezier(.25,1.05,.37,.99)';
+        exportBtn.style.animation = 'export-btn-anim 1.5s ease 1s';
         let code = '';
         panels.forEach(panel => {
             let [h, s] = rootTheme.style.getPropertyValue('--' + panel + '-light').split("deg");
