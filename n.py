@@ -22,7 +22,8 @@ s='''
         'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
         'Helvetica Neue', sans-serif;
     --shadow-color: 0deg 0% 0%;
-    /*Theme code: ${generateThemeCode()}*/
+    /*Theme code:*/
+/*${generateThemeCode()}*/
     --text-light: 207deg 70%;
     --text-dark: 207deg 70%;
     --background-light: 240deg 60%;

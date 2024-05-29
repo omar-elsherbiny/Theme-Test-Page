@@ -52,8 +52,8 @@ const rootTheme = document.querySelector(':root');
 
 const exportModal = document.getElementById('export-modal');
 const exportBtn = document.getElementById('export-btn');
-const cssHolder = document.getElementById('css-holder');
-const copyBtns = document.querySelectorAll('#export-tab>svg');
+const cssHolder = document.getElementById('css-holder2');
+const copyBtns = document.querySelectorAll('#export-tab svg');
 const exportTabSelector = document.getElementById('export-tab-selector');
 const savedTabSelector = document.getElementById('saved-tab-selector');
 const exportTab = document.getElementById('export-tab');
@@ -86,7 +86,7 @@ const showButton = document.getElementById('show-panel');
 
 const randBtn = document.getElementById('rand-btn');
 
-const exportSpans = document.querySelectorAll('#export-tab>div:nth-child(1)>pre>span');
+const exportSpans = document.querySelectorAll('#css-holder1>pre>span');
 
 const glassContainers = document.querySelectorAll('#glass>div');
 
@@ -666,6 +666,11 @@ copyBtns[1].addEventListener('click', event => {
     );
     alert("Copied the code");
 });
+copyBtns[2].addEventListener('click', event => {
+    copyBtns[2].style.color = 'var(--border-highlight)';
+    navigator.clipboard.writeText(generateThemeCode());
+    alert("Copied the code");
+});
 
 exportTabSelector.addEventListener('click', event => {
     exportTab.classList.remove('hide');
@@ -786,7 +791,7 @@ importText.addEventListener('keydown', event => {
 importText.addEventListener('input', event => {
     let match = importText.value.match(/#([0-9A-Fa-f]{6})/g);
     importValid = false;
-    if (match!=null && match.length == 10) {
+    if (match != null && match.length == 10) {
         importText.style.borderColor = '#38D926';
         importValid = true;
     } else if (importText.value.length == 0) {

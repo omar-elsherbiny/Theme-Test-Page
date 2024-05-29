@@ -1134,9 +1134,13 @@ footer {
 }
 #export-tab>div {
     position: relative;
+    height: 38%;
+    width: 85%;
+}
+#export-tab>div>div {
     font-size: 10pt;
-    width: 90%;
-    height: 40%;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0,0,0,0.05);
     border-radius: 0.5rem;
     border: 1pt solid var(--border-highlight);
@@ -1161,13 +1165,15 @@ footer {
 #css-holder span:hover {font-size: 11.5pt;}
 #export-tab pre {margin: 0;}
 #export-tab pre:hover {background-color: var(--border-highlight);}
-#export-tab>svg {
+#export-tab svg {
     position: absolute;
-    top: 1.2rem;
-    right: 2.5rem;
+    top: 5%;
+    right: 1rem;
 }
-#export-tab>svg:nth-last-child(1) {top: calc(50% + 1rem);}
 #export-tab svg:hover {scale: 1.2;}
+
+#export-tab>div:nth-last-child(1) {height: fit-content;}
+#export-code {font-size: 9pt !important;}
 /*export tab/*/
 
 /*saved tab*/
