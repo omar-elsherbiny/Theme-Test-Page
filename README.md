@@ -1,5 +1,7 @@
 # Theme-Test-Page
-This is a website I made inspired by [realtimecolors](https://www.realtimecolors.com/) and the aim was to improve on its idea by focusing on exporting CSS variables of the theme that you can directly use in your project instead of focusing on the generation part of the theme
+#### Video Demo:  https://youtu.be/jiSabB-rPgk
+#### Description:
+This is a website I to help me with theming my front end projects and the aim was to improve on the idea of theme generators by focusing on exporting CSS variables of the theme that you can directly use in your project instead of focusing on the generation part of the theme
 
 The website's main content is made to preview the theme in different styles and HTML that you might typically use in a project
 
@@ -38,7 +40,18 @@ The "Export" button opens another modal where you can select or copy:
     - A green border means a valid code has been entered and can be applied by pressing "Enter"
     - A red border means the code is in an invalid format
 
+# Files
+- `index.html`
+    - holding all HTML for page
+- `script.js`
+    - holds all behaviour for page
+- `main.css`
+    - holds all main styling and root variables
+- `theme.css`
+    - holds initial values for variables that change while using page
+- `n.py`
+    - basic python script used to parse and format texts for some HTML used
 # Credits
-This project was made by [me](https://github.com/omar-elsherbiny) with some help from my friend [Zied](https://github.com/ZiedDev)
+This project was made by [me](https://github.com/omar-elsherbiny)
 
 You can contact me on Discord at: [sherbo2007](https://discord.com/users/618443479856447500)
